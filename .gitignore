@@ -4,6 +4,6 @@
 /.sass-cache
 /bower_components
 *.log
-/.idea
+.idea/
 build/
 dist/
