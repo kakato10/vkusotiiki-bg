@@ -18,7 +18,7 @@ $ cd vkusotiiki-bg
 ```sh
 $ vagrant up
 ```
- - WAIT (do something else for about 30-60min). Last command will create a new virtual machine without GUI and will install all needed packages inside of it
+ - WAIT (do something else for about 30 - 60min depends on the machine and network signal). Last command will create a new virtual machine without GUI and will install all needed packages inside of it
  - After all finished, enter in the terminal /  command line:
 ```sh
 $ vagrant ssh
@@ -27,7 +27,6 @@ $ vagrant ssh
 ### Now you're in the game!
 Type
 ```sh
-$ cd vkusotiiki-bg
 $ grunt serve
 ```
 ## Voilà!

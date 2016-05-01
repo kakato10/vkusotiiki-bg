@@ -18,6 +18,7 @@ color '36;1' "
      For more details, visit:
      https://github.com/kakato10/vkusotiiki-bg
 "
+echo "cd /home/vagrant/vkusotiiki-bg" >> /home/vagrant/.bashrc
 
 color '35;1' 'Updating packages...'
 apt-get update
@@ -42,9 +43,13 @@ sudo npm install n -g
 sudo n stable
 sudo npm install -g grunt-cli bower yo generator-karma generator-angular
 
-color '35;1' 'Install libs with bower...'
-bower install
-color '35;1' 'Finish.'
-npm install
+color '35;1' 'Install npm packages...'
+sudo npm install
+color '35;1' 'Finish installing npm packages'
+
+# color '35;1' 'Install libs with bower...'
+# cd vkusotiiki-bg
+# bower install
+# color '35;1' 'Finish installing bower libs'
 
 color '35;1' 'Done!.'
