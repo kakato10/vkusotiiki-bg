@@ -18,16 +18,10 @@ color '36;1' "
      For more details, visit:
      https://github.com/kakato10/vkusotiiki-bg
 "
+echo "cd /home/vagrant/vkusotiiki-bg" >> /home/vagrant/.bashrc
 
 color '35;1' 'Updating packages...'
 apt-get update
-
-color '35;1' 'Installing dependencies from apt-get...'
-apt-get -y install git \
-                   build-essential \
-                   ruby-full \
-                   nodejs \
-                   npm
 
 color '35;1' 'Finished installing dependencies...'
 
@@ -35,22 +29,20 @@ color '35;1' 'Cleaning up...'
 apt-get -y autoremove
 
 color '35;1' 'Install compass gem...'
-sudo gem install compass
+gem install compass
 
 color '35;1' 'Installinng npm packages...'
-sudo npm install n -g
-sudo n stable
-sudo npm install -g grunt-cli bower yo generator-karma generator-angular
-
-color '35;1' 'Install libs with bower...'
-echo "cd /home/vagrant/vkusotiiki-bg" >> /home/vagrant/.bashrc
-cd /home/vagrant/vkusotiiki-bg
-bower install
-color '35;1' 'Finish installing bower libs'
+npm install n -g
+n stable
+npm install -g generator-karma generator-angular
 
 color '35;1' 'Install npm packages...'
-sudo npm install
+npm install
 color '35;1' 'Finish installing npm packages'
 
+# color '35;1' 'Install libs with bower...'
+# cd vkusotiiki-bg
+# bower install
+# color '35;1' 'Finish installing bower libs'
 
 color '35;1' 'Done!.'

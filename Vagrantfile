@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "scotch/box"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -39,8 +39,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  excludes = [".git", "node_modules"]
-  config.vm.synced_folder ".", "/home/vagrant/vkusotiiki-bg/", rsync__exclude: excludes, :rsync_excludes => excludes
+  # excludes = [".git", "node_modules"]
+  # config.vm.synced_folder ".", "/home/vagrant/vkusotiiki-bg/",
+  #   type: "rsync", rsync__exclude: excludes
+
+  # Optional NFS. Make sure to remove other synced_folder line too
+  config.vm.synced_folder ".", "/home/vagrant/vkusotiiki-bg/", :nfs => { :mount_options => ["dmode=777","fmode=666"] }
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
