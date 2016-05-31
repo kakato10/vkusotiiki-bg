@@ -11,7 +11,8 @@ a {
 }
 
 a:hover {
-    text-decoration: none;
+    /*text-decoration: none;*/
+    cursor: pointer;
 }
 
 /*#background-img {
@@ -100,6 +101,9 @@ a:hover {
 
 #main-carousel {
     width: 580px;
+    max-height: 350px;
+    position: relative;
+    display: inline-block;
 }
 
 .input-group {
@@ -108,4 +112,37 @@ a:hover {
 
 .container .breadcrumb {
     background-color: transparent;
+}
+
+.container {
+    position: relative;
+}
+
+.group-container {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+.left-nav {
+    margin-right: 10px;
+}
+
+.most-liked .group-container {
+    border: none;
+}
+
+.thumbnail img {
+    width: 210px;
+    height: 130px;
+}
+
+.main-content {
+    position: relative;
+    /*display: inline-block;*/
+}
+
+.recipe {
+    display: inline-table;
 }
