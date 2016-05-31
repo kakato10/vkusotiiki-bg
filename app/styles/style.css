@@ -155,5 +155,15 @@ a:hover {
 
 .recipe-content {
     padding: 10px;
+}
 
+.share-icon img {
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+
+.footer .table td, .footer .table tr, .footer .table th {
+    color: black;
+    border: none;
 }
