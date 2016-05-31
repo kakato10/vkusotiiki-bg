@@ -43,8 +43,14 @@ sudo n stable
 sudo npm install -g grunt-cli bower yo generator-karma generator-angular
 
 color '35;1' 'Install libs with bower...'
+echo "cd /home/vagrant/vkusotiiki-bg" >> /home/vagrant/.bashrc
+cd /home/vagrant/vkusotiiki-bg
 bower install
-color '35;1' 'Finish.'
-npm install
+color '35;1' 'Finish installing bower libs'
+
+color '35;1' 'Install npm packages...'
+sudo npm install
+color '35;1' 'Finish installing npm packages'
+
 
 color '35;1' 'Done!.'
