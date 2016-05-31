@@ -146,3 +146,14 @@ a:hover {
 .recipe {
     display: inline-table;
 }
+
+.recipe-title {
+    font-size: 14px;
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+.recipe-content {
+    padding: 10px;
+
+}
