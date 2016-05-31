@@ -93,3 +93,15 @@ a:hover {
 .lang.right {
     padding-top: 20px;
 }
+
+.carousel-img {
+    max-height: 350px;
+}
+
+#main-carousel {
+    width: 580px;
+}
+
+.input-group {
+    padding: 5px 0;
+}
