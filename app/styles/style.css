@@ -1,0 +1,95 @@
+body {
+    position: relative;
+    font-family: "Comic Sans MS", Arial, cursive;
+    font-weight: bold;
+    font-size: 12px;
+    /*background-image: url('../images/food-wallpaper.jpg');*/
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/*#background-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.65;
+}
+*/
+.main-container {
+    max-width: 1700px;
+    height: 1000px;
+    width: 100%;
+    margin: 10px;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-title {
+    font-size: 35px;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo-container * {
+    height: 80px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.logo img {
+    max-height: 70px;
+    margin: 5px 10px 5px 50px;
+}
+
+.menu {
+    display: inline-block;
+    /*width: 400px;*/
+}
+
+.menu ul li {
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-menu {
+    display: inline-block;
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.menu ul li a {
+    padding-right: 5px; 
+}
+
+.slider-container {
+    max-height: 100px;
+    position: relative;
+}
+
+.lang.right {
+    padding-top: 20px;
+}

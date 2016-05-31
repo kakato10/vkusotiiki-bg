@@ -44,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   type: "rsync", rsync__exclude: excludes
 
   # Optional NFS. Make sure to remove other synced_folder line too
-  config.vm.synced_folder ".", "/home/vagrant/vkusotiiki-bg/", :nfs => { :mount_options => ["dmode=777","fmode=666"] }
+  config.vm.synced_folder ".", "/home/vagrant/vkusotiiki-bg/"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -53,7 +53,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
-    vb.name = "fmi"
+    vb.name = "fmi_scotch"
     # Customize the amount of memory on the VM:
     vb.memory = "1024"
     # Customize the amount of CPUs in the VM:

@@ -2,24 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
+
+    <meta name="description" content="">
+    <title>Vkusotiiki-bg</title>
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+        <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css">
     <!-- endbuild -->
   </head>
   <body ng-app="vkusotiikiBgApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div class="header">
+      <!-- First row of the page -->
+      <div class="logo-container navbar navbar-default container">
+        <div class="logo left">
+          <img src="images/logo.jpg" alt="Logo">
+        </div>
+        <div class="center">
+          <h2 class="main-title">"Традиционни български ястия"</h2>
+        </div>
+        <div class="right lang">
+          <a href="#/bg/">BG</a>
+          <a href="#/en/">EN</a>
+          <a href="#/de/">DE</a>
+        </div>
+      </div>
+    </div>
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
@@ -32,15 +61,33 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" ui-sref="home">vkusotiikiBg</a>
+            <!-- <a class="navbar-brand" ui-sref="home">vkusotiikiBg</a> -->
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
+          <!-- TO DO -->
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ui-sref="about">About</a></li>
-              <li><a ui-sref="home">Contact</a></li>
+              <li class="active"><a href="#/">Начало</a></li>
+              <li><a href="#/map/">Карта на България</a></li>
+              <li><a href="#/recipes/">Рецепти</a></li>
+              <li><a href="#/new-recipes/">Нови рецепти</a></li>
+              <li><a href="#/my-recipes/">Моите рецепти</a></li>
+              <li><a href="#/favourite-recipes/">Любими рецепти</a></li>
+              <li><a ui-sref="about">За нас</a></li>
+              <li><a ui-sref="contacts">Контакти</a></li>
+              <li class="right"><a href="#/log-out">Изход</a></li>
+              <li class="right"><a href="#/profile">Христо Христов</a></li>
+              <li>
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                    <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Търсене">
+                </div><!-- /input-group -->
+              </li>
             </ul>
           </div>
         </div>
@@ -48,7 +95,7 @@
     </div>
 
     <div class="container">
-    <div ui-view=""></div>
+      <div ui-view=""></div>
     </div>
 
     <div class="footer">
