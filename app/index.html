@@ -76,6 +76,7 @@
               <li><a ui-sref="favouriteRecipes">Любими рецепти</a></li>
               <li><a ui-sref="about">За нас</a></li>
               <li><a ui-sref="contacts">Контакти</a></li>
+              <li><a ui-sref="offeredRecipes" style="color:red;">Предлагани</a></li>
               <li class="right"><a ui-sref="logOut">Изход</a></li>
               <li class="right"><a ui-sref="profile">Христо Христов</a></li>
               <li>
@@ -114,7 +115,7 @@
         <ul class="nav nav-pills nav-stacked">
           <li role="presentation" class="active">
             <div class="row group-container">
-              <div class="col-xs-6 col-md-12">
+              <div class="col-xs-6 col-md-12 text-center">
                 <a ui-sref="weeklyRecipe">Рецепта на седмицата</a>
                 <a ui-sref="weeklyRecipe" class="thumbnail">
                   <img src="images/recipes/musaka.jpg" alt="Рецепта на седмицата">
@@ -129,13 +130,13 @@
           <ul class="nav nav-pills nav-stacked">
             <li role="presentation">
               <div class="row group-container">
-                <div class="col-xs-6 col-md-12">
+                <div class="col-xs-6 col-md-12 text-center">
                   <a ui-sref="mostLikedRecipes">Най-харесвани рецепти</a>
                   <a ui-sref="mostLikedRecipes" class="thumbnail">
                     <img src="images/recipes/kapama.png" alt="Най-харесвани рецепти">
                   </a>
-                  <a ui-sref="#">Капама по ловджийски</a>
-                  <div class="btn-toolbar" role="toolbar">
+                  <a ui-sref="#" class="recipe-title-thumb">Капама по ловджийски</a>
+                  <div class="btn-toolbar center stars" role="toolbar">
                     <div class="btn-group" role="group">
                       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                     </div>
@@ -149,7 +150,10 @@
                       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                     </div>
                     <div class="btn-group" role="group">
-                      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </div>
+                    <div class="btn-group" role="group">
+                      <p>4.8</p>
                     </div>
                   </div>
                 </div>
@@ -157,12 +161,12 @@
             </li>
             <li role="presentation">
               <div class="row group-container">
-                <div class="col-xs-6 col-md-12">
+                <div class="col-xs-6 col-md-12 text-center">
                   <a ui-sref="weeklyRecipe" class="thumbnail">
                     <img src="images/recipes/patatnik.jpg" alt="Рецепта на сезмицата">
                   </a>
-                  <a ui-sref="#">Родопски пататник</a>
-                  <div class="btn-toolbar" role="toolbar">
+                  <a ui-sref="#" class="recipe-title-thumb">Родопски пататник</a>
+                  <div class="btn-toolbar center stars" role="toolbar">
                     <div class="btn-group" role="group">
                       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                     </div>
@@ -176,7 +180,10 @@
                       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                     </div>
                     <div class="btn-group" role="group">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                    </div>
+                    <div class="btn-group" role="group">
+                      <p>4.2</p>
                     </div>
                   </div>
                 </div>
@@ -184,12 +191,12 @@
             </li>
             <li role="presentation">
               <div class="row group-container">
-                <div class="col-xs-6 col-md-12">
+                <div class="col-xs-6 col-md-12 text-center">
                   <a ui-sref="weeklyRecipe" class="thumbnail">
                     <img src="images/recipes/sarmi.jpg" alt="Рецепта на сезмицата">
                   </a>
-                  <a ui-sref="#">Запечени сарми - асорти</a>
-                  <div class="btn-toolbar" role="toolbar">
+                  <a ui-sref="#" class="recipe-title-thumb">Запечени сарми - асорти</a>
+                  <div class="btn-toolbar center stars" role="toolbar">
                     <div class="btn-group" role="group">
                       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                     </div>
@@ -204,6 +211,9 @@
                     </div>
                     <div class="btn-group" role="group">
                       <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                    </div>
+                    <div class="btn-group" role="group">
+                      <p>3.3</p>
                     </div>
                   </div>
                 </div>
@@ -324,6 +334,8 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/recipes.js"></script>
+        <script src="scripts/controllers/offered.js"></script>
+        <script src="scripts/controllers/myRecipes.js"></script>
         <!-- endbuild -->
 </body>
 </html>

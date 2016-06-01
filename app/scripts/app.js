@@ -30,8 +30,20 @@ angular
       .state('recipes', {
         templateUrl: 'views/recipes.html',
         controller: 'RecipesCtrl',
-        controllerAs: 'recipe',
+        controllerAs: 'recipeS',
         url: '/recipes'
+      })
+      .state('myRecipes', {
+        templateUrl: 'views/myRecipes.html',
+        controller: 'MyRecipesCtrl',
+        controllerAs: 'myRecipes',
+        url: '/myRecipes'
+      })
+      .state('offeredRecipes', {
+        templateUrl: 'views/offered.html',
+        controller: 'OfferedRecipesCtrl',
+        controllerAs: 'offeredRecipes',
+        url: '/offeredRecipes'
       })
       .state('/about', {
         templateUrl: 'views/about.html',

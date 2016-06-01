@@ -163,6 +163,10 @@ a:hover {
     width: 30px;
 }
 
+.footer {
+    margin-top: 30px;
+}
+
 .footer .table td, .footer .table tr, .footer .table th {
     color: black;
     border: none;
@@ -179,4 +183,18 @@ a:hover {
 .recipe .thumbnail.left {
     margin-bottom: 0;
     margin-top: 20px;
+}
+
+.title-page {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.stars {
+    position: relative;
+    display: inline-block;
+}
+
+.recipe-title-thumb {
+    display: block;
 }
