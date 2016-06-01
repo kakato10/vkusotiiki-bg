@@ -167,3 +167,7 @@ a:hover {
     color: black;
     border: none;
 }
+
+.table-footer tbody tr td {
+    width: 7%;
+}
