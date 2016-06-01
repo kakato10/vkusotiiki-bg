@@ -171,3 +171,12 @@ a:hover {
 .table-footer tbody tr td {
     width: 7%;
 }
+
+.special-icon {
+    padding-left: 5px;
+}
+
+.recipe .thumbnail.left {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
