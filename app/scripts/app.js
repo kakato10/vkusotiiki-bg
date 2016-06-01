@@ -27,6 +27,12 @@ angular
         controllerAs: 'main',
         url: '/'
       })
+      .state('recipes', {
+        templateUrl: 'views/recipes.html',
+        controller: 'RecipesCtrl',
+        controllerAs: 'recipe',
+        url: '/recipes'
+      })
       .state('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
