@@ -150,7 +150,7 @@ a:hover {
 .recipe-title {
     font-size: 14px;
     text-decoration: underline;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 .recipe-content {
@@ -197,4 +197,16 @@ a:hover {
 
 .recipe-title-thumb {
     display: block;
+}
+
+.add-icon a .glyphicon {
+    font-size: 40px;
+}
+
+.add-icon a {
+    color: green;
+}
+
+.recipe-rating {
+    padding-top: 10px;
 }
