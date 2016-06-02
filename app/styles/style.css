@@ -83,7 +83,7 @@ a:hover {
 }
 
 .menu ul li a {
-    padding-right: 5px; 
+    padding-right: 5px;
 }
 
 .slider-container {
@@ -209,4 +209,135 @@ a:hover {
 
 .recipe-rating {
     padding-top: 10px;
+}
+
+#filter {
+  padding: 1% 2%;
+}
+
+select {
+  width:100%;
+  font-size: 14px;
+}
+
+.subfilter-container {
+  float: left;
+  margin: 1% 1%;
+}
+
+.subfilter-container label {
+  display: block;
+}
+
+.borderly-named {
+  width:17%;
+  border:1px solid black;
+  font-weight: normal;
+  display: inline-block;
+}
+
+.borderly-named h6{
+  font-weight: bold;
+  margin:-4% 4% 0;
+  background:white;
+  display:block;
+  width:80%;
+}
+
+.borderly-named ul {
+  display: block;
+}
+
+.borderly-named input {
+  margin-left: 5%;
+}
+
+#ingredients {
+  width: 47%;
+}
+
+#ingredients h6 {
+  margin:-1.4% 4% 0;
+  width:10%;
+}
+
+#ingredients ul {
+  border-bottom-color: black;
+  border-top: 1px solid black;
+  margin-top: 2%;
+  background-color: rgba(117, 117, 117, 0.57);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#ingredients li {
+  display: inline-block;
+  padding: 0.5% 1.2%;
+}
+
+#ingredients a {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+#ingredients .active {
+  background-color: white;
+  border-radius: 1%;
+}
+
+#ingredients .active > a {
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  font-color: black;
+  font-weight: bold;
+}
+
+
+#ingredients a:hover {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.tab {
+  overflow-y:auto;
+  max-height: 80px;
+}
+
+.tab label {
+  float: left;
+  width: 33%;
+}
+#other-options {
+  width: 30%;
+}
+
+#other-options h6 {
+  /*margin-left: 1%;*/
+  margin:-1.6% 3% 2%;
+  padding-left: 2%;
+  padding-right: 1%;
+  width: 28%;
+}
+
+#complexity h6 {
+  margin: -2% 3% 2%;
+  padding-left: 5%;
+  padding-right: 2%;
+  width: 40%;
+}
+
+#complexity {
+  width: 20%;
+  margin: 1% auto;
+}
+
+#complexity div {
+  margin: 0 auto;
+  width: 80%;
+}
+
+#complexity label {
+  display: inline;
 }
