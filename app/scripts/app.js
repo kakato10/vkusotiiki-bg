@@ -51,6 +51,12 @@ angular
         controllerAs: 'offeredRecipes',
         url: '/offeredRecipes'
       })
+      .state('newRecipe', {
+        templateUrl: 'views/newRecipe.html',
+        controller: 'NewRecipeCtrl',
+        controllerAs: 'newRecipe',
+        url: '/newRecipe'
+      })
       .state('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',

@@ -368,6 +368,7 @@ select {
 .breadcrumbs-holder {
     max-height: 50px;
     padding: 5px;
+    margin-top: 5px;
 }
 
 .btn-edit {
@@ -380,4 +381,29 @@ select {
     color: #fff;
     background-color: #ff7600;
     border-color: #ff7600;
+}
+
+#image {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    margin: 5px 5px 10px 5px;
+}
+
+.add-more {
+    display: inline-flex;
+    padding-top: 20px;
+}
+
+.add-more div.btn-group {
+    padding-left: 15px;
+}
+
+.add-more-title {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.add-more-video {
+    margin-left: 5px;
 }
