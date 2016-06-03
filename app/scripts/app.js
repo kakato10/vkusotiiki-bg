@@ -63,6 +63,18 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about',
         url: '/about'
+      })
+      .state('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login',
+        url: '/login'
+      })
+      .state('/chooseUserLogin', {
+        templateUrl: 'views/chooseUserLogin.html',
+        controller: 'ChooseUserLoginCtrl',
+        controllerAs: 'chooseUserLogin',
+        url: '/chooseUserLogin'
       });
 
   });

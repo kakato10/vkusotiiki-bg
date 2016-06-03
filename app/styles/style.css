@@ -450,3 +450,110 @@ td div.whole {
     padding-left: 10px;
     font-size: 16px;
 }
+
+/* login chosing a user */
+
+.login-page-container{
+    display: block;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.header-login {
+    text-align: center;
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.login-inner-container {
+    display: block;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-top: 60px;
+}
+
+.loging-inner-container-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.loging-inner-container-radiogroup {
+    font-size: 24px;
+    margin-left: 40%;
+    font-size: 15px;
+}
+
+.loging-inner-container-button-next {
+    margin-left: 45%;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.borderly-named-login h6 {
+    font-weight: bold;
+    margin: -6.5% 1% 0;
+    padding-left: 0.6%;
+    background: white;
+    display: block;
+    width: 6%;
+}
+
+.loging-inner-container-header-v2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.loging-inner-container-loginform{
+    font-size: 24px;
+    margin-left: 25%;
+    font-size: 15px;
+}
+
+.loging-inner-container-button-login{
+    margin-left: 29%;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+.input-email, .input-password {
+    width: 45% !important;
+}
+
+.control-label{
+    font-weight: normal !important;
+}
+
+.login-checkbox-remember-me{
+    display: block;
+    text-align: left;
+    float: left;
+    margin-top: -5px !important;
+}
+
+.login-lost-pass-link{
+    display: block;
+    text-align: right;
+    margin-right: 55%;
+    vertical-align: text-bottom;
+    margin-top: -10px !important;
+}
+
+.login-lost-pass-link a{
+    display: block;
+    text-align: right;
+    float: right;
+    font-weight: normal;
+    text-decoration: underline;
+    color: blue;
+}
+
+.btn-login{
+    padding: 5px 25px 5px 25px !important;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
