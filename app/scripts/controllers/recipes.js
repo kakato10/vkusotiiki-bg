@@ -8,7 +8,7 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('MainCtrl', ['$scope', function ($scope) {
+  .controller('RecipesCtrl', ['$scope', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -18,6 +18,10 @@ angular.module('vkusotiikiBgApp')
         {
             'name': 'Начало',
             'stateUrl': 'home'
+        },
+        {
+            'name': 'Рецепти',
+            'stateUrl': 'recipes'
         }
     ];
   }]);

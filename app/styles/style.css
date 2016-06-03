@@ -1,0 +1,559 @@
+body {
+    position: relative;
+    font-family: "Comic Sans MS", Arial, cursive;
+    font-weight: bold;
+    font-size: 12px;
+    /*background-image: url(../images/food-wallpaper.jpg);*/
+    /*opacity: 0.8;*/
+    color: black !important;
+}
+/*body * {
+    background-color: #f8f8f8;
+}
+*/
+a {
+    color: black;
+}
+
+a:hover {
+    /*text-decoration: none;*/
+    cursor: pointer;
+}
+
+/*#background-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.65;
+}
+*/
+
+.header {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.main-container {
+    max-width: 1700px;
+    height: 1000px;
+    width: 100%;
+    margin: 10px;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-title {
+    font-size: 35px;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo-container * {
+    height: 80px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.logo img {
+    max-height: 70px;
+    margin: 5px 10px 5px 50px;
+}
+
+.menu {
+    display: inline-block;
+    /*width: 400px;*/
+}
+
+.menu ul li {
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-menu {
+    display: inline-block;
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.menu ul li a {
+    padding-right: 5px;
+}
+
+.slider-container {
+    max-height: 100px;
+    position: relative;
+}
+
+.lang.right {
+    padding-top: 20px;
+}
+
+.carousel-img {
+    max-height: 350px;
+}
+
+#main-carousel {
+    width: 580px;
+    max-height: 350px;
+    position: relative;
+}
+
+.input-group {
+    padding: 5px 0;
+}
+
+.container .breadcrumb {
+    background-color: transparent;
+}
+
+.breadcrumb > li + li:before {
+   color: #CCCCCC;
+    content: "> ";
+   padding: 0 5px;
+}
+
+.container {
+    position: relative;
+}
+
+.group-container {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+.left-nav {
+    margin-right: 10px;
+}
+
+.most-liked .group-container {
+    border: none;
+}
+
+.thumbnail img {
+    width: 210px;
+    height: 130px;
+}
+
+.main-content {
+    position: relative;
+    /*display: inline-block;*/
+}
+
+.recipe {
+    display: inline-table;
+}
+
+.recipe-title {
+    font-size: 14px;
+    text-decoration: underline;
+    padding-bottom: 15px;
+}
+
+.recipe-content {
+    padding: 10px;
+}
+
+.share-icon img {
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+
+.footer {
+    margin-top: 30px;
+}
+
+.footer .table td, .footer .table tr, .footer .table th {
+    color: black;
+    border: none;
+}
+
+.table-footer tbody tr td {
+    width: 7%;
+}
+
+.table-footer-th{
+    padding-left: 15px !important;
+    font-size: medium;
+}
+
+.table-footer-th-social{
+    text-align: center;
+    font-size: medium;
+}
+
+.text-center th{
+    font-size: medium;
+}
+
+.special-icon {
+    padding-left: 5px;
+}
+
+.recipe .thumbnail.left {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.title-page {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.stars {
+    position: relative;
+    display: inline-block;
+}
+
+.recipe-title-thumb {
+    display: block;
+}
+
+.add-icon a .glyphicon {
+    font-size: 40px;
+}
+
+.add-icon a {
+    color: green;
+}
+
+.recipe-rating {
+    /*padding-top: 10px;*/
+    font-size: 14px;
+}
+
+.recipe-rating .btn-group {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#filter {
+  padding: 1% 2%;
+}
+
+select {
+  width:100%;
+  font-size: 14px;
+}
+
+.subfilter-container {
+  float: left;
+  margin: 1% 1%;
+}
+
+.subfilter-container label {
+  display: block;
+}
+
+.borderly-named {
+  width:17%;
+  border:1px solid black;
+  font-weight: normal;
+  display: inline-block;
+}
+
+.borderly-named h6{
+  font-weight: bold;
+  margin:-4% 4% 0;
+  background:white;
+  display:block;
+  width:80%;
+}
+
+.borderly-named ul {
+  display: block;
+}
+
+.borderly-named input {
+  margin-left: 5%;
+}
+
+#ingredients {
+  width: 47%;
+}
+
+#ingredients h6 {
+  margin:-1.4% 4% 0;
+  width:10%;
+}
+
+#ingredients ul {
+  border-bottom-color: black;
+  border-top: 1px solid black;
+  margin-top: 2%;
+  background-color: rgba(117, 117, 117, 0.57);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#ingredients li {
+  display: inline-block;
+  padding: 0.5% 1.2%;
+}
+
+#ingredients a {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+#ingredients .active {
+  background-color: white;
+  border-radius: 1%;
+}
+
+#ingredients .active > a {
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  font-color: black;
+  font-weight: bold;
+}
+
+
+#ingredients a:hover {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.tab {
+  overflow-y:auto;
+  max-height: 80px;
+}
+
+.tab label {
+  float: left;
+  width: 33%;
+}
+#other-options {
+  width: 30%;
+}
+
+#other-options h6 {
+  /*margin-left: 1%;*/
+  margin:-1.6% 3% 2%;
+  padding-left: 2%;
+  padding-right: 1%;
+  width: 28%;
+}
+
+#complexity h6 {
+  margin: -2% 3% 2%;
+  padding-left: 5%;
+  padding-right: 2%;
+  width: 40%;
+}
+
+#complexity {
+  width: 20%;
+  margin: 1% auto;
+}
+
+#complexity div {
+  margin: 0 auto;
+  width: 80%;
+}
+
+#complexity label {
+  display: inline;
+}
+
+.breadcrumbs-holder {
+    max-height: 50px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.btn-edit {
+    color: #fff;
+    background-color: #ff8a25;
+    border-color: #ff7600;
+}
+
+.btn-edit:hover, .btn-edit:focus, .btn-edit:active, .btn-edit:active:focus {
+    color: #fff;
+    background-color: #ff7600;
+    border-color: #ff7600;
+}
+
+#image {
+    background-color: #ccc;
+    width: 200px;
+    height: 200px;
+    margin: 5px 5px 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-more {
+    display: inline-flex;
+    padding-top: 20px;
+}
+
+.whole .right .add-more-title, .save-btns {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+
+.add-more div.btn-group {
+    padding-left: 15px;
+}
+
+.add-more-title {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.add-more-video {
+    margin-left: 5px;
+}
+
+.wide-text {
+    width: 80%;
+}
+
+.input-group.wide-text .form-control, .whole div.input-group .form-control  {
+    border-radius: 4px
+}
+
+.whole {
+    width: 100%;
+}
+
+td div.whole {
+    display: flex;
+}
+
+.help-block {
+    width: 10%;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+/* login chosing a user */
+
+.login-page-container{
+    display: block;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.header-login {
+    text-align: center;
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.login-inner-container {
+    display: block;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-top: 60px;
+}
+
+.loging-inner-container-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.loging-inner-container-radiogroup {
+    font-size: 24px;
+    margin-left: 40%;
+    font-size: 15px;
+}
+
+.loging-inner-container-button-next {
+    margin-left: 45%;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.borderly-named-login h6 {
+    font-weight: bold;
+    margin: -6.5% 1% 0;
+    padding-left: 0.6%;
+    background: white;
+    display: block;
+    width: 6%;
+}
+
+.loging-inner-container-header-v2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.loging-inner-container-loginform{
+    font-size: 24px;
+    margin-left: 25%;
+    font-size: 15px;
+}
+
+.loging-inner-container-button-login{
+    margin-left: 29%;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+.input-email, .input-password {
+    width: 45% !important;
+}
+
+.control-label{
+    font-weight: normal !important;
+}
+
+.login-checkbox-remember-me{
+    display: block;
+    text-align: left;
+    float: left;
+    margin-top: -5px !important;
+}
+
+.login-lost-pass-link{
+    display: block;
+    text-align: right;
+    margin-right: 55%;
+    vertical-align: text-bottom;
+    margin-top: -10px !important;
+}
+
+.login-lost-pass-link a{
+    display: block;
+    text-align: right;
+    float: right;
+    font-weight: normal;
+    text-decoration: underline;
+    color: blue;
+}
+
+.btn-login{
+    padding: 5px 25px 5px 25px !important;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}

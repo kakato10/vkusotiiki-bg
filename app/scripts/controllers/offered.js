@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name vkusotiikiBgApp.controller:MainCtrl
+ * @name vkusotiikiBgApp.controller:AboutCtrl
  * @description
- * # MainCtrl
+ * # AboutCtrl
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('MainCtrl', ['$scope', function ($scope) {
+  .controller('OfferedRecipesCtrl', ['$scope', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -18,6 +18,10 @@ angular.module('vkusotiikiBgApp')
         {
             'name': 'Начало',
             'stateUrl': 'home'
+        },
+        {
+            'name': 'Предлагани рецепти',
+            'stateUrl': 'offeredRecipes'
         }
     ];
   }]);
