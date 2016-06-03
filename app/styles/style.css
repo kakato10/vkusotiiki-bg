@@ -225,7 +225,13 @@ a:hover {
 }
 
 .recipe-rating {
+    /*padding-top: 10px;*/
+    font-size: 14px;
+}
+
+.recipe-rating .btn-group {
     padding-top: 10px;
+    text-align: center;
 }
 
 #filter {
@@ -362,4 +368,16 @@ select {
 .breadcrumbs-holder {
     max-height: 50px;
     padding: 5px;
+}
+
+.btn-edit {
+    color: #fff;
+    background-color: #ff8a25;
+    border-color: #ff7600;
+}
+
+.btn-edit:hover, .btn-edit:focus, .btn-edit:active, .btn-edit:active:focus {
+    color: #fff;
+    background-color: #ff7600;
+    border-color: #ff7600;
 }
