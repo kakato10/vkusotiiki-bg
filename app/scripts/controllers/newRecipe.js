@@ -15,13 +15,20 @@ angular.module('vkusotiikiBgApp')
       'Karma'
     ];
     $scope.breadcrumbs = [
-        {
-            'name': 'Начало',
-            'stateUrl': 'home'
-        },
-        {
-            'name': 'Нова рецепта',
-            'stateUrl': 'newRecipe'
-        }
+      {
+          'name': 'Начало',
+          'stateUrl': 'home'
+      },
+      {
+          'name': 'Нова рецепта',
+          'stateUrl': 'newRecipe'
+      }
     ];
+    $scope.slider = {
+      value: 2,
+      options: {
+        floor: 1,
+        ceil: 5
+      }
+    };
   }]);

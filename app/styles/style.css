@@ -114,7 +114,6 @@ a:hover {
     width: 580px;
     max-height: 350px;
     position: relative;
-    display: inline-block;
 }
 
 .input-group {
@@ -384,16 +383,24 @@ select {
 }
 
 #image {
-    background-color: red;
+    background-color: #ccc;
     width: 200px;
     height: 200px;
     margin: 5px 5px 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .add-more {
     display: inline-flex;
     padding-top: 20px;
 }
+
+.whole .right .add-more-title {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
 
 .add-more div.btn-group {
     padding-left: 15px;
@@ -406,4 +413,26 @@ select {
 
 .add-more-video {
     margin-left: 5px;
+}
+
+.wide-text {
+    width: 80%;
+}
+
+.input-group.wide-text .form-control, .whole div.input-group .form-control  {
+    border-radius: 4px
+}
+
+.whole {
+    width: 100%;
+}
+
+td div.whole {
+    display: flex;
+}
+
+.help-block {
+    width: 10%;
+    padding-left: 10px;
+    font-size: 16px;
 }
