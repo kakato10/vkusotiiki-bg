@@ -192,6 +192,20 @@ a:hover {
     width: 7%;
 }
 
+.table-footer-th{
+    padding-left: 15px !important;
+    font-size: medium;
+}
+
+.table-footer-th-social{
+    text-align: center;
+    font-size: medium;
+}
+
+.text-center th{
+    font-size: medium;
+}
+
 .special-icon {
     padding-left: 5px;
 }
@@ -396,7 +410,7 @@ select {
     padding-top: 20px;
 }
 
-.whole .right .add-more-title {
+.whole .right .add-more-title, .save-btns {
     padding-left: 10px;
     padding-top: 20px;
 }
