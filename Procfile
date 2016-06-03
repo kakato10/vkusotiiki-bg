@@ -1,1 +1,1 @@
-grunt serve dist
+grunt heroku
