@@ -3,9 +3,14 @@ body {
     font-family: "Comic Sans MS", Arial, cursive;
     font-weight: bold;
     font-size: 12px;
-    /*background-image: url('../images/food-wallpaper.jpg');*/
+    /*background-image: url(../images/food-wallpaper.jpg);*/
+    /*opacity: 0.8;*/
+    color: black !important;
 }
-
+/*body * {
+    background-color: #f8f8f8;
+}
+*/
 a {
     color: black;
 }
@@ -24,6 +29,12 @@ a:hover {
     opacity: 0.65;
 }
 */
+
+.header {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
 .main-container {
     max-width: 1700px;
     height: 1000px;
@@ -112,6 +123,12 @@ a:hover {
 
 .container .breadcrumb {
     background-color: transparent;
+}
+
+.breadcrumb > li + li:before {
+   color: #CCCCCC;
+    content: "> ";
+   padding: 0 5px;
 }
 
 .container {
@@ -340,4 +357,9 @@ select {
 
 #complexity label {
   display: inline;
+}
+
+.breadcrumbs-holder {
+    max-height: 50px;
+    padding: 5px;
 }
