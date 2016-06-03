@@ -513,4 +513,9 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  // change the tasks in the list to your production tasks
+  grunt.registerTask('heroku',
+    ['serve']);
+
 };
