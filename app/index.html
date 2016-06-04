@@ -2,9 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
+
+    <meta name="description" content="">
+    <title>Vkusotiiki-bg</title>
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -12,38 +15,175 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/style.css">
     <!-- endbuild -->
   </head>
+  <body ng-app="vkusotiikiBgApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-  <body ng-app="stuffApp">
-
+    <!-- Add your site or application content here -->
     <div class="header">
+      <!-- First row of the page -->
+      <div class="logo-container navbar navbar-default container">
+        <div class="logo left">
+          <img src="images/logo.jpg" alt="Logo">
+        </div>
+        <div class="center">
+          <h2 class="main-title">"Традиционни български ястия"</h2>
+        </div>
+        <div class="right lang">
+          <a href="#/bg/">BG</a>
+          <a href="#/en/">EN</a>
+          <a href="#/de/">DE</a>
+        </div>
+      </div>
+<!--     </div>
+    <div class="header"> -->
       <div class="navbar navbar-default" role="navigation">
-        
-        <!--navbar-->
         <div class="container">
-
           <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="products.list">stuff</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <!-- <a class="navbar-brand" ui-sref="home">vkusotiikiBg</a> -->
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+          <!-- TO DO -->
             <ul class="nav navbar-nav">
-              <li ui-sref-active="active"><a ui-sref="products.list">Products</a></li>
-              <li ui-sref-active="active"><a ui-sref="orders.list">Orders</a></li>
+              <li class="active"><a ui-sref="home">Начало</a></li>
+              <li><a ui-sref="map">Карта на България</a></li>
+              <li><a ui-sref="recipes">Рецепти</a></li>
+              <li><a ui-sref="newRecipes">Нови рецепти</a></li>
+              <li><a ui-sref="myRecipes">Моите рецепти</a></li>
+              <li><a ui-sref="favouriteRecipes">Любими рецепти</a></li>
+              <li><a ui-sref="about">За нас</a></li>
+              <li><a ui-sref="contacts">Контакти</a></li>
+              <li><a ui-sref="offeredRecipes" style="color:red;">Предлагани</a></li>
+              <li class="right"><a ui-sref="logOut">Изход</a></li>
+              <li class="right"><a ui-sref="profile">Христо Христов</a></li>
+              <li>
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                    <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Търсене">
+                </div><!-- /input-group -->
+              </li>
             </ul>
           </div>
-          <es-profile-preview></es-profile-preview>
         </div>
+
       </div>
+
     </div>
 
     <div class="container">
-      <es-cart-preview></es-cart-preview>
-      <div ui-view></div>
+      <div ui-view=""></div>
     </div>
+
+    <div class="footer">
+      <div class="container">
+        <table class="table table-footer">
+          <thead>
+            <tr>
+              <th class="table-footer-th">Области</th>
+              <th class="table-footer-th">Навигация</th>
+              <th class="table-footer-th-social">Сподели</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <td>
+              <table class="table col-md-3 table-cities">
+                <tbody>
+                  <tr>
+                    <td><a href="#">София</a></td>
+                    <td><a href="#">Велико Търново</a></td>
+                    <td><a href="#">Пловдив</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Варна</a></td>
+                    <td><a href="#">Стара Загора</a></td>
+                    <td><a href="#">Пазарджик</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Бургас</a></td>
+                    <td><a href="#">Благоевград</a></td>
+                    <td><a href="#">Плевен</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+
+            <td>
+              <table class="table col-md-3">
+                <tbody>
+                  <tr>
+                    <td><a href="#">Карта на България</a></td>
+                    <td><a href="#">Рецепти</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">За нас</a></td>
+                    <td><a href="#">Контакти</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Нови рецепти</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+
+            <td>
+              <table class="table col-md-3 text-center">
+                <tbody>
+                  <tr>
+                    <td><a href="https://www.facebook.com/" class="share-icon"><img src="images/fb.png" alt="Facebook" class="center">Facebook</a></td>
+                    <td><a href="https://plus.google.com/" class="share-icon"><img src="images/g.png" alt="Google +" class="center">Google +</a></td>
+                    <td><a href="https://twitter.com/" class="share-icon"><img src="images/tw.png" alt="Twitter" class="center">Twitter</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="text-center">
+          <p>© Vkusotiiki-bg 2016 г. Всички права запазени. </p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -62,31 +202,19 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/productsGridListController.js"></script>
-    <script src="scripts/controllers/productController.js"></script>
-    <script src="scripts/controllers/cartController.js"></script>
-    <script src="scripts/controllers/profilePreviewController.js"></script>
-    <script src="scripts/controllers/registrationController.js"></script>
-    <script src="scripts/controllers/orderDetailsController.js"></script>
-    <script src="scripts/services/product.js"></script>
-    <script src="scripts/services/cartLine.js"></script>
-    <script src="scripts/services/cart.js"></script>
-    <script src="scripts/services/user.js"></script>
-    <script src="scripts/services/authentication.js"></script>
-    <script src="scripts/services/namedNgIf.js"></script>
-    <script src="scripts/services/order.js"></script>
-    <script src="scripts/services/orderLine.js"></script>
-    <script src="scripts/services/salesManager.js"></script>
-    <script src="scripts/services/state.js"></script>
-    <script src="scripts/directives/productPreviewDirective.js"></script>
-    <script src="scripts/directives/orderPreviewDirective.js"></script>
-    <script src="scripts/directives/cartPreviewDirective.js"></script>
-    <script src="scripts/directives/cartLineDirective.js"></script>
-    <script src="scripts/directives/orderLineDirective.js"></script>
-    <script src="scripts/directives/profilePreview.js"></script>
-    <!-- endbuild -->
-    
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/recipes.js"></script>
+        <script src="scripts/controllers/offered.js"></script>
+        <script src="scripts/controllers/myRecipes.js"></script>
+        <script src="scripts/controllers/favouriteRecipes.js"></script>
+        <script src="scripts/controllers/newRecipe.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/chooseUserLogin.js"></script>
+        <script src="scripts/directives/leftNavigationDirective.js"></script>
+        <script src="scripts/directives/breadcrumbs.js"></script>
+        <!-- endbuild -->
 </body>
 </html>
