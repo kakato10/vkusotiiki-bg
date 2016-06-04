@@ -75,6 +75,15 @@ angular
         controller: 'ChooseUserLoginCtrl',
         controllerAs: 'chooseUserLogin',
         url: '/chooseUserLogin'
+      })
+      .state('/registerAsOrdinaryUser', {
+        templateUrl: 'views/registerAsOrdinaryUser.html',
+        controller: 'RegisterAsOrdinaryUserCtrl',
+        controllerAs: 'registerAsOrdinaryUser',
+        url: '/registerAsOrdinaryUser'
       });
+
+
+      
 
   });

@@ -451,7 +451,7 @@ td div.whole {
     font-size: 16px;
 }
 
-/* login chosing a user */
+/* register chosing a user */
 
 .login-page-container{
     display: block;
@@ -459,7 +459,7 @@ td div.whole {
     margin-right: 50px;
 }
 
-.header-login {
+.header-login, .header-reg-ordinary {
     text-align: center;
     font-size: 40px;
     font-weight: normal;
@@ -520,6 +520,8 @@ td div.whole {
     margin-bottom: 40px;
     margin-top: 20px;
 }
+
+/* register chosing a user */
 .input-email, .input-password {
     width: 45% !important;
 }
@@ -556,4 +558,91 @@ td div.whole {
     padding: 5px 25px 5px 25px !important;
     margin-top: 30px;
     margin-bottom: 60px;
+}
+
+/* register as ordinary user */
+
+
+.reg-ordinary-inner-container-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.reg-ordinary-inner-container, .user-info-container, .user-pass-container {
+  display: block;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.borderly-named-reg-ordinary h6 {
+    font-weight: bold;
+    margin: -0.5% 1% 0;
+    padding-left: 0.6%;
+    background: white;
+    display: block;
+    width: 11.5%;
+}
+
+.user-image {
+  display: block !important;
+}
+
+.user-image-upload-container {
+  display: block !important;
+    margin-left: 40%;
+}
+
+.upload-user-image{
+  display:inline-flex;
+  margin-left: 13px;
+  margin-top: 10px;
+}
+
+.upload_user_image_btn{
+  margin-left: 5px !important;
+}
+
+.borderly-named-user-info h6 {
+    font-weight: bold;
+    margin: -1.5% 3% 0;
+    padding-left: 0.6%;
+    background: white;
+    display: block;
+    width: 25.5%;
+}
+
+.borderly-named-user-pass h6 {
+    font-weight: bold;
+    margin: -1.5% 3% 0;
+    padding-left: 0.6%;
+    background: white;
+    display: block;
+    width: 11.5%;
+}
+
+
+.user-info-container, .user-pass-container{
+  display: block !important;
+    margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 30px;
+}
+
+.reg-ordinary-inner-container-btns {
+  display: block;
+  margin-left: 42.8%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.normalize{
+  font-weight: normal;
+  font-size: 13px !important;
+}
+
+.add-image{
+  margin-top:5px;
 }
