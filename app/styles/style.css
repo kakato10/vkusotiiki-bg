@@ -183,7 +183,9 @@ a:hover {
     margin-top: 30px;
 }
 
-.footer .table td, .footer .table tr, .footer .table th {
+.footer .table td, .footer .table tr, .footer .table th,
+.user-info-inner-container .table td, .user-info-inner-container .table tr,
+.edit-profile-ordinary-inner-container-registration .table tbody td, .edit-profile-ordinary-inner-container-registration .table tbody tr {
     color: black;
     border: none;
 }
@@ -571,19 +573,23 @@ td div.whole {
   margin-top: 10px;
 }
 
-.reg-ordinary-inner-container, .user-info-container, .user-pass-container {
+.reg-ordinary-inner-container, .user-info-container, .user-pass-container, .edit-profile-ordinary-inner-container {
   display: block;
   border: 1px solid gray;
   border-radius: 5px;
 }
 
-.borderly-named-reg-ordinary h6 {
+.borderly-named-reg-ordinary h6, .user-profile-section-title h6 {
     font-weight: bold;
     margin: -0.5% 1% 0;
     padding-left: 0.6%;
     background: white;
     display: block;
     width: 11.5%;
+}
+
+.user-profile-section-title h6 {
+    width: 19%;
 }
 
 .user-image {
@@ -611,7 +617,7 @@ td div.whole {
     padding-left: 0.6%;
     background: white;
     display: block;
-    width: 25.5%;
+    width: 26.5%;
 }
 
 .borderly-named-user-pass h6 {
@@ -625,24 +631,49 @@ td div.whole {
 
 
 .user-info-container, .user-pass-container{
-  display: block !important;
+    display: block !important;
     margin-left: 30%;
-  margin-right: 30%;
-  margin-top: 30px;
+    margin-right: 30%;
+    margin-top: 10px;
+}
+
+.user-info-container.user-profile-section-title {
+    margin: 4% 0 0 0;
+    display: block !important;
 }
 
 .reg-ordinary-inner-container-btns {
-  display: block;
-  margin-left: 42.8%;
-  margin-top: 30px;
-  margin-bottom: 30px;
+    display: block;
+    margin-left: 42.8%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.edit-btns button {
+    margin-left: 20px;
 }
 
 .normalize{
-  font-weight: normal;
-  font-size: 13px !important;
+    font-weight: normal;
+    font-size: 13px !important;
 }
 
 .add-image{
-  margin-top:5px;
+    margin-top:5px;
+}
+
+.edit-profile-ordinary-inner-container-registration .pass-edit{
+    width: 40%;
+}
+
+.pass-edit h6 {
+    width: 25%;
+}
+
+.reg-ordinary-inner-container .proflie-edit{
+    width: 5.7%;
+}
+
+.table-inner tbody tr td label {
+    padding-left: 20%;
 }
