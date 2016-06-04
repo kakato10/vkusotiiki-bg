@@ -64,20 +64,22 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
-          <!-- TO DO -->
+            <!-- TO DO -->
             <ul class="nav navbar-nav">
-              <li class="active"><a ui-sref="home">Начало</a></li>
-              <li><a ui-sref="map">Карта на България</a></li>
-              <li><a ui-sref="recipes">Рецепти</a></li>
-              <li><a ui-sref="newRecipes">Нови рецепти</a></li>
-              <li><a ui-sref="myRecipes">Моите рецепти</a></li>
-              <li><a ui-sref="favouriteRecipes">Любими рецепти</a></li>
-              <li><a ui-sref="about">За нас</a></li>
-              <li><a ui-sref="contacts">Контакти</a></li>
-              <li><a ui-sref="offeredRecipes" style="color:red;">Предлагани</a></li>
-              <li class="right"><a ui-sref="logOut">Изход</a></li>
-              <li class="right"><a ui-sref="profile">Христо Христов</a></li>
-              <li>
+              <li ui-sref-active="active"><a ui-sref="home">Начало</a></li>
+              <li ui-sref-active="active"><a ui-sref="map">Карта на България</a></li>
+              <li ui-sref-active="active"><a ui-sref="recipes">Рецепти</a></li>
+              <li ui-sref-active="active"><a ui-sref="newRecipes">Нови рецепти</a></li>
+              <li ui-sref-active="active"><a ui-sref="myRecipes">Моите рецепти</a></li>
+              <li ui-sref-active="active"><a ui-sref="favouriteRecipes">Любими рецепти</a></li>
+              <li ui-sref-active="active"><a ui-sref="about">За нас</a></li>
+              <li ui-sref-active="active"><a ui-sref="contacts">Контакти</a></li>
+              <li ui-sref-active="active"><a ui-sref="offeredRecipes" style="color:red;">Предлагани</a></li>
+              <li ui-sref-active="active" class="right"><a ui-sref="logOut">Изход</a></li>
+              <!-- <li ui-sref-active="active" class="right" ng-if="loggedIn"><a ui-sref="editOrdinaryUserProfile">Христо Христов</a></li>
+              <li ui-sref-active="active" class="right" ng-if="!loggedIn"><a ui-sref="login">Вход</a></li> -->
+              <li ui-sref-active="active" class="right"><a ui-sref="editOrdinaryUserProfile">Христо Христов</a></li>
+              <li ui-sref-active="active">
                 <div class="input-group">
                   <span class="input-group-btn">
                     <button class="btn btn-default" type="button">
@@ -216,6 +218,7 @@
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/chooseUserLogin.js"></script>
         <script src="scripts/controllers/registerAsOrdinaryUser.js"></script>
+        <script src="scripts/controllers/editOrdinaryUserProfile.js"></script>
         <script src="scripts/directives/leftNavigationDirective.js"></script>
         <script src="scripts/directives/breadcrumbs.js"></script>
         <!-- endbuild -->

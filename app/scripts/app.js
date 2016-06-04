@@ -58,29 +58,35 @@ angular
         controllerAs: 'newRecipe',
         url: '/newRecipe'
       })
-      .state('/about', {
+      .state('about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about',
         url: '/about'
       })
-      .state('/login', {
+      .state('login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'login',
         url: '/login'
       })
-      .state('/chooseUserLogin', {
+      .state('chooseUserLogin', {
         templateUrl: 'views/chooseUserLogin.html',
         controller: 'ChooseUserLoginCtrl',
         controllerAs: 'chooseUserLogin',
         url: '/chooseUserLogin'
       })
-      .state('/registerAsOrdinaryUser', {
+      .state('registerAsOrdinaryUser', {
         templateUrl: 'views/registerAsOrdinaryUser.html',
         controller: 'RegisterAsOrdinaryUserCtrl',
         controllerAs: 'registerAsOrdinaryUser',
         url: '/registerAsOrdinaryUser'
+      })
+      .state('editOrdinaryUserProfile', {
+        templateUrl: 'views/editOrdinaryUserProfile.html',
+        controller: 'EditOrdinaryUserProfileCtrl',
+        controllerAs: 'editOrdinaryUserProfile',
+        url: '/editOrdinaryUserProfile'
       });
 
 
