@@ -70,11 +70,11 @@ angular
         controllerAs: 'login',
         url: '/login'
       })
-      .state('chooseUserLogin', {
-        templateUrl: 'views/chooseUserLogin.html',
-        controller: 'ChooseUserLoginCtrl',
-        controllerAs: 'chooseUserLogin',
-        url: '/chooseUserLogin'
+      .state('chooseUserRegistration', {
+        templateUrl: 'views/chooseUserRegistration.html',
+        controller: 'ChooseUserRegistrationCtrl',
+        controllerAs: 'chooseUserRegistration',
+        url: '/chooseUserRegistration'
       })
       .state('registerAsOrdinaryUser', {
         templateUrl: 'views/registerAsOrdinaryUser.html',
@@ -92,4 +92,15 @@ angular
 
       
 
-  });
+  })
+
+  .run(['$rootScope', function($rootScope){
+    // $rootScope.loggedIn = true;
+    $rootScope.logOut = function() {
+      $rootScope.loggedIn = false;
+    };
+
+    $rootScope.logIn = function() {
+      $rootScope.loggedIn = true;
+    };
+  }]);

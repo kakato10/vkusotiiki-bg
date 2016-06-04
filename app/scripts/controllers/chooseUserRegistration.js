@@ -8,7 +8,7 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('ChooseUserLoginCtrl', ['$scope', function ($scope) {
+  .controller('ChooseUserRegistrationCtrl', ['$scope', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

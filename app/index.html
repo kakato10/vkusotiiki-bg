@@ -75,10 +75,11 @@
               <li ui-sref-active="active"><a ui-sref="about">За нас</a></li>
               <li ui-sref-active="active"><a ui-sref="contacts">Контакти</a></li>
               <li ui-sref-active="active"><a ui-sref="offeredRecipes" style="color:red;">Предлагани</a></li>
-              <li ui-sref-active="active" class="right"><a ui-sref="logOut">Изход</a></li>
-              <!-- <li ui-sref-active="active" class="right" ng-if="loggedIn"><a ui-sref="editOrdinaryUserProfile">Христо Христов</a></li>
-              <li ui-sref-active="active" class="right" ng-if="!loggedIn"><a ui-sref="login">Вход</a></li> -->
-              <li ui-sref-active="active" class="right"><a ui-sref="editOrdinaryUserProfile">Христо Христов</a></li>
+              <!-- <li ui-sref-active="active" class="right"><a ui-sref="logOut">Изход</a></li> -->
+              <li ui-sref-active="active" class="right" ng-if="loggedIn"><a ui-sref="logOut()">Изход</a></li>
+              <li ui-sref-active="active" class="right" ng-if="!loggedIn"><a ui-sref="chooseUserRegistration">Регистрация</a></li>
+              <li ui-sref-active="active" class="right" ng-if="loggedIn"><a ui-sref="editOrdinaryUserProfile">Христо Христов</a></li>
+              <li ui-sref-active="active" class="right" ng-if="!loggedIn"><a ui-sref="login">Вход</a></li>
               <li ui-sref-active="active">
                 <div class="input-group">
                   <span class="input-group-btn">
@@ -216,7 +217,7 @@
         <script src="scripts/controllers/favouriteRecipes.js"></script>
         <script src="scripts/controllers/newRecipe.js"></script>
         <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/chooseUserLogin.js"></script>
+        <script src="scripts/controllers/chooseUserRegistration.js"></script>
         <script src="scripts/controllers/registerAsOrdinaryUser.js"></script>
         <script src="scripts/controllers/editOrdinaryUserProfile.js"></script>
         <script src="scripts/directives/leftNavigationDirective.js"></script>
