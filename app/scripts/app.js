@@ -40,6 +40,12 @@ angular
         controllerAs: 'recipeS',
         url: '/recipes'
       })
+      .state('newRecipes', {
+        templateUrl: 'views/newRecipes.html',
+        controller: 'NewRecipesCtrl',
+        controllerAs: 'newRecipes',
+        url: '/newRecipes'
+      })
       .state('favouriteRecipes', {
         templateUrl: 'views/favouriteRecipes.html',
         controller: 'FavouriteRecipesCtrl',
