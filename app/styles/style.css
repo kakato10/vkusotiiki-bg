@@ -186,7 +186,8 @@ a:hover {
 .footer .table td, .footer .table tr, .footer .table th,
 .user-info-inner-container .table td, .user-info-inner-container .table tr,
 .edit-profile-ordinary-inner-container-registration .table tbody td, .edit-profile-ordinary-inner-container-registration .table tbody tr,
-.inner-contacts .table-contacts td, .inner-contacts .table-contacts tr, .inner-contacts .table-contacts th {
+.inner-contacts .table-contacts td, .inner-contacts .table-contacts tr, .inner-contacts .table-contacts th,
+.about-us-photos tbody tr td, .about-us-photos tr, .about-us-photos th {
     color: black;
     border: none;
 }
@@ -735,4 +736,17 @@ td div.whole {
     width:700px;
     height:380px;
     margin-bottom: 20px;
+}
+
+.about-us h6 {
+    width: 11.8%;
+}
+
+.about-us-text {
+    text-align: justify;
+    padding: 20px;
+}
+
+.about-us-photos {
+
 }
