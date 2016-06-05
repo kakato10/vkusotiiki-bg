@@ -677,3 +677,20 @@ td div.whole {
 .table-inner tbody tr td label {
     padding-left: 20%;
 }
+
+.no-float {
+    float: none;
+}
+
+.user-info-inner-container div label {
+    padding-top: 25px;
+}
+
+.fixed-width h6 {
+    width: 13%;
+}
+
+#map {
+    width: 1100px;
+    height: 700px;
+}

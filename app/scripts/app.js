@@ -28,6 +28,12 @@ angular
         controllerAs: 'main',
         url: '/'
       })
+      .state('map', {
+        templateUrl: 'views/map.html',
+        controller: 'MapCtrl',
+        controllerAs: 'map',
+        url: '/map'
+      })
       .state('recipes', {
         templateUrl: 'views/recipes.html',
         controller: 'RecipesCtrl',
