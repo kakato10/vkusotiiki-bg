@@ -185,7 +185,8 @@ a:hover {
 
 .footer .table td, .footer .table tr, .footer .table th,
 .user-info-inner-container .table td, .user-info-inner-container .table tr,
-.edit-profile-ordinary-inner-container-registration .table tbody td, .edit-profile-ordinary-inner-container-registration .table tbody tr {
+.edit-profile-ordinary-inner-container-registration .table tbody td, .edit-profile-ordinary-inner-container-registration .table tbody tr,
+.inner-contacts .table-contacts td, .inner-contacts .table-contacts tr, .inner-contacts .table-contacts th {
     color: black;
     border: none;
 }
@@ -455,7 +456,7 @@ td div.whole {
 
 /* register chosing a user */
 
-.login-page-container{
+.login-page-container, .contacts-page-container{
     display: block;
     margin-left: 50px;
     margin-right: 50px;
@@ -573,7 +574,8 @@ td div.whole {
   margin-top: 10px;
 }
 
-.reg-ordinary-inner-container, .user-info-container, .user-pass-container, .edit-profile-ordinary-inner-container {
+.reg-ordinary-inner-container, .user-info-container, .user-pass-container, .edit-profile-ordinary-inner-container,
+.contacts-inner-container {
   display: block;
   border: 1px solid gray;
   border-radius: 5px;
@@ -630,7 +632,7 @@ td div.whole {
 }
 
 
-.user-info-container, .user-pass-container{
+.user-info-container, .user-pass-container, .contacts-container{
     display: block !important;
     margin-left: 30%;
     margin-right: 30%;
@@ -693,4 +695,44 @@ td div.whole {
 #map {
     width: 1100px;
     height: 700px;
+}
+
+.borderly-named-contacts h6 {
+    font-weight: bold;
+    margin: -0.5% 1% 0;
+    padding-left: 0.6%;
+    background: white;
+    display: block;
+    width: 5.8%;
+}
+
+.inner-contacts h6 {
+    margin: -1.5% 1% 0;
+}
+
+.longer-email h6{
+    width: 10%;
+}
+
+.contacts-page-container .inner-container{
+    margin: 30px;
+    padding: 10px 30px;
+}
+
+.contacts-page-container {
+    position: relative;
+}
+
+.post-breadcrumbs{
+    margin-top: 95px;
+}
+
+.table-contacts.footer {
+    border: none;
+}
+
+#contactsMap {
+    width:700px;
+    height:380px;
+    margin-bottom: 20px;
 }

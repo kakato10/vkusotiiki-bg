@@ -76,6 +76,12 @@ angular
         controllerAs: 'about',
         url: '/about'
       })
+      .state('contacts', {
+        templateUrl: 'views/contacts.html',
+        controller: 'ContactsCtrl',
+        controllerAs: 'contacts',
+        url: '/contacts'
+      })
       .state('login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
