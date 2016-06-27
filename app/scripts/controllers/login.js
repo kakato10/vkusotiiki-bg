@@ -8,7 +8,7 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('LoginCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
+  .controller('LoginCtrl', [ '$rootScope', '$scope', function ($rootScope, $scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,7 +16,7 @@ angular.module('vkusotiikiBgApp')
     ];
     $rootScope.loggedIn = true;
 
-    $rootScope.logOut = function() {
+    $rootScope.logOut = function () {
       $rootScope.loggedIn = false;
     };
-  }]);
+  } ]);

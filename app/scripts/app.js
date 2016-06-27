@@ -23,102 +23,98 @@ angular
     $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('home', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        templateUrl : 'views/main.html',
+        controller  : 'MainCtrl',
         controllerAs: 'main',
-        url: '/'
+        url         : '/'
       })
       .state('map', {
-        templateUrl: 'views/map.html',
-        controller: 'MapCtrl',
+        templateUrl : 'views/map.html',
+        controller  : 'MapCtrl',
         controllerAs: 'map',
-        url: '/map'
+        url         : '/map'
       })
       .state('recipes', {
-        templateUrl: 'views/recipes.html',
-        controller: 'RecipesCtrl',
+        templateUrl : 'views/recipes.html',
+        controller  : 'RecipesCtrl',
         controllerAs: 'recipeS',
-        url: '/recipes'
+        url         : '/recipes'
       })
       .state('newRecipes', {
-        templateUrl: 'views/newRecipes.html',
-        controller: 'NewRecipesCtrl',
+        templateUrl : 'views/newRecipes.html',
+        controller  : 'NewRecipesCtrl',
         controllerAs: 'newRecipes',
-        url: '/newRecipes'
+        url         : '/newRecipes'
       })
       .state('favouriteRecipes', {
-        templateUrl: 'views/favouriteRecipes.html',
-        controller: 'FavouriteRecipesCtrl',
+        templateUrl : 'views/favouriteRecipes.html',
+        controller  : 'FavouriteRecipesCtrl',
         controllerAs: 'favouriteRecipes',
-        url: '/favouriteRecipes'
+        url         : '/favouriteRecipes'
       })
       .state('myRecipes', {
-        templateUrl: 'views/myRecipes.html',
-        controller: 'MyRecipesCtrl',
+        templateUrl : 'views/myRecipes.html',
+        controller  : 'MyRecipesCtrl',
         controllerAs: 'myRecipes',
-        url: '/myRecipes'
+        url         : '/myRecipes'
       })
       .state('offeredRecipes', {
-        templateUrl: 'views/offered.html',
-        controller: 'OfferedRecipesCtrl',
+        templateUrl : 'views/offered.html',
+        controller  : 'OfferedRecipesCtrl',
         controllerAs: 'offeredRecipes',
-        url: '/offeredRecipes'
+        url         : '/offeredRecipes'
       })
       .state('newRecipe', {
-        templateUrl: 'views/newRecipe.html',
-        controller: 'NewRecipeCtrl',
+        templateUrl : 'views/newRecipe.html',
+        controller  : 'NewRecipeCtrl',
         controllerAs: 'newRecipe',
-        url: '/newRecipe'
+        url         : '/newRecipe'
       })
       .state('about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
+        templateUrl : 'views/about.html',
+        controller  : 'AboutCtrl',
         controllerAs: 'about',
-        url: '/about'
+        url         : '/about'
       })
       .state('contacts', {
-        templateUrl: 'views/contacts.html',
-        controller: 'ContactsCtrl',
+        templateUrl : 'views/contacts.html',
+        controller  : 'ContactsCtrl',
         controllerAs: 'contacts',
-        url: '/contacts'
+        url         : '/contacts'
       })
       .state('login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
+        templateUrl : 'views/login.html',
+        controller  : 'LoginCtrl',
         controllerAs: 'login',
-        url: '/login'
+        url         : '/login'
       })
       .state('chooseUserRegistration', {
-        templateUrl: 'views/chooseUserRegistration.html',
-        controller: 'ChooseUserRegistrationCtrl',
+        templateUrl : 'views/chooseUserRegistration.html',
+        controller  : 'ChooseUserRegistrationCtrl',
         controllerAs: 'chooseUserRegistration',
-        url: '/chooseUserRegistration'
+        url         : '/chooseUserRegistration'
       })
       .state('registerAsOrdinaryUser', {
-        templateUrl: 'views/registerAsOrdinaryUser.html',
-        controller: 'RegisterAsOrdinaryUserCtrl',
+        templateUrl : 'views/registerAsOrdinaryUser.html',
+        controller  : 'RegisterAsOrdinaryUserCtrl',
         controllerAs: 'registerAsOrdinaryUser',
-        url: '/registerAsOrdinaryUser'
+        url         : '/registerAsOrdinaryUser'
       })
       .state('editOrdinaryUserProfile', {
-        templateUrl: 'views/editOrdinaryUserProfile.html',
-        controller: 'EditOrdinaryUserProfileCtrl',
+        templateUrl : 'views/editOrdinaryUserProfile.html',
+        controller  : 'EditOrdinaryUserProfileCtrl',
         controllerAs: 'editOrdinaryUserProfile',
-        url: '/editOrdinaryUserProfile'
+        url         : '/editOrdinaryUserProfile'
       });
-
-
-      
-
   })
 
-  .run(['$rootScope', function($rootScope){
+  .run([ '$rootScope', function ($rootScope) {
     // $rootScope.loggedIn = true;
-    $rootScope.logOut = function() {
+    $rootScope.logOut = function () {
       $rootScope.loggedIn = false;
     };
 
-    $rootScope.logIn = function() {
+    $rootScope.logIn = function () {
       $rootScope.loggedIn = true;
     };
-  }]);
+  } ]);

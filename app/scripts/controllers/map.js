@@ -8,20 +8,17 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('MapCtrl', ['$scope', function ($scope) {
+  .controller('MapCtrl', [ '$scope', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-    $scope.breadcrumbs = [
-        {
-            'name': 'Начало',
-            'stateUrl': 'home'
-        },
-        {
-            'name': 'Карта',
-            'stateUrl': 'map'
-        }
-    ];
-  }]);
+    $scope.breadcrumbs   = [ {
+      'name'    : 'Начало',
+      'stateUrl': 'home'
+    }, {
+      'name'    : 'Карта',
+      'stateUrl': 'map'
+    } ];
+  } ]);

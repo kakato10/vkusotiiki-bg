@@ -8,10 +8,10 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('EditOrdinaryUserProfileCtrl', ['$scope', function ($scope) {
+  .controller('EditOrdinaryUserProfileCtrl', [ '$scope', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  }]);
+  } ]);

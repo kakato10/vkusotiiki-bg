@@ -8,20 +8,17 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('FavouriteRecipesCtrl', ['$scope', function ($scope) {
+  .controller('FavouriteRecipesCtrl', [ '$scope', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-    $scope.breadcrumbs = [
-        {
-            'name': 'Начало',
-            'stateUrl': 'home'
-        },
-        {
-            'name': 'Любими рецепти',
-            'stateUrl': 'favouriteRecipes'
-        }
-    ];
-  }]);
+    $scope.breadcrumbs   = [ {
+      'name'    : 'Начало',
+      'stateUrl': 'home'
+    }, {
+      'name'    : 'Любими рецепти',
+      'stateUrl': 'favouriteRecipes'
+    } ];
+  } ]);
