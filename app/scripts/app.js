@@ -19,6 +19,9 @@ angular
     'ui.router',
     'rzModule'
   ])
+  /*globals Firebase, swal */
+  .constant('ref', new Firebase('vkusotiiki-bg.firebaseIO.com'))
+  .constant('swal', swal)
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
@@ -96,8 +99,7 @@ angular
       })
       .state('registerAsOrdinaryUser', {
         templateUrl : 'views/registerAsOrdinaryUser.html',
-        controller  : 'RegisterAsOrdinaryUserCtrl',
-        controllerAs: 'registerAsOrdinaryUser',
+        controller  : 'RegistrationController',
         url         : '/registerAsOrdinaryUser'
       })
       .state('editOrdinaryUserProfile', {
@@ -107,14 +109,7 @@ angular
         url         : '/editOrdinaryUserProfile'
       });
   })
-
-  .run([ '$rootScope', function ($rootScope) {
-    // $rootScope.loggedIn = true;
-    $rootScope.logOut = function () {
-      $rootScope.loggedIn = false;
-    };
-
-    $rootScope.logIn = function () {
-      $rootScope.loggedIn = true;
-    };
-  } ]);
+  .run(['State', '$rootScope', 'Authentication', function (State, $rootScope, Authentication) {
+    $rootScope.logOut = Authentication.logOut;
+    $rootScope.state = {};
+  }]);
