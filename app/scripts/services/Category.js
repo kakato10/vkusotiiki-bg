@@ -1,3 +1,7 @@
-/**
- * Created by kakato10 on 28.06.16.
- */
+'use strict';
+angular.module('vkusotiikiBgApp')
+  .service('Category', [ 'DS', function (DS) {
+    return DS.defineResource({
+      name: 'Category'
+    });
+  } ]);

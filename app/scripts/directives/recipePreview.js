@@ -1,3 +1,12 @@
-/**
- * Created by kakato10 on 28.06.16.
- */
+'use strict';
+
+angular.module('vkusotiikiBgApp')
+  .directive('recipePreview', function () {
+    return {
+      templateUrl: 'views/recipePreview.html',
+      restrict: 'E',
+      scope: {
+        recipe: '='
+      }
+    };
+  });

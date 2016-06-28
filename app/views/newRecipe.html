@@ -65,7 +65,9 @@
                     </td>
                     <td class="col-sm-6">
                       <div class="input-group input-group-sm wide-text">
-                        <input type="text" class="form-control" placeholder="Заглавие" id="form-name" aria-describedby="sizing-addon1">
+                        <input type="text" class="form-control" placeholder="Заглавие" id="form-name"
+                               aria-describedby="sizing-addon1"
+                               ng-model="recipe.title">
                       </div>
                     </td>
                   </tr>
@@ -77,13 +79,8 @@
                     <td class="col-sm-6">
                       <div class="whole">
                         <div class="input-group wide-text">
-                          <select class="form-control" id="form-category">
-                            <option>Супа</option>
-                            <option>Салата</option>
-                            <option>Предястие</option>
-                            <option>Основно</option>
-                            <option>Десерт</option>
-                            <option>Друго</option>
+                          <select class="form-control" id="form-category" ng-model="recipe.category">
+                            <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
                           </select>
                         </div>
                         <div class="help-block">
@@ -100,7 +97,7 @@
                     <td class="col-sm-6">
                       <div class="whole">
                         <div class="input-group input-group-sm wide-text">
-                          <input type="text" class="form-control" placeholder="Ястие" id="form-dish" aria-describedby="sizing-addon1">
+                          <input type="text" class="form-control" placeholder="Ястие" id="form-dish" aria-describedby="sizing-addon1" ng-model="recipe.dish">
                         </div>
                         <div class="help-block">
                           <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въвъведе вида на ястието."></span>
@@ -115,7 +112,10 @@
                     </td>
                     <td class="col-sm-6">
                       <div class="input-group input-group-sm wide-text">
-                        <textarea class="form-control" rows="6" placeholder="Съставки" id="form-ingredients" aria-describedby="sizing-addon1"></textarea>
+                        <textarea class="form-control" rows="6" placeholder="Съставки"
+                                  id="form-ingredients"
+                                  aria-describedby="sizing-addon1"
+                                  ng-model="recipe.ingredients"></textarea>
                       </div>
                     </td>
                   </tr>
@@ -127,17 +127,8 @@
                     <td class="col-sm-6">
                       <div class="whole">
                         <div class="input-group wide-text">
-                          <select class="form-control" id="form-region">
-                            <option>София</option>
-                            <option>Пловдив</option>
-                            <option>Варна</option>
-                            <option>Бургас</option>
-                            <option>Пазарджик</option>
-                            <option>Смолян</option>
-                            <option>Велико Търново</option>
-                            <option>Плевен</option>
-                            <option>Видин</option>
-                            <option>Русе</option>
+                          <select class="form-control" id="form-region" ng-model="recipe.region">
+                            <option ng-repeat="region in regions" value="{{region.id}}">{{region.name}}</option>
                           </select>
                         </div>
                         <div class="help-block">
@@ -153,7 +144,10 @@
                     </td>
                     <td class="col-sm-6">
                       <div class="input-group input-group-sm wide-text">
-                        <textarea class="form-control" rows="6" placeholder="Начин на приготвяне" id="form-description" aria-describedby="sizing-addon1"></textarea>
+                        <textarea class="form-control" rows="6" placeholder="Начин на приготвяне"
+                                  id="form-description"
+                                  aria-describedby="sizing-addon1"
+                                  ng-model="recipe.description"></textarea>
                       </div>
                     </td>
                   </tr>
@@ -165,7 +159,7 @@
                     <td class="col-sm-6">
                       <div class="whole">
                         <div class="input-group">
-                          <input class="form-control" id="form-servings" type="number" min="1" max="10"/>
+                          <input class="form-control" id="form-servings" type="number" min="1" max="10" ng-model="dishesCount"/>
                         </div>
                         <div class="help-block">
                           <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете брой порции за приготвяне на ястието."></span>
@@ -183,7 +177,7 @@
                         <div class="input-group input-group-sm wide-text" id="form-difficulty">
                           <rzslider
                               rz-slider-model="slider.value"
-                              rz-slider-options="slider.options"></rzslider>
+                              rz-slider-options="slider.options" ng-model="recipe.difficulty"></rzslider>
                         </div>
                         <div class="help-block">
                           <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Лесна се отбелязва с 1. Трудна се отбелязва с 5."></span>
@@ -199,7 +193,7 @@
                     <td class="col-sm-6">
                       <div class="whole">
                         <div class="input-group">
-                          <input class="form-control" id="form-time" type="number" min="1" max="10"/>
+                          <input class="form-control" id="form-time" type="number" ng-model="recipe.time"/>
                         </div>
                         <div class="right">
                           <p class="add-more-title"> мин.</p>
@@ -218,7 +212,7 @@
                     <td class="col-sm-6">
                       <div class="whole">
                         <div class="input-group wide-text">
-                          <select class="form-control" id="form-holiday">
+                          <select class="form-control" id="form-holiday" ng-model="recipe.holiday">
                             <option>Великден</option>
                             <option>Гергьовден</option>
                             <option>Петровден</option>
@@ -246,7 +240,7 @@
                     <td class="col-sm-6">
                       <div class="whole">
                         <div class="input-group wide-text">
-                          <select class="form-control" id="form-season">
+                          <select class="form-control" id="form-season" ng-model="recipe.season">
                             <option>Пролет</option>
                             <option>Лято</option>
                             <option>Есен</option>
@@ -268,20 +262,28 @@
                       <div class="whole">
                         <div class="input-group wide-text" id="form-other-options">
                           <div class="checkbox">
-                            <label><input type="checkbox" value="">Вегетарианска рецепта</label>
+                            <label><input type="checkbox" value="" ng-model="recipe.otherOptions.vegeterian">
+                              Вегетарианска рецепта
+                            </label>
                           </div>
                           <div class="checkbox">
-                            <label><input type="checkbox" value="">Веганска рецепта</label>
+                            <label><input type="checkbox" value="" ng-model="recipe.otherOptions.vegan">
+                              Веганска рецепта
+                            </label>
                           </div>
                           <div class="checkbox">
-                            <label><input type="checkbox" value="">Рецепта само с био храни</label>
+                            <label><input type="checkbox" value="" ng-model="recipe.otherOptions.bio">
+                              Рецепта само с био храни
+                            </label>
                           </div>
                           <div class="checkbox">
-                            <label><input type="checkbox" value="">Възможност за алергична реакция</label>
+                            <label><input type="checkbox" value="" ng-model="recipe.otherOptions.allergy">
+                              Възможност за алергична реакция
+                            </label>
                           </div>
                         </div>
                         <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
+                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете някоя от опциите, ако важи за рецептата"></span>
                         </div>
                       </div>
                     </td>
@@ -289,11 +291,10 @@
 
                   <tr>
                     <td class="col-sm-1">
-                    
                     </td>
                     <td class="col-sm-6 save-btns">
                       <div class="col-md-8">
-                        <button class="btn btn-default btn-success" type="button">
+                        <button class="btn btn-default btn-success" type="button" ng-click="save(recipe)">
                           <span class="glyphicon glyphicon-pencil"></span>
                           Запази
                         </button>

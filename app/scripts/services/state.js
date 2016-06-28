@@ -7,6 +7,7 @@ angular.module('vkusotiikiBgApp')
     function ($rootScope, ref, User) {
       return {
         setUser   : function () {
+          console.log(User);
           User.find(ref.getAuth().uid)
             .then(function (user) {
               $rootScope.state = {

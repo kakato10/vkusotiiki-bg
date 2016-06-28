@@ -3,24 +3,15 @@
  */
 'use strict';
 angular.module('vkusotiikiBgApp')
-  .service('User', [ function () {
+  .service('User', [ 'DS', function (DS) {
     var fakeUser = {
-      name: 'Иван Петров',
-      email: 'ivan.petrov@abv.bg',
-      region: 'София'
+      name  : 'Иван Петров',
+      email : 'ivan.petrov@abv.bg',
+      region: 'София',
+      id    : "f121925d-d296-4818-870f-5f453389c4a8"
     };
-    return {
-      create: function (user) {
-        console.log(user);
-        return new Promise(function (resolve, reject) {
-          resolve(user);
-        });
-      },
 
-      find: function(user) {
-        return new Promise(function (resolve, reject) {
-          resolve(fakeUser);
-        });
-      }
-    };
+    return DS.defineResource({
+      name: 'User'
+    });
   } ]);

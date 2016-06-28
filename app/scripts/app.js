@@ -16,13 +16,16 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngRateIt',
     'ui.router',
-    'rzModule'
+    'rzModule',
+    'js-data'
   ])
   /*globals Firebase, swal */
-  .constant('ref', new Firebase('vkusotiiki-bg.firebaseIO.com'))
+  .constant('ref', new Firebase('vkusotiiki-bg.firebaseio.com'))
   .constant('swal', swal)
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, DSProvider, DSFirebaseAdapterProvider) {
+    DSFirebaseAdapterProvider.defaults.basePath = 'https://vkusotiiki-bg.firebaseio.com';
     $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('home', {
@@ -41,14 +44,19 @@ angular
         templateUrl : 'views/recipes.html',
         controller  : 'RecipesCtrl',
         controllerAs: 'recipeS',
-        url         : '/recipes'
+        url         : '/recipes',
+        resolve: {
+          recipes: ['Recipe', function (Recipe) {
+            return Recipe.findAll();
+          }]
+        }
       })
       .state('newRecipes', {
         templateUrl : 'views/newRecipes.html',
         controller  : 'NewRecipesCtrl',
         controllerAs: 'newRecipes',
         url         : '/newRecipes'
-      })
+       })
       .state('favouriteRecipes', {
         templateUrl : 'views/favouriteRecipes.html',
         controller  : 'FavouriteRecipesCtrl',
@@ -71,7 +79,15 @@ angular
         templateUrl : 'views/newRecipe.html',
         controller  : 'NewRecipeCtrl',
         controllerAs: 'newRecipe',
-        url         : '/newRecipe'
+        url         : '/newRecipe',
+        resolve: {
+          regions: ['Region', function (Region) {
+            return Region.findAll();
+          }],
+          categories: ['Category', function (Category) {
+            return Category.findAll();
+          }]
+        }
       })
       .state('about', {
         templateUrl : 'views/about.html',
@@ -112,4 +128,14 @@ angular
   .run(['State', '$rootScope', 'Authentication', function (State, $rootScope, Authentication) {
     $rootScope.logOut = Authentication.logOut;
     $rootScope.state = {};
+  }])
+  .run(['DS', 'DSFirebaseAdapter',
+    function(DS, DSFirebaseAdapter) {
+      DS.registerAdapter('firebase', DSFirebaseAdapter, {
+        default: true
+      });
+    }
+  ])
+  .run(['Recipe', function (Recipe, User, Region, Category) {
+    /* jshint unused: false */
   }]);
