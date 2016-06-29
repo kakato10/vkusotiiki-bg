@@ -20,6 +20,10 @@ angular.module('vkusotiikiBgApp')
           'stateUrl': 'home'
       },
       {
+          'name': 'Рецепти',
+          'stateUrl': 'recipes'
+      },
+      {
           'name': 'Разглеждане на рецепта',
           'stateUrl': 'recipeDetails'
       }

@@ -128,7 +128,7 @@ angular
         templateUrl: 'views/recipeDetails.html',
         controller: 'RecipeDetailsCtrl',
         controllerAs: 'recipeDetails',
-        url: '/recipeDetails'
+        url: '/recipeDetails/:id'
       });
 
 
