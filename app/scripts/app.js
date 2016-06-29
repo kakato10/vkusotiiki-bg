@@ -122,8 +122,16 @@ angular
         templateUrl : 'views/editOrdinaryUserProfile.html',
         controller  : 'EditOrdinaryUserProfileCtrl',
         controllerAs: 'editOrdinaryUserProfile',
-        url         : '/editOrdinaryUserProfile'
+        url: '/editOrdinaryUserProfile'
+      })
+      .state('recipeDetails', {
+        templateUrl: 'views/recipeDetails.html',
+        controller: 'RecipeDetailsCtrl',
+        controllerAs: 'recipeDetails',
+        url: '/recipeDetails'
       });
+
+
   })
   .run(['State', '$rootScope', 'Authentication', function (State, $rootScope, Authentication) {
     $rootScope.logOut = Authentication.logOut;
