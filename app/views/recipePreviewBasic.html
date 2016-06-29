@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-xs-6 col-md-12 text-center">
+    <a ui-sref="weeklyRecipe" class="thumbnail">
+      <img src="images/recipes/musaka.jpg" alt="Рецепта на седмицата">
+    </a>
+    <a ui-sref="#">{{recipe.title}}</a>
+    <div>
+      <ng-rate-it ng-model="recipe.rating" read-only="true" ng-if="recipe.rating"></ng-rate-it>{{recipe.rating}}
+    </div>
+  </div>
+</div>

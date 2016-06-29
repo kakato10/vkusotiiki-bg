@@ -10,12 +10,6 @@
 angular.module('vkusotiikiBgApp')
   .controller('LoginCtrl', [ '$rootScope', '$scope', 'ref', 'Authentication', '$state',
     function ($rootScope, $scope, ref, Authentication, $state) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
-
       if (ref.getAuth()) {
         $state.transitionTo('home');
       }
@@ -23,5 +17,5 @@ angular.module('vkusotiikiBgApp')
       $scope.logIn = function (email, password, remember) {
         remember ? remember = 'default' : remember = 'sessionOnly';
         Authentication.logIn(email, password, remember);
-      }
+      };
     } ]);

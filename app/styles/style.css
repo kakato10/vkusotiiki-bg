@@ -143,6 +143,7 @@ a:hover {
 
 .left-nav {
     margin-right: 10px;
+    text-align: center;
 }
 
 .most-liked .group-container {
@@ -151,7 +152,7 @@ a:hover {
 
 .thumbnail img {
     width: 210px;
-    height: 130px;
+    height: 130px
 }
 
 .main-content {

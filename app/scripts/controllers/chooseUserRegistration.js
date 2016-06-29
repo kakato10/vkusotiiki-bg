@@ -9,9 +9,4 @@
  */
 angular.module('vkusotiikiBgApp')
   .controller('ChooseUserRegistrationCtrl', [ '$scope', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
   } ]);

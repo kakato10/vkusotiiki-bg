@@ -8,17 +8,15 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('NewRecipesCtrl', [ '$scope', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-    $scope.breadcrumbs = [ {
-      'name'    : 'Начало',
-      'stateUrl': 'home'
-    }, {
-      'name'    : 'Нови рецепти',
-      'stateUrl': 'newRecipes'
-    } ];
-  } ]);
+  .controller('NewRecipesCtrl', [ '$scope', 'recipies',
+    function ($scope, recipies) {
+      $scope.breadcrumbs = [ {
+        'name'    : 'Начало',
+        'stateUrl': 'home'
+      }, {
+        'name'    : 'Нови рецепти',
+        'stateUrl': 'newRecipes'
+      } ];
+      
+      $scope.recipies = recipies;
+    } ]);

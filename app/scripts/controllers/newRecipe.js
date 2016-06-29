@@ -10,12 +10,6 @@
 angular.module('vkusotiikiBgApp')
   .controller('NewRecipeCtrl', [ '$scope', 'Authentication', 'Recipe', 'regions', 'categories',
     function ($scope, Authentication, Recipe, regions, categories) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
-
       $scope.regions = regions;
       $scope.categories = categories;
       $scope.breadcrumbs = [ {
@@ -41,16 +35,20 @@ angular.module('vkusotiikiBgApp')
         ingredients = ingredients.map(function (ingredient) {
           var data = ingredient.split(' - ');
           return {
-            name       : data[ 0 ],
-            quantity   : parseInt(data[ 1 ], 10),
-            unit: data[ 2 ]
+            name    : data[ 0 ],
+            quantity: parseInt(data[ 1 ], 10),
+            unit    : data[ 2 ]
           };
         });
         return ingredients;
       }
-
+      
       $scope.save = Authentication.require(function (recipe) {
         recipe.ingredients = formatIngredients(recipe.ingredients);
-        Recipe.create(recipe);
+        recipe.createdOn = new Date().toString();
+        recipe.authorId = $scope.state.user.id;
+        Recipe.create(recipe, {
+          cacheResponse: true
+        });
       })
     } ]);

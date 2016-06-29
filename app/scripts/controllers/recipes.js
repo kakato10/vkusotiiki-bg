@@ -9,11 +9,6 @@
  */
 angular.module('vkusotiikiBgApp')
   .controller('RecipesCtrl', [ '$scope', 'recipes', function ($scope, recipes) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
     $scope.breadcrumbs = [ {
       'name'    : 'Начало',
       'stateUrl': 'home'

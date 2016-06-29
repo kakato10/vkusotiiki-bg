@@ -9,12 +9,7 @@
  */
 angular.module('vkusotiikiBgApp')
   .controller('MapCtrl', [ '$scope', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-    $scope.breadcrumbs   = [ {
+    $scope.breadcrumbs = [ {
       'name'    : 'Начало',
       'stateUrl': 'home'
     }, {

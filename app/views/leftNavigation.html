@@ -1,110 +1,16 @@
-<div class="col-lg-3 left left-nav">
-  <ul class="nav nav-pills nav-stacked">
+<div class="col-lg-3 left left-nav ">
+  <ul class="nav nav-pills nav-stacked group-container">
+    <a ui-sref="weeklyRecipe" class="sidebar-section-title text-center">Рецепта на седмицата</a>
     <li role="presentation" class="active">
-      <div class="row group-container">
-        <div class="col-xs-6 col-md-12 text-center">
-          <a ui-sref="weeklyRecipe">Рецепта на седмицата</a>
-          <a ui-sref="weeklyRecipe" class="thumbnail">
-            <img src="images/recipes/musaka.jpg" alt="Рецепта на седмицата">
-          </a>
-          <a ui-sref="#">Мусака с тиквички</a>
-        </div>
-      </div>
+      <recipe-preview-basic recipe="weekly" showRating="false"></recipe-preview-basic>
     </li>
   </ul>
 
   <div class="most-liked group-container">
     <ul class="nav nav-pills nav-stacked">
-      <li role="presentation">
-        <div class="row group-container">
-          <div class="col-xs-6 col-md-12 text-center">
-            <a ui-sref="mostLikedRecipes">Най-харесвани рецепти</a>
-            <a ui-sref="mostLikedRecipes" class="thumbnail">
-              <img src="images/recipes/kapama.png" alt="Най-харесвани рецепти">
-            </a>
-            <a ui-sref="#" class="recipe-title-thumb">Капама по ловджийски</a>
-            <div class="btn-toolbar center stars" role="toolbar">
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <p>4.8</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li role="presentation">
-        <div class="row group-container">
-          <div class="col-xs-6 col-md-12 text-center">
-            <a ui-sref="weeklyRecipe" class="thumbnail">
-              <img src="images/recipes/patatnik.jpg" alt="Рецепта на сезмицата">
-            </a>
-            <a ui-sref="#" class="recipe-title-thumb">Родопски пататник</a>
-            <div class="btn-toolbar center stars" role="toolbar">
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <p>4.2</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li role="presentation">
-        <div class="row group-container">
-          <div class="col-xs-6 col-md-12 text-center">
-            <a ui-sref="weeklyRecipe" class="thumbnail">
-              <img src="images/recipes/sarmi.jpg" alt="Рецепта на сезмицата">
-            </a>
-            <a ui-sref="#" class="recipe-title-thumb">Запечени сарми - асорти</a>
-            <div class="btn-toolbar center stars" role="toolbar">
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              </div>
-              <div class="btn-group" role="group">
-                <p>3.3</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <a ui-sref="mostLikedRecipes">Най-харесвани рецепти</a>
+      <li role="presentation" class="active" ng-repeat="recipe in rated">
+        <recipe-preview-basic  recipe="recipe"></recipe-preview-basic>
       </li>
     </ul>
   </div>

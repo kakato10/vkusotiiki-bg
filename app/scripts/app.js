@@ -45,18 +45,29 @@ angular
         controller  : 'RecipesCtrl',
         controllerAs: 'recipeS',
         url         : '/recipes',
-        resolve: {
-          recipes: ['Recipe', function (Recipe) {
-            return Recipe.findAll();
-          }]
+        resolve     : {
+          recipes: [ 'Recipe', function (Recipe) {
+            return Recipe.findAll({}, {bypassCache: true});
+          } ]
         }
       })
       .state('newRecipes', {
         templateUrl : 'views/newRecipes.html',
         controller  : 'NewRecipesCtrl',
         controllerAs: 'newRecipes',
-        url         : '/newRecipes'
-       })
+        url         : '/newRecipes',
+        resolve     : {
+          recipies: [ 'Recipe', function (Recipe) {
+            return Recipe.findAll({}, {bypassCache: true})
+              .then(function (recipies) {
+                recipies.sort(function (a, b) {
+                  return new Date(b.createdOn) - new Date(a.createdOn);
+                });
+                return recipies.slice(0, 5);
+              });
+          } ]
+        }
+      })
       .state('favouriteRecipes', {
         templateUrl : 'views/favouriteRecipes.html',
         controller  : 'FavouriteRecipesCtrl',
@@ -67,7 +78,21 @@ angular
         templateUrl : 'views/myRecipes.html',
         controller  : 'MyRecipesCtrl',
         controllerAs: 'myRecipes',
-        url         : '/myRecipes'
+        url         : '/myRecipes',
+        resolve     : {
+          recipies: [ 'Recipe', '$rootScope', function (Recipe, $rootScope) {
+            return Recipe.findAll({}, {bypassCache: true})
+              .then(function (recipies) {
+                console.log('here');
+                var userRecipies = recipies.filter(function (recipe) {
+                  console.log($rootScope.state.user.id);
+                  return recipe.authorId === $rootScope.state.user.id;
+                });
+                console.log(userRecipies);
+                return userRecipies;
+              });
+          } ]
+        }
       })
       .state('offeredRecipes', {
         templateUrl : 'views/offered.html',
@@ -80,13 +105,13 @@ angular
         controller  : 'NewRecipeCtrl',
         controllerAs: 'newRecipe',
         url         : '/newRecipe',
-        resolve: {
-          regions: ['Region', function (Region) {
+        resolve     : {
+          regions   : [ 'Region', function (Region) {
             return Region.findAll();
-          }],
-          categories: ['Category', function (Category) {
+          } ],
+          categories: [ 'Category', function (Category) {
             return Category.findAll();
-          }]
+          } ]
         }
       })
       .state('about', {
@@ -114,9 +139,9 @@ angular
         url         : '/chooseUserRegistration'
       })
       .state('registerAsOrdinaryUser', {
-        templateUrl : 'views/registerAsOrdinaryUser.html',
-        controller  : 'RegistrationController',
-        url         : '/registerAsOrdinaryUser'
+        templateUrl: 'views/registerAsOrdinaryUser.html',
+        controller : 'RegistrationController',
+        url        : '/registerAsOrdinaryUser'
       })
       .state('editOrdinaryUserProfile', {
         templateUrl : 'views/editOrdinaryUserProfile.html',
@@ -125,17 +150,17 @@ angular
         url         : '/editOrdinaryUserProfile'
       });
   })
-  .run(['State', '$rootScope', 'Authentication', function (State, $rootScope, Authentication) {
+  .run([ 'State', '$rootScope', 'Authentication', function (State, $rootScope, Authentication) {
     $rootScope.logOut = Authentication.logOut;
     $rootScope.state = {};
-  }])
-  .run(['DS', 'DSFirebaseAdapter',
-    function(DS, DSFirebaseAdapter) {
+  } ])
+  .run([ 'DS', 'DSFirebaseAdapter',
+    function (DS, DSFirebaseAdapter) {
       DS.registerAdapter('firebase', DSFirebaseAdapter, {
         default: true
       });
     }
   ])
-  .run(['Recipe', function (Recipe, User, Region, Category) {
+  .run([ 'Recipe', function (Recipe, User, Region, Category) {
     /* jshint unused: false */
-  }]);
+  } ]);

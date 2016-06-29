@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('vkusotiikiBgApp')
-  .directive('recipePreview', function () {
+  .directive('recipePreviewExtended', function () {
     return {
-      templateUrl: 'views/recipePreview.html',
+      templateUrl: 'views/recipePreviewExtended.html',
       restrict: 'E',
       scope: {
         recipe: '='

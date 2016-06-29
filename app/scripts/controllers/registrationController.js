@@ -10,12 +10,6 @@
 angular.module('vkusotiikiBgApp')
   .controller('RegistrationController', [ '$scope', 'ref', 'swal', '$state', 'User',
     function ($scope, ref, swal, $state, User) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
-
       if (ref.getAuth()) {
         $state.transitionTo('home');
       }
@@ -28,7 +22,6 @@ angular.module('vkusotiikiBgApp')
             password: password
           }, function (error, userData) {
             if (error) {
-              console.log(error.code);
               switch (error.code) {
                 case 'EMAIL_TAKEN':
                   swal({
