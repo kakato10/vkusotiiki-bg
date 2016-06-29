@@ -2,92 +2,56 @@
 <left-navigation></left-navigation>
 
 <div class="main-content col-xs-9 row">
-  <div class="row">
-    <h3 class="title-page text-center">Добави рецепта</h3>
+  <div class="row recipe-details">
+    <h2 class="title-page text-center">Мусака с тиквички</h2>
+    <a ui-sref="#"><h4 class="title-page text-center styled-a">Иван Иванов</h4></a>
     <div class="recipes">
       <table class="table">
         <tbody>
           <tr>
           <!-- BEGIN IMAGE / VIDEO Upload -->
             <td class="col-sm-3">
-             <div class="images">
-              <div id="image">
-                <p>снимка</p>
-                <!-- <img id="image" src="images/logo.jpg"> -->
-              </div>
-              <div class="text-center">
-                <p>Заглавна снимка</p>
-              </div>
-              <p>Още снимки:</p>
-              <div id="image">
-                <p>снимка</p>
-              </div>
-              <div id="image">
-                <p>снимка</p>
-              </div>
-              <div id="image">
-                <p>снимка</p>
-              </div>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>
+                    <div id="image">
+                      <p>снимка</p>
+                      <!-- <img id="image" src="images/logo.jpg"> -->
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="recipe-ingredients text-center">
+                    <p>Съставки: <a href="http://www.ebag.bg/" title="ebag.bg" class="styled-a">Купи от ebag.bg</a></p>
+                    <div class="input-group ingredients-holder">
+                      <p>картоф - 100 - гр.</p>
+                      <p>домати - 400 - гр.</p>
+                      <p>домати - 400 - гр.</p>
+                      <p>домати - 400 - гр.</p>
+                      <p>домати - 400 - гр.</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-              <div class="add-more">
-                <p class="add-more-title">Добави снимка:</p>
-                <div class="btn-group btn-group-sm" role="group">
-                  <button class="btn btn-default btn-success" type="button">
-                    <span class="glyphicon glyphicon-save"></span>
-                    Прикачи
-                  </button>
-                </div>
-              </div>
-
-              <div class="add-more">
-                <p class="add-more-title">Добави видео:</p>
-                <div class="btn-group btn-group-sm add-more-video" role="group">
-                  <button class="btn btn-default btn-success" type="button">
-                    <span class="glyphicon glyphicon-save"></span>
-                    Прикачи
-                  </button>
-                </div>
-              </div>
-
-
-             </div>
             </td>
           <!-- END IMAGE / VIDEO Upload -->
 
           <!-- BEGIN RECIPE Form -->
             <td class="col-sm-8">
-              <table>
+              <table class="table">
                 <tbody>
 
                   <tr>
                     <td class="col-sm-1">
-                      <label for="form-name">Заглавие: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="input-group input-group-sm wide-text">
-                        <input type="text" class="form-control" placeholder="Заглавие" id="form-name" aria-describedby="sizing-addon1">
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-category">Категория: *</label>
+                      <label for="form-category">Категория: </label>
                     </td>
                     <td class="col-sm-6">
                       <div class="whole">
                         <div class="input-group wide-text">
-                          <select class="form-control" id="form-category">
-                            <option>Супа</option>
-                            <option>Салата</option>
-                            <option>Предястие</option>
-                            <option>Основно</option>
-                            <option>Десерт</option>
-                            <option>Друго</option>
-                          </select>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете категория ястие."></span>
+                          <p>Основно</p>
                         </div>
                       </div>
                     </td>
@@ -95,15 +59,12 @@
 
                   <tr>
                     <td class="col-sm-1">
-                      <label for="form-dish">Ястие: *</label>
+                      <label for="form-dish">Ястие: </label>
                     </td>
                     <td class="col-sm-6">
                       <div class="whole">
                         <div class="input-group input-group-sm wide-text">
-                          <input type="text" class="form-control" placeholder="Ястие" id="form-dish" aria-describedby="sizing-addon1">
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въвъведе вида на ястието."></span>
+                          <p>Мусака</p>
                         </div>
                       </div>
                     </td>
@@ -111,201 +72,32 @@
 
                   <tr>
                     <td class="col-sm-1">
-                      <label for="form-ingredients">Съставки: *</label>
+                      <label for="form-region">Област: </label>
+                    </td>
+                    <td class="col-sm-6">
+                      <div class="whole">
+                        <div class="input-group wide-text">
+                            <p>София</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="description-holder">
+                    <td class="col-sm-1">
+                      <label for="form-description">Начин на приготвяне: </label>
                     </td>
                     <td class="col-sm-6">
                       <div class="input-group input-group-sm wide-text">
-                        <textarea class="form-control" rows="6" placeholder="Съставки" id="form-ingredients" aria-describedby="sizing-addon1"></textarea>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                       </div>
                     </td>
                   </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-region">Област: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group wide-text">
-                          <select class="form-control" id="form-region">
-                            <option>София</option>
-                            <option>Пловдив</option>
-                            <option>Варна</option>
-                            <option>Бургас</option>
-                            <option>Пазарджик</option>
-                            <option>Смолян</option>
-                            <option>Велико Търново</option>
-                            <option>Плевен</option>
-                            <option>Видин</option>
-                            <option>Русе</option>
-                          </select>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете регион, в който се приготвя ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-description">Начин на приготвяне: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="input-group input-group-sm wide-text">
-                        <textarea class="form-control" rows="6" placeholder="Начин на приготвяне" id="form-description" aria-describedby="sizing-addon1"></textarea>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-servings">Порции: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group">
-                          <input class="form-control" id="form-servings" type="number" min="1" max="10"/>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете брой порции за приготвяне на ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-difficulty">Ниво на трудност: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group input-group-sm wide-text" id="form-difficulty">
-                          <rzslider
-                              rz-slider-model="slider.value"
-                              rz-slider-options="slider.options"></rzslider>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Лесна се отбелязва с 1. Трудна се отбелязва с 5."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-time">Време за приготвяне: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group">
-                          <input class="form-control" id="form-time" type="number" min="1" max="10"/>
-                        </div>
-                        <div class="right">
-                          <p class="add-more-title"> мин.</p>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въведете време за приготвяне на ястието в минути."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-holiday">Празник: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group wide-text">
-                          <select class="form-control" id="form-holiday">
-                            <option>Великден</option>
-                            <option>Гергьовден</option>
-                            <option>Петровден</option>
-                            <option>Атанасовден</option>
-                            <option>Игнажден</option>
-                            <option>Рождество Христово</option>
-                            <option>Ивановден</option>
-                            <option>Йордановден</option>
-                            <optgroup class="separator"></optgroup>
-                            <option>Рамазан байрям</option>
-                            <option>Курбан байрям</option>
-                          </select>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете празник, за който се приготвя ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-season">Сезон: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group wide-text">
-                          <select class="form-control" id="form-season">
-                            <option>Пролет</option>
-                            <option>Лято</option>
-                            <option>Есен</option>
-                            <option>Зима</option>
-                          </select>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-other-options">Други опции: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group wide-text" id="form-other-options">
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Вегетарианска рецепта</label>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Веганска рецепта</label>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Рецепта само с био храни</label>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Възможност за алергична реакция</label>
-                          </div>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                    
-                    </td>
-                    <td class="col-sm-6 save-btns">
-                      <div class="col-md-8">
-                        <button class="btn btn-default btn-success" type="button">
-                          <span class="glyphicon glyphicon-pencil"></span>
-                          Запази
-                        </button>
-                        <button class="btn btn-default right btn-danger" type="button">
-                          <span class="glyphicon glyphicon-trash"></span>
-                          Откажи
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-
-
 
                 </tbody>
               </table>
@@ -313,6 +105,79 @@
             </td>
           <!-- END RECIPE Form -->
 
+          </tr>
+          <tr>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="col-sm-3">
+                    <label for="form-servings">Порции: </label>
+                  </td>
+                  <td class="col-sm-1">
+                    <p>4</p>
+                  </td>
+
+                  <td class="col-sm-3">
+                    <label for="form-difficulty">Ниво на трудност: </label>
+                  </td>
+                  <td class="col-sm-1">
+                    <p>4</p>
+                  </td>
+
+                  <td class="col-sm-3">
+                    <label for="form-time">Време за приготвяне: *</label>
+                  </td>
+                  <td class="col-sm-1">
+                    <p>45 мин.</p>
+                  </td>
+
+
+                <tr>
+                  <td class="col-sm-1">
+                    <label for="form-other-options">Други опции: *</label>
+                  </td>
+                  <td class="col-sm-6">
+                    <div class="whole">
+                      <div class="input-group wide-text" id="form-other-options">
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Вегетарианска рецепта</label>
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Веганска рецепта</label>
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Рецепта само с био храни</label>
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Възможност за алергична реакция</label>
+                        </div>
+                      </div>
+                      <div class="help-block">
+                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="col-sm-1">
+                  
+                  </td>
+                  <td class="col-sm-6 save-btns">
+                    <div class="col-md-8">
+                      <button class="btn btn-default btn-success" type="button">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Запази
+                      </button>
+                      <button class="btn btn-default right btn-danger" type="button">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Откажи
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </tr>
         </tbody>
       </table>
