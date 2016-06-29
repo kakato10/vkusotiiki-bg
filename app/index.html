@@ -68,18 +68,18 @@
 
             <!-- TO DO -->
             <ul class="nav navbar-nav">
-              <li ui-sref-active="active"><a ui-sref="home">Начало</a></li>
-              <li ui-sref-active="active"><a ui-sref="map">Карта на България</a></li>
-              <li ui-sref-active="active"><a ui-sref="recipes">Рецепти</a></li>
-              <li ui-sref-active="active"><a ui-sref="newRecipes">Нови рецепти</a></li>
-              <li ui-sref-active="active" es-is-logged-in><a ui-sref="myRecipes">Моите рецепти</a></li>
-              <li ui-sref-active="active"><a ui-sref="favouriteRecipes" es-is-logged-in>Любими рецепти</a></li>
-              <li ui-sref-active="active"><a ui-sref="about">За нас</a></li>
-              <li ui-sref-active="active"><a ui-sref="contacts">Контакти</a></li>
+              <li ui-sref-active="active"><a ui-sref="home.landing">Начало</a></li>
+              <li ui-sref-active="active"><a ui-sref="home.map">Карта на България</a></li>
+              <li ui-sref-active="active"><a ui-sref="home.recipies.list">Рецепти</a></li>
+              <li ui-sref-active="active"><a ui-sref="home.recipies.new">Нови рецепти</a></li>
+              <li ui-sref-active="active" es-is-logged-in><a ui-sref="home.recipies.my">Моите рецепти</a></li>
+              <li ui-sref-active="active"><a ui-sref="home.recipies.favourites" es-is-logged-in>Любими рецепти</a></li>
+              <li ui-sref-active="active"><a ui-sref="home.about">За нас</a></li>
+              <li ui-sref-active="active"><a ui-sref="home.contacts">Контакти</a></li>
               <!--<li ui-sref-active="active"><a ui-sref="offeredRecipes" style="color:red;">Предлагани</a></li>-->
               <!-- <li ui-sref-active="active" class="right"><a ui-sref="logOut">Изход</a></li> -->
               <li class="right" ng-if="state.user" ng-click="logOut()"><a>Изход</a></li>
-              <li ui-sref-active="active" class="right" ng-if="!state.user"><a ui-sref="chooseUserRegistration">Регистрация</a></li>
+              <li ui-sref-active="active" class="right" ng-if="!state.user"><a ui-sref="register">Регистрация</a></li>
               <li ui-sref-active="active" class="right" ng-if="state.user"><a ui-sref="editOrdinaryUserProfile">{{state.user.name}}</a></li>
               <li ui-sref-active="active" class="right" ng-if="!state.user"><a ui-sref="login">Вход</a></li>
               <li ui-sref-active="active">
@@ -102,6 +102,7 @@
 
     <div class="base-container whole">
       <div class="container ">
+        <breadcrumbs values="breadCrumbs"></breadcrumbs>
         <div ui-view=""></div>
       </div>
     </div>
@@ -245,6 +246,8 @@
         <script src="scripts/services/Recipe.js"></script>
         <script src="scripts/services/Category.js"></script>
         <script src="scripts/services/Region.js"></script>
+        <script src="scripts/services/Rating.js"></script>
+
         <!-- endbuild -->
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASrwZ5hSZahiv-u09xV3ugI8G8k_a6D2U"></script>

@@ -1,6 +1,6 @@
 <div class="col-lg-3 left left-nav ">
   <ul class="nav nav-pills nav-stacked group-container">
-    <a ui-sref="weeklyRecipe" class="sidebar-section-title text-center">Рецепта на седмицата</a>
+    <a class="sidebar-section-title text-center">Рецепта на седмицата</a>
     <li role="presentation" class="active">
       <recipe-preview-basic recipe="weekly" showRating="false"></recipe-preview-basic>
     </li>
@@ -8,11 +8,10 @@
 
   <div class="most-liked group-container">
     <ul class="nav nav-pills nav-stacked">
-      <a ui-sref="mostLikedRecipes">Най-харесвани рецепти</a>
-      <li role="presentation" class="active" ng-repeat="recipe in rated">
+      <a>Най-харесвани рецепти</a>
+      <li role="presentation" class="active" ng-repeat="recipe in recipies">
         <recipe-preview-basic  recipe="recipe"></recipe-preview-basic>
       </li>
     </ul>
   </div>
-
 </div>
