@@ -1,11 +1,11 @@
 <div class="row group-container">
   <div class="col-xs-6 col-md-12 recipe">
-    <a ui-sref="weeklyRecipe" class="thumbnail left">
-      <img src="images/recipes/chushki.jpg" alt="Рецепта на седмицата">
+    <a ui-sref="recipeDetails('{{recipe.id}}')" class="thumbnail left">
+      <img src="images/recipes/chushki.jpg" alt="{{recipe.title}}">
     </a>
     <div class="recipe-content col-xs-4 col-md-8">
       <div class="recipe-title">
-        <a ui-sref="#" >{{recipe.title}}</a>
+        <a ui-sref="recipeDetails('{{recipe.id}}')">{{recipe.title}}</a>
         <div class="btn-group special-icon" role="group">
           <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
         </div>
@@ -15,6 +15,6 @@
   </div>
   <div class="col-xs-6 col-md-12 center btn-toolbar recipe-rating" role="toolbar">
     <ng-rate-it ng-model="recipe.rating" read-only="true" ng-if="recipe.rating"></ng-rate-it>{{recipe.rating}}
-    <a ui-sref="weeklyRecipe" class="right"><p>Виж повече >></p></a>
+    <a ui-sref="recipeDetails('{{recipe.id}}')" class="right"><p>Виж повече >></p></a>
   </div>
 </div>
