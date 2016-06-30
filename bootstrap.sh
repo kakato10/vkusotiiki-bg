@@ -23,7 +23,24 @@ echo "cd /home/vagrant/vkusotiiki-bg" >> /home/vagrant/.bashrc
 color '35;1' 'Updating packages...'
 apt-get update
 
+
+color '35;1' 'Install dependencies...'
+apt-get install mysql-server \
+                mysql-client \
+                libmysqlclient-dev \
+                php5-cli \
+                php5-mysql \
+                php5-mysqlnd \
+                apache2 --fix-missing
 color '35;1' 'Finished installing dependencies...'
+
+# database
+
+sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+
+service mysql restart
+echo 'create database `vkusotiiki-bg`' | mysql -u root -proot
+mysql -u root -proot vkusotiiki-bg < php_services/vkusotiiki-bg-2.sql
 
 color '35;1' 'Cleaning up...'
 apt-get -y autoremove

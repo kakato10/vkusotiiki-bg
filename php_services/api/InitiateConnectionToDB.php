@@ -1,5 +1,6 @@
 <?php
     //session_start();
+    require_once '../ServerConfig.php';
 
     function initiate_connection($server_name, $username, $password, $db_name){
         // Create connection
@@ -17,5 +18,11 @@
             die("Connection failed: " . $conn->connect_error . "<br>");
         }
         return $conn;
+    }
+
+    function get_connection()
+    {
+        global $server_name, $username, $password, $db_name;
+        return initiate_connection($server_name, $username, $password, $db_name);
     }
 ?>
