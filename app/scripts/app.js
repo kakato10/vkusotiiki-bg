@@ -251,11 +251,14 @@ angular
     $rootScope.logOut = Authentication.logOut;
     $rootScope.state = {};
   } ])
-  .run([ 'DS', 'DSFirebaseAdapter',
-    function (DS, DSFirebaseAdapter) {
+  .run([ 'DS', 'DSFirebaseAdapter', 'DSHttpAdapter',
+    function (DS, DSFirebaseAdapter, DSHttpAdapter) {
       DS.registerAdapter('firebase', DSFirebaseAdapter, {
         default: true
       });
+      // DS.registerAdapter('http', DSHttpAdapter, {
+      //   default: true
+      // });
     }
   ])
   .run([ '$rootScope', '$state', function ($rootScope, $state) {
