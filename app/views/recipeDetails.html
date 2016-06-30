@@ -1,0 +1,171 @@
+<left-navigation></left-navigation>
+
+<div class="main-content col-xs-9 row">
+  <div class="row recipe-details">
+    <h2 class="title-page text-center">{{recipe.title}}
+        <span class="glyphicon glyphicon-star favourite"
+              ng-if="state.user && state.user.likes(recipe.id)"
+              ng-click="removeFromFavourites()">
+        </span>
+        <span class="glyphicon glyphicon-star-empty favourite"
+            ng-if="state.user && !state.user.likes(recipe.id)"
+            ng-click="addToFavourites(recipe.id)">
+        </span>
+    </h2>
+    <a ui-sref="#"><h4 class="title-page text-center styled-a">{{author.name}}</h4></a>
+    <div class="recipes">
+      <table class="table">
+        <tbody>
+        <tr>
+          <!-- BEGIN IMAGE / VIDEO Upload -->
+          <td class="col-sm-3">
+            <table class="table">
+              <tbody>
+              <tr>
+                <td>
+                  <div id="image">
+                    <p>снимка</p>
+                    <!-- <img id="image" src="images/logo.jpg"> -->
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="recipe-ingredients text-center">
+                  <ng-rate-it ng-model="rating" step="0.5" resetable="false" min="0" max="5"
+                              ng-attr-read-only="!canRate"
+                              ng-click="rate(recipe, rating)"></ng-rate-it>{{rating}}
+                  <p>Създадена на {{ date | date:'yyyy-MM-dd hh:mm'}}</p>
+                  <p>Съставки: <a href="http://www.ebag.bg/" title="ebag.bg" class="styled-a">Купи от ebag.bg</a></p>
+                  <div class="input-group ingredients-holder">
+                    <p ng-repeat="ingridient in recipe.ingredients">
+                      {{ingridient.name}} - {{ingridient.quantity}} - {{ingridient.unit}}
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+
+          </td>
+          <!-- END IMAGE / VIDEO Upload -->
+
+          <!-- BEGIN RECIPE Form -->
+          <td class="col-sm-8">
+            <table class="table">
+              <tbody>
+
+              <tr>
+                <td class="col-sm-1">
+                  <label for="form-category">Категория: </label>
+                </td>
+                <td class="col-sm-6">
+                  <div class="whole">
+                    <div class="input-group wide-text">
+                      <p>{{category}}</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="col-sm-1">
+                  <label for="form-dish">Ястие: </label>
+                </td>
+                <td class="col-sm-6">
+                  <div class="whole">
+                    <div class="input-group input-group-sm wide-text">
+                      <p>{{recipe.dish}}</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="col-sm-1">
+                  <label for="form-region">Област: </label>
+                </td>
+                <td class="col-sm-6">
+                  <div class="whole">
+                    <div class="input-group wide-text">
+                      <p>{{region}}</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="description-holder recipe-text">
+                <td class="col-sm-1">
+                  <label for="form-description">Начин на приготвяне: </label>
+                </td>
+                <td class="col-sm-6">
+                  <div class="input-group input-group-sm wide-text">
+                    <p>{{recipe.description}}</p>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+
+          </td>
+          <!-- END RECIPE Form -->
+
+        </tr>
+        <tr>
+          <table class="table">
+            <tbody>
+            <tr>
+              <td class="col-sm-3">
+                <label for="form-servings">Порции: </label>
+              </td>
+              <td class="col-sm-1">
+                <p>{{recipe.portions || 5}}</p>
+              </td>
+
+              <td class="col-sm-3">
+                <label for="form-difficulty">Ниво на трудност: </label>
+              </td>
+              <td class="col-sm-1">
+                <p>{{recipe.difficulty}}</p>
+              </td>
+
+              <td class="col-sm-3">
+                <label for="form-time">Време за приготвяне: *</label>
+              </td>
+              <td class="col-sm-1">
+                <p>{{recipe.time}}</p>
+              </td>
+            <tr ng-if="recipe.otherOptions">
+              <td class="col-sm-1">
+                <label for="form-other-options">Други опции: *</label>
+              </td>
+              <td class="col-sm-6">
+                <div class="whole">
+                  <div class="input-group wide-text" id="form-other-options">
+                    <div class="checkbox" ng-if="recipe.otherOptions.vegeterian">
+                      <label>Вегетарианска рецепта</label>
+                    </div>
+                    <div class="checkbox" ng-if="recipe.otherOptions.vegan">
+                      <label>Веганска рецепта</label>
+                    </div>
+                    <div class="checkbox" ng-if="recipe.otherOptions.bio">
+                      <label>Рецепта само с био храни</label>
+                    </div>
+                    <div class="checkbox" ng-if="recipe.otherOptions.allergy"">
+                      <label>Възможност за алергична реакция</label>
+                    </div>
+                  </div>
+                  <div class="help-block">
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"
+                          title="Изберете сезон, в който се приготвя ястието."></span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

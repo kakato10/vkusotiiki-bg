@@ -9,4 +9,9 @@ angular.module('vkusotiikiBgApp')
         recipe: '='
       }
     };
+  })
+  .filter('toDate', function () {
+    return function (date) {
+      return new Date(date);
+    };
   });

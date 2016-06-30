@@ -4,6 +4,9 @@ angular.module('vkusotiikiBgApp')
   .directive('breadcrumbs', function () {
     return {
       templateUrl: 'views/breadcrumbs.html',
-      restrict: 'E'
+      restrict: 'E',
+      scope: {
+        values: '='
+      }
     };
   });

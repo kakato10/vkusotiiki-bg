@@ -22,7 +22,7 @@ angular.module('vkusotiikiBgApp')
             return secondRating - firstRating;
           });
 
-          $scope.rated = recipes.slice(0, 5);
+          $scope.recipies = recipes.slice(0, 5);
         });
 
     } ]);

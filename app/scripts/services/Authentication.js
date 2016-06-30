@@ -9,7 +9,7 @@ angular.module('vkusotiikiBgApp')
         if (error) {
           console.log('Login Failed!', error);
         } else {
-          $state.transitionTo('home');
+          $state.transitionTo('home.landing');
           console.log('Authenticated successfully with payload:', authData);
         }
       }

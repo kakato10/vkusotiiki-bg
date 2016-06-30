@@ -12,6 +12,14 @@ angular.module('vkusotiikiBgApp')
     };
 
     return DS.defineResource({
-      name: 'User'
+      name: 'User',
+      methods: {
+        likes: function(recipeId) {
+          if (this.favourites) {
+            return this.favourites.indexOf(recipeId) !== -1;
+          }
+          return false;
+        }
+      }
     });
   } ]);

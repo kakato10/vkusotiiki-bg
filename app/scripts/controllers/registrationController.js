@@ -53,7 +53,7 @@ angular.module('vkusotiikiBgApp')
                     text : 'You have been registered!',
                     type : 'success'
                   }, function () {
-                    $state.transitionTo('home');
+                    $state.transitionTo('home.landing');
                   });
                 });
             }

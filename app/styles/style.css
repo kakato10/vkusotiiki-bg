@@ -446,7 +446,7 @@ select {
     border-radius: 4px
 }
 
-.whole {
+.whole, .ingredients-holder {
     width: 100%;
 }
 
@@ -756,3 +756,35 @@ td div.whole {
 
 }
 
+.styled-a {
+    color: #23527c;
+}
+
+.ingredients-holder {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.description-holder td {
+    vertical-align: top;
+}
+
+.description-holder p {
+    text-align: justify;
+}
+
+.recipe-ingredients .styled-a {
+    font-size: 14px;
+}
+
+.favourite {
+  color: rgba(195, 162, 0, 0.74)
+}
+
+.favourite:hover {
+    cursor: pointer;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
