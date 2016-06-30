@@ -100,218 +100,311 @@
   <!-- BEGIN Breadcrumbs -->
   <div class="navbar navbar-default breadcrumbs-holder">
     <ol class="breadcrumb">
-      <li class="active"><a ui-sref="home">Начало</a></li>
-      <li class="active"><a ui-sref="myRecipes">Моите рецепти</a></li>
+      <li><a ui-sref="home">Начало</a></li>
+      <li><a ui-sref="recipes">Рецепти</a></li>
+      <li class="active"><a ui-sref="recipeDetails">Детайли за рецепта</a></li>
     </ol>
   </div>
   <!-- END Breadcrumbs -->
-<div class="main-content col-md-12 row">
-
-<div class="nav navbar-default">
-  
-  <!-- BEGIN Carousel -->
-  <div id="main-carousel" class="carousel slide center" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#main-carousel" data-slide-to="1"></li>
-      <li data-target="#main-carousel" data-slide-to="2"></li>
-      <li data-target="#main-carousel" data-slide-to="3"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img class="center carousel-img" src="images/food-wallpaper.jpg" alt="Chania">
-        <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+<div class="col-lg-3 left left-nav">
+  <ul class="nav nav-pills nav-stacked">
+    <li role="presentation" class="active">
+      <div class="row group-container">
+        <div class="col-xs-6 col-md-12 text-center">
+          <a ui-sref="weeklyRecipe">Рецепта на седмицата</a>
+          <a ui-sref="weeklyRecipe" class="thumbnail">
+            <img src="images/recipes/musaka.jpg" alt="Рецепта на седмицата">
+          </a>
+          <a ui-sref="#">Мусака с тиквички</a>
         </div>
       </div>
+    </li>
+  </ul>
 
-      <div class="item">
-        <img class="center carousel-img" src="images/food-wallpaper.jpg" alt="Chania">
-        <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+  <div class="most-liked group-container">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation">
+        <div class="row group-container">
+          <div class="col-xs-6 col-md-12 text-center">
+            <a ui-sref="mostLikedRecipes">Най-харесвани рецепти</a>
+            <a ui-sref="mostLikedRecipes" class="thumbnail">
+              <img src="images/recipes/kapama.png" alt="Най-харесвани рецепти">
+            </a>
+            <a ui-sref="#" class="recipe-title-thumb">Капама по ловджийски</a>
+            <div class="btn-toolbar center stars" role="toolbar">
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <p>4.8</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="item">
-        <img class="center carousel-img" src="images/food-wallpaper.jpg" alt="Flower">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beatiful flowers in Kolymbari, Crete.</p>
+      </li>
+      <li role="presentation">
+        <div class="row group-container">
+          <div class="col-xs-6 col-md-12 text-center">
+            <a ui-sref="weeklyRecipe" class="thumbnail">
+              <img src="images/recipes/patatnik.jpg" alt="Рецепта на сезмицата">
+            </a>
+            <a ui-sref="#" class="recipe-title-thumb">Родопски пататник</a>
+            <div class="btn-toolbar center stars" role="toolbar">
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <p>4.2</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="item">
-        <img class="center carousel-img" src="images/food-wallpaper.jpg" alt="Flower">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beatiful flowers in Kolymbari, Crete.</p>
+      </li>
+      <li role="presentation">
+        <div class="row group-container">
+          <div class="col-xs-6 col-md-12 text-center">
+            <a ui-sref="weeklyRecipe" class="thumbnail">
+              <img src="images/recipes/sarmi.jpg" alt="Рецепта на сезмицата">
+            </a>
+            <a ui-sref="#" class="recipe-title-thumb">Запечени сарми - асорти</a>
+            <div class="btn-toolbar center stars" role="toolbar">
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+              </div>
+              <div class="btn-group" role="group">
+                <p>3.3</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+      </li>
+    </ul>
   </div>
-  <!-- END Carousel -->
+
 </div>
 
-
-  <!-- BEGIN Breadcrumbs -->
-  <!-- <div class="navbar navbar-default">
-    <ol class="breadcrumb">
-      <li class="active"><a href="#/home">Начало</a></li>
-      <li><a href="#">Library</a></li>
-      <li class="active">Data</li>
-    </ol>
-  </div> -->
-  <!-- END Breadcrumbs -->
-
-  <div class="row marketing">
-    <h3>Рецепти</h3>
+<div class="main-content col-xs-9 row">
+  <div class="row recipe-details">
+    <h2 class="title-page text-center">Мусака с тиквички</h2>
+    <a ui-sref="#"><h4 class="title-page text-center styled-a">Иван Иванов</h4></a>
     <div class="recipes">
-      <div class="row group-container">
-        <div class="col-xs-6 col-md-12 recipe">
-          <a ui-sref="weeklyRecipe" class="thumbnail left">
-            <img src="images/recipes/sarmi.jpg" alt="Рецепта на седмицата">
-          </a>
-          <div class="recipe-content col-xs-12 col-md-12 col-lg-9">
-            <div class="recipe-title">
-              <a ui-sref="#" >Запечени сарми - асорти</a>
-              <div class="btn-group special-icon" role="group">
-                <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="recipe-text">
-              <p>1. Нарежете на дребни кубчета или на ивички месото от пуйката, свинското, наденицата и пушените гърди. Разбъркайте ги с олиото, червения пипер, стритата люта чушка и малко сол. </p>
-              <p>2. С остър нож отрежете твърдите части на всеки лист от зелката и сложете по малко от плънката. Завийте на сарми.  </p>
-              <p>3. С остър нож отрежете твърдите части на всеки лист от зелката и сложете по малко от плънката. Завийте на сарми.  </p>
-            </div>
-          </div>
-        </div>
-          <div class="col-xs-6 col-md-12 center btn-toolbar recipe-rating" role="toolbar">
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <p>3.9</p>
-            </div>
-            <a ui-sref="weeklyRecipe" class="right"><p>Виж повече >></p></a>
-          </div>
-      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+          <!-- BEGIN IMAGE / VIDEO Upload -->
+            <td class="col-sm-3">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>
+                    <div id="image">
+                      <p>снимка</p>
+                      <!-- <img id="image" src="images/logo.jpg"> -->
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="recipe-ingredients text-center">
+                    <p>Съставки: <a href="http://www.ebag.bg/" title="ebag.bg" class="styled-a">Купи от ebag.bg</a></p>
+                    <div class="input-group ingredients-holder">
+                      <p>картоф - 100 - гр.</p>
+                      <p>домати - 400 - гр.</p>
+                      <p>домати - 400 - гр.</p>
+                      <p>домати - 400 - гр.</p>
+                      <p>домати - 400 - гр.</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-      <div class="row group-container">
-        <div class="col-xs-6 col-md-12 recipe">
-          <a ui-sref="weeklyRecipe" class="thumbnail left">
-            <img src="images/recipes/chushki.jpg" alt="Рецепта на седмицата">
-          </a>
-          <div class="recipe-content col-xs-12 col-md-12 col-lg-9">
-            <div class="recipe-title">
-              <a ui-sref="#" >Пълнени чушки с ориз</a>
-              <div class="btn-group special-icon" role="group">
-                <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="recipe-text">
-              <p>1. Нарежете на дребни кубчета или на ивички месото от пуйката, свинското, наденицата и пушените гърди. Разбъркайте ги с олиото, червения пипер, стритата люта чушка и малко сол. </p>
-              <p>2. С остър нож отрежете твърдите части на всеки лист от зелката и сложете по малко от плънката. Завийте на сарми.  </p>
-            </div>
-          </div>
-        </div>
-          <div class="col-xs-6 col-md-12 center btn-toolbar recipe-rating" role="toolbar">
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <p>3.4</p>
-            </div>
-            <a ui-sref="weeklyRecipe" class="right"><p>Виж повече >></p></a>
-          </div>
-      </div>
+            </td>
+          <!-- END IMAGE / VIDEO Upload -->
 
-      <div class="row group-container">
-        <div class="col-xs-6 col-md-12 recipe">
-          <a ui-sref="weeklyRecipe" class="thumbnail left">
-            <img src="images/recipes/banica.jpg" alt="Рецепта на седмицата">
-          </a>
-          <div class="recipe-content col-xs-12 col-md-12 col-lg-9">
-            <div class="recipe-title">
-              <a ui-sref="#" >Баница със сирене</a>
-              <div class="btn-group special-icon" role="group">
-                <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
-                <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="recipe-text">
-              <p>1. Нарежете на дребни кубчета или на ивички месото от пуйката, свинското, наденицата и пушените гърди. Разбъркайте ги с олиото, червения пипер, стритата люта чушка и малко сол. </p>
-              <p>2. С остър нож отрежете твърдите части на всеки лист от зелката и сложете по малко от плънката. Завийте на сарми.  </p>
-            </div>
-          </div>
-        </div>
-          <div class="col-xs-6 col-md-12 center btn-toolbar recipe-rating" role="toolbar">
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-            </div>
-            <div class="btn-group" role="group">
-              <p>3.1</p>
-            </div>
-            <a ui-sref="weeklyRecipe" class="right"><p>Виж повече >></p></a>
-          </div>
-      </div>
+          <!-- BEGIN RECIPE Form -->
+            <td class="col-sm-8">
+              <table class="table">
+                <tbody>
+
+                  <tr>
+                    <td class="col-sm-1">
+                      <label for="form-category">Категория: </label>
+                    </td>
+                    <td class="col-sm-6">
+                      <div class="whole">
+                        <div class="input-group wide-text">
+                          <p>Основно</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="col-sm-1">
+                      <label for="form-dish">Ястие: </label>
+                    </td>
+                    <td class="col-sm-6">
+                      <div class="whole">
+                        <div class="input-group input-group-sm wide-text">
+                          <p>Мусака</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="col-sm-1">
+                      <label for="form-region">Област: </label>
+                    </td>
+                    <td class="col-sm-6">
+                      <div class="whole">
+                        <div class="input-group wide-text">
+                            <p>София</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="description-holder">
+                    <td class="col-sm-1">
+                      <label for="form-description">Начин на приготвяне: </label>
+                    </td>
+                    <td class="col-sm-6">
+                      <div class="input-group input-group-sm wide-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </td>
+          <!-- END RECIPE Form -->
+
+          </tr>
+          <tr>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="col-sm-3">
+                    <label for="form-servings">Порции: </label>
+                  </td>
+                  <td class="col-sm-1">
+                    <p>4</p>
+                  </td>
+
+                  <td class="col-sm-3">
+                    <label for="form-difficulty">Ниво на трудност: </label>
+                  </td>
+                  <td class="col-sm-1">
+                    <p>4</p>
+                  </td>
+
+                  <td class="col-sm-3">
+                    <label for="form-time">Време за приготвяне: *</label>
+                  </td>
+                  <td class="col-sm-1">
+                    <p>45 мин.</p>
+                  </td>
+
+
+                <tr>
+                  <td class="col-sm-1">
+                    <label for="form-other-options">Други опции: *</label>
+                  </td>
+                  <td class="col-sm-6">
+                    <div class="whole">
+                      <div class="input-group wide-text" id="form-other-options">
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Вегетарианска рецепта</label>
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Веганска рецепта</label>
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Рецепта само с био храни</label>
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Възможност за алергична реакция</label>
+                        </div>
+                      </div>
+                      <div class="help-block">
+                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="col-sm-1">
+                  
+                  </td>
+                  <td class="col-sm-6 save-btns">
+                    <div class="col-md-8">
+                      <button class="btn btn-default btn-success" type="button">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Запази
+                      </button>
+                      <button class="btn btn-default right btn-danger" type="button">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Откажи
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </tr>
+        </tbody>
+      </table>
+
 
     </div>
 
   </div>
 </div>
-    </div>
-
     <div class="footer">
       <div class="container">
         <table class="table table-footer">
