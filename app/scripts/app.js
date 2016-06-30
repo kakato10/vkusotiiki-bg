@@ -26,7 +26,7 @@ angular
   .constant('swal', swal)
   .config(function ($stateProvider, $urlRouterProvider, DSProvider, DSFirebaseAdapterProvider) {
     DSFirebaseAdapterProvider.defaults.basePath = 'https://vkusotiiki-bg.firebaseio.com';
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
     $stateProvider
       .state('home', {
         abstract: true,
@@ -38,12 +38,17 @@ angular
         }
       })
       .state('home.landing', {
-        templateUrl : 'views/main.html',
-        controller  : 'MainCtrl',
-        controllerAs: 'main',
+        templateUrl : 'views/recipes.html',
+        controller  : 'RecipesCtrl',
+        controllerAs: 'recipeS',
         url         : 'home',
         data        : {
           label: 'Начало'
+        },
+        resolve     : {
+          recipes: [ 'Recipe', function (Recipe) {
+            return Recipe.findAll({}, {bypassCache: true});
+          } ]
         }
       })
       .state('home.map', {
@@ -102,7 +107,7 @@ angular
         resolve     : {
           recipies: [ 'Recipe', '$rootScope',
             function (Recipe, $rootScope) {
-              return Recipe.findAll()
+              return Recipe.findAll({}, {bypassCache:true})
                 .then(function (recipies) {
                   return recipies.filter(function (recipe) {
                     return $rootScope.state.user.likes(recipe.id);
@@ -123,9 +128,7 @@ angular
           recipies: [ 'Recipe', '$rootScope', function (Recipe, $rootScope) {
             return Recipe.findAll({}, {bypassCache: true})
               .then(function (recipies) {
-                console.log('here');
                 var userRecipies = recipies.filter(function (recipe) {
-                  console.log($rootScope.state.user.id);
                   return recipe.authorId === $rootScope.state.user.id;
                 });
                 return userRecipies;
@@ -213,17 +216,31 @@ angular
         controllerAs: 'recipeDetails',
         url         : 'recipeDetails/:id',
         resolve     : {
-          recipe: [ '$stateParams', 'Recipe',
+          recipe  : [ '$stateParams', 'Recipe',
             function ($stateParams, Recipe) {
               return Recipe.find($stateParams.id);
             } ],
-          author: [ '$stateParams', 'Recipe', 'User',
+          author  : [ '$stateParams', 'Recipe', 'User',
             function ($stateParams, Recipe, User) {
               return Recipe.find($stateParams.id)
                 .then(function (recipe) {
                   return User.find(recipe.authorId);
                 });
-            } ]
+            } ],
+          category: [ '$stateParams', 'Recipe', 'Category',
+            function ($stateParams, Recipe, Category) {
+              return Recipe.find($stateParams.id)
+                .then(function (recipe) {
+                  return Category.find(recipe.category.slice(1));
+                })
+            } ],
+          region  : [ '$stateParams', 'Recipe', 'Region', function ($stateParams, Recipe, Region) {
+            return Recipe.find($stateParams.id)
+              .then(function (recipe) {
+                console.log(recipe);
+                return Region.find(recipe.region.slice(1));
+              })
+          } ]
         },
         data        : {
           label: 'Разглеждане на рецепта'
@@ -249,7 +266,7 @@ angular
         var breadCrumbs = [];
         while (state.parent) {
           var breadCrumb = {
-            name    : state.data.label
+            name: state.data.label
           }
           var redirectTo;
 
@@ -268,7 +285,7 @@ angular
 
           state = state.parent;
         }
-        breadCrumbs[breadCrumbs.length - 1 ].disabled = true;
+        breadCrumbs[ breadCrumbs.length - 1 ].disabled = true;
         $rootScope.breadCrumbs = breadCrumbs;
       });
   } ])

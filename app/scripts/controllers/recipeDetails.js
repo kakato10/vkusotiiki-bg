@@ -8,25 +8,12 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('RecipeDetailsCtrl', [ '$scope', 'recipe', 'author', 'Rating', 'Authentication',
-    function ($scope, recipe, author, Rating, Authentication) {
-      $scope.breadcrumbs = [
-        {
-          'name'    : 'Начало',
-          'stateUrl': 'home'
-        },
-        {
-          'name'    : 'Рецепти',
-          'stateUrl': 'recipes'
-        },
-        {
-          'name'    : 'Разглеждане на рецепта',
-          'stateUrl': 'recipeDetails'
-        }
-      ];
+  .controller('RecipeDetailsCtrl', [ '$scope', 'recipe', 'author', 'region', 'category', 'Rating', 'Authentication',
+    function ($scope, recipe, author, region, category, Rating, Authentication) {
       $scope.recipe = recipe;
       $scope.author = author;
-
+      $scope.region = region.name;
+      $scope.category = category.name;
       $scope.slider = {
         value  : 2,
         options: {
@@ -34,35 +21,39 @@ angular.module('vkusotiikiBgApp')
           ceil : 5
         }
       };
+      var rating = recipe.rating;
 
       function canRate() {
-        Rating.findAll({
-            where: {
-              recipe: {
-                '=': recipe.id
-              }
-            }
-          })
+        Rating.findAll({}, {bypassCache: true})
           .then(function (ratings) {
+            ratings = ratings.filter(function (rating) {
+              return rating.recipe === recipe.id;
+            });
+            if (!rating) {
+              rating = ratings.reduce(function (current, rating) {
+                  return current + rating.rating;
+                }, 0) / ratings.length;
+              $scope.rating = rating;
+            }
             if ($scope.state.user) {
               $scope.canRate = !ratings.some(function (rating) {
-                console.log(rating.user, $scope.state.user.id, rating.user === $scope.state.user.id);
                 return rating.user === $scope.state.user.id;
               });
+              return;
             }
             $scope.canRate = false;
           });
-      }
+      }      console.log(rating);
+
 
       Authentication.bind($scope, {
-        whenAuthenticated: canRate,
+        whenAuthenticated   : canRate,
         whenNotAuthenticated: canRate
       });
 
       $scope.removeFromFavourites = function (recipeId) {
         var user = $scope.state.user;
         user.favourites.splice(user.favourites.indexOf(recipeId, 1));
-        console.log(user.favourites);
         user.DSUpdate({
           favourites: user.favourites
         }, {
@@ -81,14 +72,15 @@ angular.module('vkusotiikiBgApp')
         });
       };
 
-      $scope.rating = recipe.rating;
+      $scope.rating = rating;
 
       $scope.rate = function (recipe, rating) {
-        if (!$scope.rated) {
-          $scope.canRate = true;
+        if ($scope.canRate) {
+          $scope.canRate = false;
           Rating.create({
-            user: $scope.state.user.id,
-            recipe: recipe.id
+            user  : $scope.state.user.id,
+            recipe: recipe.id,
+            rating: rating
           });
         }
       }

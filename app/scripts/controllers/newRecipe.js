@@ -42,11 +42,12 @@ angular.module('vkusotiikiBgApp')
         });
         return ingredients;
       }
-      
+
       $scope.save = Authentication.require(function (recipe) {
         recipe.ingredients = formatIngredients(recipe.ingredients);
         recipe.createdOn = new Date().toString();
         recipe.authorId = $scope.state.user.id;
+        recipe.difficulty = $scope.slider.value;
         Recipe.create(recipe, {
           cacheResponse: true
         });

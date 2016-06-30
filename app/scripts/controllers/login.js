@@ -11,7 +11,7 @@ angular.module('vkusotiikiBgApp')
   .controller('LoginCtrl', [ '$rootScope', '$scope', 'ref', 'Authentication', '$state',
     function ($rootScope, $scope, ref, Authentication, $state) {
       if (ref.getAuth()) {
-        $state.transitionTo('home');
+        $state.transitionTo('home.landing');
       }
 
       $scope.logIn = function (email, password, remember) {
