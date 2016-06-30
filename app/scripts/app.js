@@ -184,7 +184,7 @@ angular
         templateUrl : 'views/login.html',
         controller  : 'LoginCtrl',
         controllerAs: 'login',
-        url         : 'login',
+        url         : '/login',
         data        : {
           label: 'Вписване'
         }
@@ -199,7 +199,7 @@ angular
       .state('register', {
         templateUrl: 'views/registerAsOrdinaryUser.html',
         controller : 'RegistrationController',
-        url        : 'registration',
+        url        : '/registration',
         data       : {
           label: 'Регистрация'
         }

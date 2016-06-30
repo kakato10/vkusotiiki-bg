@@ -33,7 +33,8 @@
                 <td class="recipe-ingredients text-center">
                   <ng-rate-it ng-model="rating" step="0.5" resetable="false" min="0" max="5"
                               ng-attr-read-only="!canRate"
-                              ng-click="rate(recipe, rating)"></ng-rate-it>
+                              ng-click="rate(recipe, rating)"></ng-rate-it>{{rating}}
+                  <p>Създадена на {{ date | date:'yyyy-MM-dd hh:mm'}}</p>
                   <p>Съставки: <a href="http://www.ebag.bg/" title="ebag.bg" class="styled-a">Купи от ebag.bg</a></p>
                   <div class="input-group ingredients-holder">
                     <p ng-repeat="ingridient in recipe.ingredients">

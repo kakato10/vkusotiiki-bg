@@ -10,6 +10,7 @@
           <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
         </div>
       </div>
+      <p>Създадена на {{ recipe.createdOn | toDate | date:'yyyy-MM-dd HH:mm'}}</p>
       <div class="recipe-text">{{recipe.description}}</div>
     </div>
   </div>

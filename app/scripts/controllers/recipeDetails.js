@@ -43,8 +43,7 @@ angular.module('vkusotiikiBgApp')
             }
             $scope.canRate = false;
           });
-      }      console.log(rating);
-
+      }
 
       Authentication.bind($scope, {
         whenAuthenticated   : canRate,
@@ -73,6 +72,7 @@ angular.module('vkusotiikiBgApp')
       };
 
       $scope.rating = rating;
+      $scope.date = new Date(recipe.createdOn);
 
       $scope.rate = function (recipe, rating) {
         if ($scope.canRate) {
