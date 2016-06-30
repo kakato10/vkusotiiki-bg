@@ -6,5 +6,4 @@
 *.log
 .idea/
 build/
-dist/
 .vagrant/
