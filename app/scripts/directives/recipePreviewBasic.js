@@ -7,7 +7,8 @@ angular.module('vkusotiikiBgApp')
       restrict: 'E',
       scope: {
         recipe: '='
-      }
+      },
+      controller: 'RecipePreview'
     };
   })
   .filter('toDate', function () {

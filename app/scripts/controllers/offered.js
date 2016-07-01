@@ -9,11 +9,4 @@
  */
 angular.module('vkusotiikiBgApp')
   .controller('OfferedRecipesCtrl', [ '$scope', function ($scope) {
-    $scope.breadcrumbs = [ {
-      'name'    : 'Начало',
-      'stateUrl': 'home'
-    }, {
-      'name'    : 'Предлагани рецепти',
-      'stateUrl': 'offeredRecipes'
-    } ];
   } ]);

@@ -10,12 +10,5 @@
 angular.module('vkusotiikiBgApp')
   .controller('MyRecipesCtrl', [ '$scope', 'recipies',
     function ($scope, recipies) {
-      $scope.breadcrumbs = [ {
-        'name'    : 'Начало',
-        'stateUrl': 'home'
-      }, {
-        'name'    : 'Моите рецепти',
-        'stateUrl': 'myRecipes'
-      } ];
       $scope.recipies = recipies;
     } ]);

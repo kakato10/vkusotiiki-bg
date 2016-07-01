@@ -9,8 +9,4 @@
  */
 angular.module('vkusotiikiBgApp')
   .controller('MainCtrl', [ '$scope', function ($scope) {
-    $scope.breadcrumbs = [ {
-      'name'    : 'Начало',
-      'stateUrl': 'home'
-    } ];
   } ]);

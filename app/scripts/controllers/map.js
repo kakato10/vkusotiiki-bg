@@ -9,11 +9,4 @@
  */
 angular.module('vkusotiikiBgApp')
   .controller('MapCtrl', [ '$scope', function ($scope) {
-    $scope.breadcrumbs = [ {
-      'name'    : 'Начало',
-      'stateUrl': 'home'
-    }, {
-      'name'    : 'Карта',
-      'stateUrl': 'map'
-    } ];
   } ]);

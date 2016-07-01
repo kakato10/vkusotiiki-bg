@@ -8,17 +8,11 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('NewRecipeCtrl', [ '$scope', 'Authentication', 'Recipe', 'regions', 'categories',
-    function ($scope, Authentication, Recipe, regions, categories) {
+  .controller('NewRecipeCtrl', [ '$scope', 'Authentication', 'Recipe', 'regions', 'categories', '$state',
+    function ($scope, Authentication, Recipe, regions, categories, $state) {
       $scope.regions = regions;
       $scope.categories = categories;
-      $scope.breadcrumbs = [ {
-        'name'    : 'Начало',
-        'stateUrl': 'home'
-      }, {
-        'name'    : 'Нова рецепта',
-        'stateUrl': 'newRecipe'
-      } ];
+
       $scope.slider = {
         value  : 2,
         options: {
@@ -50,6 +44,10 @@ angular.module('vkusotiikiBgApp')
         recipe.difficulty = $scope.slider.value;
         Recipe.create(recipe, {
           cacheResponse: true
+        }).then(function (recipe) {
+          $state.go('home.recipies.details', {
+            id: recipe.id
+          });
         });
       })
     } ]);
