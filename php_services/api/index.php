@@ -17,53 +17,61 @@
 require_once '../ServerConfig.php';
 require_once 'InitiateConnectionToDB.php';
 require '../libs/Slim/Slim.php';
+
 \Slim\Slim::registerAutoloader();
-// $app = \Slim\Slim::getInstance();
 $app = new \Slim\Slim();
 
-// $app->get('/recipes/recipeDetails/{id}', function (Request $request, Response $response) {
-//     $name = $request->getAttribute('id');
+// $app->contentType('application/json; charset=utf-8');
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=utf-8");
+
+// $app->get("/recipeDetails/:id", function (Request $request, Response $response) {
 //     echo "$name";
+//     $name = $request->getAttribute('id');
 //     $response->getBody()->write("Hello, $name");
 
 //     return $response;
 // });
-// $app->run();
 
-$app->contentType('application/json');
-// $app->get('/', 'getUsers');
 
-// function getUsers() {
-//     echo "<br/>";
-//     echo "getUsers";
-//     echo "<br/>";
-//     $conn = get_connection();
-//     var_dump($conn);
-//     $table_name = "user";
-//     $sql = "SELECT * FROM $table_name";
-//     $result = $conn->query($sql);
-//     //echo "$stmt";
-//     if($result === false) {
-//       echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
-//       return;
-//     } else {
-//         //echo "Records printing" . "<br>";
-//         $rows[] = array();
-//         while ($row = $result->fetch_assoc()) {
-//             $rows[] = $row;
-//         }
-//         //foreach($rows as $row){
-//             //echo $row["name"] . "<br>";
-//         //}
-//     }
-//     $conn->close();
-//     unset($rows[key($rows)]);
-//     echo json_encode(array_values($rows));
-// }
+$app->get('/', 'getUsers');
 
-$app->put('/', 'insert_into_user');
-$app->get('/:id', 'get_user_data_by_id');
-$app->put('/recipe/:recipe+', 'insert_ingredient_for_recipe_by_id');
+function getUsers() {
+    echo "<br/>";
+    echo "getUsers";
+    echo "<br/>";
+    $conn = get_connection();
+    var_dump($conn);
+    $table_name = "user";
+    $sql = "SELECT * FROM $table_name";
+    $result = $conn->query($sql);
+    //echo "$stmt";
+    if($result === false) {
+      echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
+      return;
+    } else {
+        //echo "Records printing" . "<br>";
+        $rows[] = array();
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        //foreach($rows as $row){
+            //echo $row["name"] . "<br>";
+        //}
+    }
+    $conn->close();
+    unset($rows[key($rows)]);
+    echo json_encode(array_values($rows));
+}
+
+$app->get('/home', function () use ($app) {
+    echo "string";
+});
+
+
+// $app->put('/', 'insert_into_user');
+// $app->get('/:id', 'get_user_data_by_id');
+// $app->put('/recipe/:recipe+', 'insert_ingredient_for_recipe_by_id');
 
 $conn = get_connection();
 function insert_into_user(){

@@ -63,19 +63,17 @@
 		global $app, $conn;
 		$req = $app->request();
 		$body = json_decode($req->getBody());
-		$stmt = $conn->prepare("INSERT INTO special_recipe (user, recipe) VALUES (?, ?)");
+		$sql = "INSERT INTO special_recipe (user, recipe) VALUES (?, ?)";
+		$stmt = $conn->prepare($sql);
 		if($stmt === false) {
 		   echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
 		  return;
 		}
-		if ($stmt) {
+		else {
 		    // Bind parameters. Types: s = string, i = integer, d = double,  b = blob 
 		    $stmt->bind_param("ii",  $body->user,  $body->recipe);
 		    $stmt->execute();
-			echo "New records created successfully\n";
-		}
-		else{
-			echo "error";
+			//echo "New records created successfully\n";
 		}
 	}
 		
@@ -85,16 +83,17 @@
 		// $id = "37";
 		// $stmt = $conn->prepare("DELETE FROM user WHERE name = ?");
 		global $conn;
-		$stmt = $conn->prepare("DELETE FROM special_recipe WHERE id = ?");
+		$sql = "DELETE FROM special_recipe WHERE id = ?";
+		$stmt = $conn->prepare($sql);
 		if($stmt === false) {
 		   echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
 		  return;
 		}
-		if ($stmt) {		
+		else {		
 		    // Bind parameters. Types: s = string, i = integer, d = double,  b = blob 
 		    $stmt->bind_param("i", $user_id);
 		    $stmt->execute();
-			echo "Record deleted successfully\n";
+			//echo "Record deleted successfully\n";
 		}
 	}
 ?>

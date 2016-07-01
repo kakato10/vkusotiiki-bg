@@ -26,11 +26,10 @@
 				$stmt->execute();
 		   // echo "New records created successfully\n";
 		}
-		$conn->close();
 	}
 	
 	// Update a ingredient in a recipe with an id
-	function update_ingredient_for_recipe_by_id($conn, $id, $ingredients){
+	function update_ingredient_for_recipe_by_id($id){
 	    // Set parameters and execute
 		// $recipe = 27;
 		// $ingredients = array("ingredient" => 2, "unit" => "?.?.", "quantity" => 7)
@@ -44,8 +43,7 @@
 		$ingredients = json_decode($body->ingredients); 
 		$ingredient = $ingredients->ingredient;
 		$quantity = $ingredients->quantity;
-		$unit = $ingredients->unit
-		
+		$unit = $ingredients->unit;
 		$sql = "UPDATE ingredient_recipe SET ingredient = ?, quantity = ? , unit = ? WHERE id = ?";
 		$stmt = $conn->prepare($sql);
 		if($stmt === false) {
@@ -55,9 +53,8 @@
 		    // Bind parameters. Types: s = string, i = integer, d = double,  b = blob 
 		    $stmt->bind_param("iisi", $ingredient, $quantity, $unit, $id);
 		    $stmt->execute();
-			echo "Records updated successfully\n";
+			//echo "Records updated successfully\n";
 		}
-		$conn->close();
 	}
 	
 	// Get a recipe's ingredients by recipe id
@@ -78,7 +75,6 @@
 				$rows[] = array("ingredient" => $row["ingredient"],"unit" => $row["unit"], "quantity" => $row["quantity"]);
 			}
 		}
-		$conn->close();
 		unset($rows[key($rows)]);
 		echo json_encode(array_values($rows));
 	}
@@ -88,7 +84,8 @@
 		// Set parameters 
 		global $conn;
 		//$id = "31";
-		$stmt = $conn->prepare("DELETE FROM ingredient_recipe WHERE id = ?");
+		$sql = "DELETE FROM ingredient_recipe WHERE id = ?";
+		$stmt = $conn->prepare($sql);
 		if($stmt === false) {
 		  trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
 		}
@@ -98,6 +95,5 @@
 		    $stmt->execute();
 			//echo "Record deleted successfully\n";
 		}
-		$conn->close();
 	}
 ?>

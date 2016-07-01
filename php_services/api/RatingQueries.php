@@ -3,19 +3,19 @@
     require_once 'ServerConfig.php';
 	require_once 'InitiateConnectionToDB.php';
 	
-	// Get all user's data
-	function get_all_users_data(){
+	// Get all rating's data
+	function get_all_ratings_data(){
 		global $conn;
-		$table_name = "user";
+		$table_name = "rating";
+		$rows[] = array();
 		$sql = "SELECT * FROM $table_name";
 		$result = $conn->query($sql);
 		//echo "$stmt";
 		if($result === false) {
 		  echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
 		  return;
-		} else {
-			//echo "Records printing" . "<br>";
-			$rows[] = array();
+		}else {
+			echo "Records printing" . "<br>";
 			while ($row = $result->fetch_assoc()) {
 				$rows[] = $row;
 			}
@@ -27,94 +27,103 @@
 		echo json_encode(array_values($rows));
 	}
 	
-    // Get user's data by id
-	function get_user_data_by_id($id){
+    // Get rating's data by id
+	function get_rating_data_by_id($id){
 		global $conn;
-		$table_name = "user";
+		$table_name = "rating";
 		$sql = "SELECT * FROM $table_name WHERE id = $id";
 		$result = $conn->query($sql);
-		//echo "$stmt";
 		if($result === false) {
 		  echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
 		  return;
-		} else {
+		}else {
 			//echo "Records printing" . "<br>";
+			$row = $result->fetch_assoc();
+		}
+		else{
+			echo "error";
+		}
+		echo json_encode($row);
+	}
+	
+	// Get the average rating by recipe id
+	function get_average_rating_by_recipe_id($recipe_id){
+		// Set parameters and execute
+		// $recipe_id = 27;
+		$sql = "SELECT ROUND(AVG(rating),2) AS average_rating FROM rating WHERE recipe = $recipe_id GROUP BY recipe";
+		$result = $conn->query($sql);
+		if($result === false) {
+		    echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
+		    return;
+		}
+		else{
 			$row = $result->fetch_assoc();
 		}
 		echo json_encode($row);
 	}
 	
-    // Insert into user
-	function insert_into_user(){
+    // Insert into rating
+	function insert_into_rating(){
 		// Set parameters and execute
 		/*
-		$first_name = "Michael";
-		$last_name = "Thiessen";
-		$location = 1;
-		$password = "1234567";
-		$email = "michael@demo.com";
-		$image = 1;
+        $user = 42;
+		$recipe = 27;
+		$rating = 1;
 		*/
 		global $app, $conn;
 		$req = $app->request();
 		$body = json_decode($req->getBody());
-		$sql = "INSERT INTO user (first_name, last_name, location, password, email, image) VALUES (?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO rating (user, recipe, rating) VALUES (?, ?, ?)";
 		$stmt = $conn->prepare($sql);
 		if($stmt === false) {
-		  echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
-		  return;
+		    echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
+		    return;
 		}
 		else {
 		    // Bind parameters. Types: s = string, i = integer, d = double,  b = blob 
-		    $stmt->bind_param("ssissi", $body->first_name, $body->last_name, $body->location, $body->password, $body->email, $body->image);
+		    $stmt->bind_param("iii",  $body->user,  $body->recipe,  $body->rating);
 		    $stmt->execute();
 			//echo "New records created successfully\n";
 		}
 	}
 		
-	// Update a user with an id
-	function update_user_by_id($id){
+	// Update a rating with an id
+	function update_rating_by_id($user, $recipe){
 		// Set parameters and execute
 		/*
-		$id = 37;
-		$first_name = "Michael";
-		$last_name = "Tompson";
-		$location = 1;
-		$password = "987654321";
-		$email = "michael@demo.bg";
-		$image = 1;
+	    $id = 12;
+		$rating = 2;
 		*/
 		global $app, $conn;
 		$req = $app->request();
 		$body = json_decode($req->getBody());
-		$sql = "UPDATE user SET first_name = ?, last_name = ?, location = ?, password = ?, email = ?, image = ?
-		WHERE id = ?";
+		$sql = "UPDATE rating SET rating = ? WHERE user = ? and recipe = ?";
 		$stmt = $conn->prepare($sql);
 		if($stmt === false) {
-		   echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
-		   return;
+		    echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
+		    return;
 		}
-		else {
+		else {		
 		    // Bind parameters. Types: s = string, i = integer, d = double,  b = blob 
-		    $stmt->bind_param("ssissii", $body->first_name, $body->last_name, $body->location, $body->password, $body->email, $body->image, $id);
+		    $stmt->bind_param("iii",  $body->rating, $user, $recipe);
 		    $stmt->execute();
 			//echo "Records updated successfully\n";
 		}
 	}
 		
-    // Delete a user with an id
-	function delete_user_by_id($id){
+    // Delete a rating with an id
+	function delete_rating_by_id($id){
 		// Set parameters and execute
-		// $id = "37";
+		// $id = "13";
 		global $conn;
-		$sql = "DELETE FROM user WHERE id = ?";
 		// $stmt = $conn->prepare("DELETE FROM user WHERE name = ?");
+		$sql = "DELETE FROM rating WHERE id = ?";
 		$stmt = $conn->prepare($sql);
 		if($stmt === false) {
-		  echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
-		  return;
+		    echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
+		    return;
 		}
-		else {		
+		else{		
 		    // Bind parameters. Types: s = string, i = integer, d = double,  b = blob 
 		    $stmt->bind_param("i", $id);
 		    $stmt->execute();

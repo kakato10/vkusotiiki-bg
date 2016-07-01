@@ -4,8 +4,9 @@
 	require_once 'InitiateConnectionToDB.php';
 	
 	// Get all business user's data
-	function get_all_business_users_data($conn){
+	function get_all_business_users_data(){
 		$table_name = "user";
+		global $conn;
 		$sql = "SELECT * FROM user AS U INNER JOIN business_user AS B ON U.id = B.user";
 		$result = $conn->query($sql);
 		//echo "$stmt";
@@ -23,13 +24,16 @@
 				//echo $row["name"] . "<br>";
 			//}
 		}
+		$conn->close();
 		unset($rows[key($rows)]);
 		echo json_encode(array_values($rows));
+		
 	}
 	
     // Get business user's data by id
-	function get_business_user_data_by_id($conn, $id){
+	function get_business_user_data_by_id($id){
 		$sql = "SELECT * FROM user AS U INNER JOIN business_user AS B ON U.id = B.user WHERE U.id = '$id'";
+		global $conn;
 		$result = $conn->query($sql);
 		if($result === false) {
 		  echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
@@ -39,11 +43,12 @@
 			echo "Records printing" . "<br>";
 			$row = $result->fetch_assoc();
 		}
+		$conn->close();
 		echo json_encode($row);
 	}
 	
     // Insert into business user
-	function insert_into_business_user($conn){
+	function insert_into_business_user(){
 		// Set parameters and execute
 		/*
 		$first_name = "Michael";
@@ -55,7 +60,7 @@
 		$address = "ул. Черно Море 43";
 		$telephone_num = 0898346423;
 		*/
-		global $app;
+		global $conn,$app;
 		$req = $app->request();
 		$body = json_decode($req->getBody());
 		
@@ -86,12 +91,13 @@
 		    $stmt1->execute();
 			
 			$conn->query("COMMIT");
-			echo "New records created successfully\n";
+			$conn->close();
+			//echo "New records created successfully\n";
 		}
 	}
 		
 	// Update a business business_user with an id
-	function update_business_user_by_user_id($conn, $user_id){
+	function update_business_user_by_user_id($user_id){
 		// Set parameters and execute
 		/*
 		$user_id = 37;
@@ -104,7 +110,9 @@
 		$address = "ул. Черно Море 46";
 		$telephone_num = 087883223;
 		*/
-		
+		global $conn,$app;
+		$req = $app->request();
+		$body = json_decode($req->getBody());
 		$sql = "UPDATE user SET first_name = ?, last_name = ?, location = ?, password = ?, email = ?, image = ? WHERE id = ?";
 		$stmt = $conn->prepare($sql);
 		if($stmt === false) {
@@ -132,13 +140,15 @@
 			$conn->query("COMMIT");
 			//echo "Records updated successfully\n";
 		}
+		$conn->close();
 	}
 		
     // Delete a business user with an user id
-	function delete_business_user_by_user_id($conn, $user_id){
+	function delete_business_user_by_user_id($user_id){
 		// Set parameters and execute
 		// $id = "37";
 		// $stmt = $conn->prepare("DELETE FROM user WHERE name = ?");
+		global $conn;
 		$stmt = $conn->prepare("DELETE FROM user WHERE id = ?");
 		if($stmt === false) {
 		  echo json_encode('Wrong SQL: ' . $sql . ' Error: ' . $conn->errno . ' ' . $conn->error, E_USER_ERROR);
@@ -150,5 +160,6 @@
 		    $stmt->execute();
 			//echo "Record deleted successfully\n";
 		}
+		$conn->close();
 	}
 ?>
