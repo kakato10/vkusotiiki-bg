@@ -89,3 +89,18 @@ body {
     border-bottom: 0;
   }
 }
+
+body {
+  background-image: url(/images/logo.jpg), url(/images/food-wallpaper.jpg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 5px 5px, 20px 20 px;
+}
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  font-family: Verdana;
+  border: 10px solid orange;
+  background:rgba(255,255,255,0.5);
+}
