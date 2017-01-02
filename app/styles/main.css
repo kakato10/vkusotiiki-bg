@@ -90,7 +90,6 @@ body {
   }
 }
 
-
 body {
   background-image: url(/images/background.jpg);
   background-size: 100%;
@@ -110,10 +109,8 @@ body {
 .main-title {
    font-family: 'DomCasual Normal';
    text-transform: capitalize;
-   font-size: 40pt;
+   font-size: 60pt;
    letter-spacing: 6px;
    word-spacing: 15px;
    font-weight: bold;
 }
-
-.nav .navbar-nav { a { color: white;}}
