@@ -1,18 +1,18 @@
 body {
-  position: relative;
-  font-family: "Comic Sans MS", Arial, cursive;
-  font-weight: bold;
-  font-size: 12px;
-  color: black !important;
+    position: relative;
+    font-family: "Comic Sans MS", Arial, cursive;
+    font-weight: bold;
+    font-size: 12px;
+    color: black !important;
 }
 
 a {
-  color: black;
+    color: black;
 }
 
 a:hover {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
     cursor: pointer;
 }
 
@@ -112,9 +112,9 @@ a:hover {
 }
 
 .breadcrumb > li + li:before {
-   color: #CCCCCC;
+    color: #CCCCCC;
     content: "> ";
-   padding: 0 5px;
+    padding: 0 5px;
 }
 
 .container {
@@ -171,11 +171,19 @@ a:hover {
     margin-top: 30px;
 }
 
-.footer .table td, .footer .table tr, .footer .table th,
-.user-info-inner-container .table td, .user-info-inner-container .table tr,
-.edit-profile-ordinary-inner-container-registration .table tbody td, .edit-profile-ordinary-inner-container-registration .table tbody tr,
-.inner-contacts .table-contacts td, .inner-contacts .table-contacts tr, .inner-contacts .table-contacts th,
-.about-us-photos tbody tr td, .about-us-photos tr, .about-us-photos th {
+.footer .table td,
+.footer .table tr,
+.footer .table th,
+.user-info-inner-container .table td,
+.user-info-inner-container .table tr,
+.edit-profile-ordinary-inner-container-registration .table tbody td,
+.edit-profile-ordinary-inner-container-registration .table tbody tr,
+.inner-contacts .table-contacts td,
+.inner-contacts .table-contacts tr,
+.inner-contacts .table-contacts th,
+.about-us-photos tbody tr td,
+.about-us-photos tr,
+.about-us-photos th {
     color: black;
     border: none;
 }
@@ -184,18 +192,17 @@ a:hover {
     width: 7%;
 }
 
-.table-footer-th{
+.table-footer-th {
     padding-left: 15px !important;
     font-size: medium;
-
 }
 
-.table-footer-th-social{
+.table-footer-th-social {
     text-align: center;
     font-size: medium;
 }
 
-.text-center th{
+.text-center th {
     font-size: medium;
 }
 
@@ -223,7 +230,7 @@ a:hover {
 }
 
 .recipe-text {
-  white-space: pre-wrap;
+    white-space: pre-wrap;
 }
 
 .add-icon a .glyphicon {
@@ -245,134 +252,134 @@ a:hover {
 }
 
 #filter {
-  padding: 1% 2%;
+    padding: 1% 2%;
 }
 
 select {
-  width:100%;
-  font-size: 14px;
+    width: 100%;
+    font-size: 14px;
 }
 
 .subfilter-container {
-  float: left;
-  margin: 1% 0.5%;
+    float: left;
+    margin: 1% 0.5%;
 }
 
 .subfilter-container label {
-  display: block;
+    display: block;
 }
 
 .borderly-named {
-  width:17%;
-  border:1px solid black;
-  font-weight: normal;
-  display: inline-block;
+    width: 17%;
+    border: 1px solid black;
+    font-weight: normal;
+    display: inline-block;
 }
 
-.borderly-named h6{
-  font-weight: bold;
-  margin:-4% 4% 0;
-  background:white;
-  display:block;
-  width:80%;
+.borderly-named h6 {
+    font-weight: bold;
+    margin: -4% 4% 0;
+    background: white;
+    display: block;
+    width: 80%;
 }
 
 .borderly-named ul {
-  display: block;
+    display: block;
 }
 
 .borderly-named input {
-  margin-left: 5%;
+    margin-left: 5%;
 }
 
 #ingredients {
-  width: 45%;
+    width: 45%;
 }
 
 #ingredients h6 {
-  margin:-1.4% 4% 0;
-  width:10%;
+    margin: -1.4% 4% 0;
+    width: 10%;
 }
 
 #ingredients ul {
-  border-bottom-color: black;
-  border-top: 1px solid black;
-  margin-top: 2%;
-  background-color: rgba(117, 117, 117, 0.57);
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+    border-bottom-color: black;
+    border-top: 1px solid black;
+    margin-top: 2%;
+    background-color: rgba(117, 117, 117, 0.57);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 #ingredients li {
-  display: inline-block;
-  padding: 0.5% 1.2%;
+    display: inline-block;
+    padding: 0.5% 1.2%;
 }
 
 #ingredients a {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
 }
 
 #ingredients .active {
-  background-color: white;
-  border-radius: 1%;
+    background-color: white;
+    border-radius: 1%;
 }
 
 #ingredients .active > a {
-  border-bottom-color: transparent;
-  border-top-color: transparent;
-  font-color: black;
-  font-weight: bold;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    font-color: black;
+    font-weight: bold;
 }
 
-
 #ingredients a:hover {
-  background-color: transparent;
-  border-color: transparent;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .tab {
-  overflow-y:auto;
-  max-height: 80px;
+    overflow-y: auto;
+    max-height: 80px;
 }
 
 .tab label {
-  float: left;
-  width: 33%;
+    float: left;
+    width: 33%;
 }
+
 #other-options {
-  width: 29%;
+    width: 29%;
 }
 
 #other-options h6 {
-  /*margin-left: 1%;*/
-  margin:-1.6% 3% 2%;
-  padding-left: 2%;
-  padding-right: 1%;
-  width: 28%;
+    /*margin-left: 1%;*/
+    margin: -1.6% 3% 2%;
+    padding-left: 2%;
+    padding-right: 1%;
+    width: 28%;
 }
 
 #complexity h6 {
-  margin: -2% 3% 2%;
-  padding-left: 5%;
-  padding-right: 2%;
-  width: 40%;
+    margin: -2% 3% 2%;
+    padding-left: 5%;
+    padding-right: 2%;
+    width: 40%;
 }
 
 #complexity {
-  width: 20%;
-  margin: 1% auto;
+    width: 20%;
+    margin: 1% auto;
 }
 
 #complexity div {
-  margin: 0 auto;
-  width: 80%;
+    margin: 0 auto;
+    width: 80%;
 }
 
 #complexity label {
-  display: inline;
+    display: inline;
 }
 
 .breadcrumbs-holder {
@@ -387,7 +394,10 @@ select {
     border-color: #ff7600;
 }
 
-.btn-edit:hover, .btn-edit:focus, .btn-edit:active, .btn-edit:active:focus {
+.btn-edit:hover,
+.btn-edit:focus,
+.btn-edit:active,
+.btn-edit:active:focus {
     color: #fff;
     background-color: #ff7600;
     border-color: #ff7600;
@@ -407,11 +417,11 @@ select {
     padding-top: 20px;
 }
 
-.whole .right .add-more-title, .save-btns {
+.whole .right .add-more-title,
+.save-btns {
     padding-left: 10px;
     padding-top: 20px;
 }
-
 
 .add-more div.btn-group {
     padding-left: 15px;
@@ -430,11 +440,13 @@ select {
     width: 80%;
 }
 
-.input-group.wide-text .form-control, .whole div.input-group .form-control  {
+.input-group.wide-text .form-control,
+.whole div.input-group .form-control {
     border-radius: 4px
 }
 
-.whole, .ingredients-holder {
+.whole,
+.ingredients-holder {
     width: 100%;
 }
 
@@ -448,15 +460,18 @@ td div.whole {
     font-size: 16px;
 }
 
+
 /* register chosing a user */
 
-.login-page-container, .contacts-page-container{
+.login-page-container,
+.contacts-page-container {
     display: block;
     margin-left: 50px;
     margin-right: 50px;
 }
 
-.header-login, .header-reg-ordinary {
+.header-login,
+.header-reg-ordinary {
     text-align: center;
     font-size: 40px;
     font-weight: normal;
@@ -506,35 +521,38 @@ td div.whole {
     margin-top: 60px;
 }
 
-.loging-inner-container-loginform{
+.loging-inner-container-loginform {
     font-size: 24px;
     margin-left: 25%;
     font-size: 15px;
 }
 
-.loging-inner-container-button-login{
+.loging-inner-container-button-login {
     margin-left: 29%;
     margin-bottom: 40px;
     margin-top: 20px;
 }
 
+
 /* register chosing a user */
-.input-email, .input-password {
+
+.input-email,
+.input-password {
     width: 45% !important;
 }
 
-.control-label{
+.control-label {
     font-weight: normal !important;
 }
 
-.login-checkbox-remember-me{
+.login-checkbox-remember-me {
     display: block;
     text-align: left;
     float: left;
     margin-top: -5px !important;
 }
 
-.login-lost-pass-link{
+.login-lost-pass-link {
     display: block;
     text-align: right;
     margin-right: 55%;
@@ -542,7 +560,7 @@ td div.whole {
     margin-top: -10px !important;
 }
 
-.login-lost-pass-link a{
+.login-lost-pass-link a {
     display: block;
     text-align: right;
     float: right;
@@ -551,31 +569,35 @@ td div.whole {
     color: blue;
 }
 
-.btn-login{
+.btn-login {
     padding: 5px 25px 5px 25px !important;
     margin-top: 30px;
     margin-bottom: 60px;
 }
 
+
 /* register as ordinary user */
 
-
 .reg-ordinary-inner-container-header {
-  text-align: center;
-  font-size: 24px;
-  font-weight: normal;
-  margin-bottom: 20px;
-  margin-top: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-.reg-ordinary-inner-container, .user-info-container, .user-pass-container, .edit-profile-ordinary-inner-container,
+.reg-ordinary-inner-container,
+.user-info-container,
+.user-pass-container,
+.edit-profile-ordinary-inner-container,
 .contacts-inner-container {
-  display: block;
-  border: 1px solid gray;
-  border-radius: 5px;
+    display: block;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
-.borderly-named-reg-ordinary h6, .user-profile-section-title h6 {
+.borderly-named-reg-ordinary h6,
+.user-profile-section-title h6 {
     font-weight: bold;
     margin: -0.5% 1% 0;
     padding-left: 0.6%;
@@ -589,22 +611,22 @@ td div.whole {
 }
 
 .user-image {
-  display: block !important;
+    display: block !important;
 }
 
 .user-image-upload-container {
-  display: block !important;
+    display: block !important;
     margin-left: 40%;
 }
 
-.upload-user-image{
-  display:inline-flex;
-  margin-left: 13px;
-  margin-top: 10px;
+.upload-user-image {
+    display: inline-flex;
+    margin-left: 13px;
+    margin-top: 10px;
 }
 
-.upload_user_image_btn{
-  margin-left: 5px !important;
+.upload_user_image_btn {
+    margin-left: 5px !important;
 }
 
 .borderly-named-user-info h6 {
@@ -625,8 +647,9 @@ td div.whole {
     width: 11.5%;
 }
 
-
-.user-info-container, .user-pass-container, .contacts-container{
+.user-info-container,
+.user-pass-container,
+.contacts-container {
     display: block !important;
     margin-left: 30%;
     margin-right: 30%;
@@ -649,16 +672,16 @@ td div.whole {
     margin-left: 20px;
 }
 
-.normalize{
+.normalize {
     font-weight: normal;
     font-size: 13px !important;
 }
 
-.add-image{
-    margin-top:5px;
+.add-image {
+    margin-top: 5px;
 }
 
-.edit-profile-ordinary-inner-container-registration .pass-edit{
+.edit-profile-ordinary-inner-container-registration .pass-edit {
     width: 40%;
 }
 
@@ -666,7 +689,7 @@ td div.whole {
     width: 25%;
 }
 
-.reg-ordinary-inner-container .proflie-edit{
+.reg-ordinary-inner-container .proflie-edit {
     width: 5.7%;
 }
 
@@ -704,11 +727,11 @@ td div.whole {
     margin: -1.5% 1% 0;
 }
 
-.longer-email h6{
+.longer-email h6 {
     width: 10%;
 }
 
-.contacts-page-container .inner-container{
+.contacts-page-container .inner-container {
     margin: 30px;
     padding: 10px 30px;
 }
@@ -717,7 +740,7 @@ td div.whole {
     position: relative;
 }
 
-.post-breadcrumbs{
+.post-breadcrumbs {
     margin-top: 95px;
 }
 
@@ -726,8 +749,8 @@ td div.whole {
 }
 
 #contactsMap {
-    width:700px;
-    height:380px;
+    width: 700px;
+    height: 380px;
     margin-bottom: 20px;
 }
 
@@ -740,9 +763,7 @@ td div.whole {
     padding: 20px;
 }
 
-.about-us-photos {
-
-}
+.about-us-photos {}
 
 .styled-a {
     color: #23527c;
@@ -766,7 +787,7 @@ td div.whole {
 }
 
 .favourite {
-  color: rgba(195, 162, 0, 0.74)
+    color: rgba(195, 162, 0, 0.74)
 }
 
 .favourite:hover {
@@ -778,41 +799,40 @@ td div.whole {
 }
 
 .icon {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 button {
-  background-color:none; 
+    background-color: none;
 }
 
 textarea {
-  width: 100%;
-  height: 100px;
+    width: 100%;
+    height: 100px;
 }
 
 .navbar {
-  background-color: #b79e86;
-  width: 100%;
-  
+    background-color: #b79e86;
+    width: 100%;
 }
 
 .nav.navbar-nav > li > a {
-  color: white;
+    color: white;
 }
 
 .nav.navbar-nav > li > a:hover {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 
 .table.col-md-3.table-cities {
-background: transparent;
+    background: transparent;
 }
 
-.table.col-md-3  {
-background: transparent;
+.table.col-md-3 {
+    background: transparent;
 }
 
 #copyright {
-  color:black;
+    color: black;
 }
