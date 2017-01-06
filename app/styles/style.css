@@ -922,3 +922,7 @@ textarea {
 .main-content .col-md-8 {
     width: 73%;
 }
+
+#advancedSearchDiv {
+    display: none;
+}
