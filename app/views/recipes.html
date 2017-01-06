@@ -1,142 +1,180 @@
 <!--<breadcrumbs values="{{ breadcrumbs }}"></breadcrumbs>-->
-
 <div class="group-container col-md-12 row" id="filter">
-  <div class="subfilter-container">
-    <label for="#category"> Категория </label>
-    <select id="category" multiple="multiple">
-      <option>Без предпочитание</option>
-      <option>Салати</option>
-      <option>Супи</option>
-      <option>Основни</option>
-      <option>Десерти</option>
-      <option>Печива</option>
-      <option>Напитки</option>
-      <option>Други</option>
-    </select>
-  </div>
-  <div class="subfilter-container">
-    <label for="#dish" style="display: block"> Ястие </label>
-    <select id="dish" multiple="multiple">
-      <option>Без предпочитание</option>
-      <option>Баница</option>
-      <option>Баклава</option>
-      <option>Ориз</option>
-      <option>Картофи</option>
-      <option>Мусака</option>
-      <option>Гювеч</option>
-      <option>Сарми</option>
-    </select>
-  </div>
-  <div class="subfilter-container borderly-named">
-    <h6>Време за приготвяне</h6>
-    <div>
-      <input type="checkbox"> до 15 минути <br>
-      <input type="checkbox"> 15 - 30 минути <br>
-      <input type="checkbox"> 30 - 45 минути <br>
-      <input type="checkbox"> 45 - 60 минути <br>
-      <input type="checkbox"> над 60 минути <br>
+    <div class="subfilter-container">
+        <label for="#category"> Категория </label>
+        <select id="category" multiple="multiple">
+            <option>Без предпочитание</option>
+            <option>Салати</option>
+            <option>Супи</option>
+            <option>Основни</option>
+            <option>Десерти</option>
+            <option>Печива</option>
+            <option>Напитки</option>
+            <option>Други</option>
+        </select>
     </div>
-  </div>
-  <div class="subfilter-container borderly-named" id="ingredients">
-    <h6>Продукти</h6>
-    <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" data-target="#menu1">Зеленчуци</a></li>
-      <li><a data-toggle="tab" data-target="#menu2">Плодове</a></li>
-      <li><a data-toggle="tab" data-target="#menu2">Ядки</a></li>
-      <li><a data-toggle="tab" data-target="#menu2">Млечни</a></li>
-      <li><a data-toggle="tab" data-target="#menu2">Месни</a></li>
-      <li><a data-toggle="tab" data-target="#menu2">Рибни</a></li>
-      <li><a data-toggle="tab" data-target="#menu2">Подправки</a></li>
-      <li><a data-toggle="tab" data-target="#menu2">Други</a></li>
-    </ul>
-    <div class="tab-content">
-      <div id="menu1" class="tab-pane fade in active tab">
-        <label> <input type="checkbox"> Ориз </label>
-        <label> <input type="checkbox"> Леща </label>
-        <label> <input type="checkbox"> Гъби </label>
-        <label> <input type="checkbox"> Картофи </label>
-        <label> <input type="checkbox"> Боб </label>
-        <label> <input type="checkbox"> Тиквички </label>
-        <label> <input type="checkbox"> Домати </label>
-        <label> <input type="checkbox"> Грах </label>
-        <label> <input type="checkbox"> Чушки </label>
-        <label> <input type="checkbox"> Целина </label>
-        <label> <input type="checkbox"> Зелен лук </label>
-        <label> <input type="checkbox"> Черевен лук </label>
-      </div>
-      <div id="menu2" class="tab-pane fade tab">
-        <label> <input type="checkbox"> Портокал </label>
-        <label> <input type="checkbox"> Банан </label>
-        <label> <input type="checkbox"> Ябълка </label>
-        <label> <input type="checkbox"> Круша </label>
-        <label> <input type="checkbox"> Нектарина </label>
-        <label> <input type="checkbox"> Кайсия </label>
-        <label> <input type="checkbox"> Ягода </label>
-        <label> <input type="checkbox"> Малина </label>
-        <label> <input type="checkbox"> Пъпеш </label>
-        <label> <input type="checkbox"> Диня </label>
-        <label> <input type="checkbox"> Червени боровинки </label>
-        <label> <input type="checkbox"> Черешо </label>
-      </div>
+    <div class="subfilter-container">
+        <label for="#dish" style="display: block"> Ястие </label>
+        <select id="dish" multiple="multiple">
+            <option>Без предпочитание</option>
+            <option>Баница</option>
+            <option>Баклава</option>
+            <option>Ориз</option>
+            <option>Картофи</option>
+            <option>Мусака</option>
+            <option>Гювеч</option>
+            <option>Сарми</option>
+        </select>
     </div>
-  </div>
-  <div class="subfilter-container">
-    <label for="#region" > Област </label>
-    <select id="region" multiple="multiple">
-      <option>Благоевград</option>
-      <option>Велико Търново</option>
-      <option>София</option>
-      <option>Варна</option>
-      <option>Бургас</option>
-    </select>
-  </div>
-  <div class="subfilter-container">
-    <label for="#season" > Област </label>
-    <select id="season" multiple="multiple">
-      <option>Без предпочитание</option>
-      <option>Пролет</option>
-      <option>Лято</option>
-      <option>Есен</option>
-      <option>Зима</option>
-    </select>
-  </div>
-  <div class="subfilter-container">
-    <label for="#holiday" > Празник </label>
-    <select id="hliday" multiple="multiple">
-      <option>Без предпочитание</option>
-      <option>Великден</option>
-      <option>Гергьовден</option>
-      <option>Коледа</option>
-      <option>Бъдни вечер</option>
-    </select>
-  </div>
-  <div class="subfilter-container borderly-named" id="other-options">
-    <h6>Други опции</h6>
-    <div>
-      <input type="checkbox"> Предлагани от ресторанти <br>
-      <input type="checkbox"> Вегетарианска рецепта <br>
-      <input type="checkbox"> Веганска рецепта <br>
-      <input type="checkbox"> Рецепта само с био храни <br>
-      <input type="checkbox"> Възможност за алергична реакция <br>
+    <div class="subfilter-container borderly-named">
+        <h6>Време за приготвяне</h6>
+        <div>
+            <input type="checkbox"> до 15 минути
+            <br>
+            <input type="checkbox"> 15 - 30 минути
+            <br>
+            <input type="checkbox"> 30 - 45 минути
+            <br>
+            <input type="checkbox"> 45 - 60 минути
+            <br>
+            <input type="checkbox"> над 60 минути
+            <br>
+        </div>
     </div>
-  </div>
-  <div class="subfilter-container borderly-named" id="complexity">
-    <h6>Сложност</h6>
-    <div>
-      <label> <input type="radio"> 1 </label>
-      <label> <input type="radio"> 2 </label>
-      <label> <input type="radio"> 3 </label>
-      <label> <input type="radio"> 4 </label>
-      <label> <input type="radio"> 5 </label>
+    <div class="subfilter-container borderly-named" id="ingredients">
+        <h6>Продукти</h6>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" data-target="#menu1">Зеленчуци</a></li>
+            <li><a data-toggle="tab" data-target="#menu2">Плодове</a></li>
+            <li><a data-toggle="tab" data-target="#menu2">Ядки</a></li>
+            <li><a data-toggle="tab" data-target="#menu2">Млечни</a></li>
+            <li><a data-toggle="tab" data-target="#menu2">Месни</a></li>
+            <li><a data-toggle="tab" data-target="#menu2">Рибни</a></li>
+            <li><a data-toggle="tab" data-target="#menu2">Подправки</a></li>
+            <li><a data-toggle="tab" data-target="#menu2">Други</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="menu1" class="tab-pane fade in active tab">
+                <label>
+                    <input type="checkbox"> Ориз </label>
+                <label>
+                    <input type="checkbox"> Леща </label>
+                <label>
+                    <input type="checkbox"> Гъби </label>
+                <label>
+                    <input type="checkbox"> Картофи </label>
+                <label>
+                    <input type="checkbox"> Боб </label>
+                <label>
+                    <input type="checkbox"> Тиквички </label>
+                <label>
+                    <input type="checkbox"> Домати </label>
+                <label>
+                    <input type="checkbox"> Грах </label>
+                <label>
+                    <input type="checkbox"> Чушки </label>
+                <label>
+                    <input type="checkbox"> Целина </label>
+                <label>
+                    <input type="checkbox"> Зелен лук </label>
+                <label>
+                    <input type="checkbox"> Черевен лук </label>
+            </div>
+            <div id="menu2" class="tab-pane fade tab">
+                <label>
+                    <input type="checkbox"> Портокал </label>
+                <label>
+                    <input type="checkbox"> Банан </label>
+                <label>
+                    <input type="checkbox"> Ябълка </label>
+                <label>
+                    <input type="checkbox"> Круша </label>
+                <label>
+                    <input type="checkbox"> Нектарина </label>
+                <label>
+                    <input type="checkbox"> Кайсия </label>
+                <label>
+                    <input type="checkbox"> Ягода </label>
+                <label>
+                    <input type="checkbox"> Малина </label>
+                <label>
+                    <input type="checkbox"> Пъпеш </label>
+                <label>
+                    <input type="checkbox"> Диня </label>
+                <label>
+                    <input type="checkbox"> Червени боровинки </label>
+                <label>
+                    <input type="checkbox"> Черешо </label>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="subfilter-container">
+        <label for="#region"> Област </label>
+        <select id="region" multiple="multiple">
+            <option>Благоевград</option>
+            <option>Велико Търново</option>
+            <option>София</option>
+            <option>Варна</option>
+            <option>Бургас</option>
+        </select>
+    </div>
+    <div class="subfilter-container">
+        <label for="#season"> Сезон </label>
+        <select id="season" multiple="multiple">
+            <option>Без предпочитание</option>
+            <option>Пролет</option>
+            <option>Лято</option>
+            <option>Есен</option>
+            <option>Зима</option>
+        </select>
+    </div>
+    <div class="subfilter-container">
+        <label for="#holiday"> Празник </label>
+        <select id="hliday" multiple="multiple">
+            <option>Без предпочитание</option>
+            <option>Великден</option>
+            <option>Гергьовден</option>
+            <option>Коледа</option>
+            <option>Бъдни вечер</option>
+        </select>
+    </div>
+    <div class="subfilter-container borderly-named" id="other-options">
+        <h6>Други опции</h6>
+        <div>
+            <input type="checkbox"> Предлагани от ресторанти
+            <br>
+            <input type="checkbox"> Вегетарианска рецепта
+            <br>
+            <input type="checkbox"> Веганска рецепта
+            <br>
+            <input type="checkbox"> Рецепта само с био храни
+            <br>
+            <input type="checkbox"> Възможност за алергична реакция
+            <br>
+        </div>
+    </div>
+    <div class="subfilter-container borderly-named" id="complexity">
+        <h6>Сложност</h6>
+        <div>
+            <label>
+                <input type="radio"> 1 </label>
+            <label>
+                <input type="radio"> 2 </label>
+            <label>
+                <input type="radio"> 3 </label>
+            <label>
+                <input type="radio"> 4 </label>
+            <label>
+                <input type="radio"> 5 </label>
+        </div>
+    </div>
 </div>
 <left-navigation></left-navigation>
 <div class="main-content col-md-8">
-  <div class="row">
-    <h3>Рецепти</h3>
-    <div class="recipes">
-      <recipe-preview-extended ng-repeat="recipe in recipes" recipe="recipe"></recipe-preview-extended>
+    <div class="row">
+        <h3>Рецепти</h3>
+        <div class="recipes">
+            <recipe-preview-extended ng-repeat="recipe in recipes" recipe="recipe"></recipe-preview-extended>
+        </div>
     </div>
-  </div>
 </div>

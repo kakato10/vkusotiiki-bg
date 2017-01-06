@@ -1,11 +1,9 @@
-<div class="row">
-  <div class="col-xs-6 col-md-12 text-center">
+<div class="col-xs-6 col-md-12 text-center">
     <a ui-sref="home.recipies.details({{recipe}})" class="thumbnail">
-      <img src="images/recipes/musaka.jpg" alt="Рецепта на седмицата">
+        <img src="images/recipes/musaka.jpg" alt="Рецепта на седмицата">
     </a>
     <a ui-sref="home.recipies.details({{recipe}})">{{recipe.title}}</a>
     <div>
-      <ng-rate-it ng-model="rating" read-only="true" ng-if="rating"></ng-rate-it><span ng-if="rating!==0">{{rating}}</span>
+        <ng-rate-it ng-model="rating" read-only="true" ng-if="rating"></ng-rate-it><span ng-if="rating!==0">{{rating}}</span>
     </div>
-  </div>
 </div>

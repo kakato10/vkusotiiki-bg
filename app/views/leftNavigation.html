@@ -1,17 +1,20 @@
-<div class="col-lg-3 left left-nav ">
-  <ul class="nav nav-pills nav-stacked group-container">
-    <a class="sidebar-section-title text-center">Рецепта на седмицата</a>
-    <li role="presentation" class="active">
-      <recipe-preview-basic ng-if="weekly" recipe="weekly" showRating="false"></recipe-preview-basic>
-    </li>
-  </ul>
-
-  <div class="most-liked group-container">
-    <ul class="nav nav-pills nav-stacked">
-      <a>Най-харесвани рецепти</a>
-      <li role="presentation" class="active" ng-repeat="recipe in recipies">
-        <recipe-preview-basic  recipe="recipe"></recipe-preview-basic>
-      </li>
+<div class="left left-nav ">
+    <ul class="nav nav-pills nav-stacked group-container">
+        <a class="sidebar-section-title text-center">
+            <font size="3">Рецепта на седмицата</font>
+        </a>
+        <li role="presentation" class="active">
+            <recipe-preview-basic ng-if="weekly" recipe="weekly" showRating="false"></recipe-preview-basic>
+        </li>
     </ul>
-  </div>
+    <div class="most-liked group-container">
+        <ul class="nav nav-pills nav-stacked">
+            <a>
+                <font size="3">Най-харесвани рецепти</font>
+            </a>
+            <li role="presentation" class="active" ng-repeat="recipe in recipies">
+                <recipe-preview-basic recipe="recipe"></recipe-preview-basic>
+            </li>
+        </ul>
+    </div>
 </div>

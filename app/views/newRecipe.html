@@ -1,324 +1,283 @@
 <left-navigation></left-navigation>
-
 <div class="main-content col-xs-9 row">
-  <div class="row">
-    <h3 class="title-page text-center">Добави рецепта</h3>
-    <div class="recipes">
-      <table class="table">
-        <tbody>
-          <tr>
-          <!-- BEGIN IMAGE / VIDEO Upload -->
-            <td class="col-sm-3">
-             <div class="images">
-              <div id="image">
-                <p>снимка</p>
-                <!-- <img id="image" src="images/logo.jpg"> -->
-              </div>
-              <div class="text-center">
-                <p>Заглавна снимка</p>
-              </div>
-              <p>Още снимки:</p>
-              <div id="image">
-                <p>снимка</p>
-              </div>
-              <div id="image">
-                <p>снимка</p>
-              </div>
-              <div id="image">
-                <p>снимка</p>
-              </div>
-
-              <div class="add-more">
-                <p class="add-more-title">Добави снимка:</p>
-                <div class="btn-group btn-group-sm" role="group">
-                  <button class="btn btn-default btn-success" type="button">
-                    <span class="glyphicon glyphicon-save"></span>
-                    Прикачи
-                  </button>
-                </div>
-              </div>
-
-              <div class="add-more">
-                <p class="add-more-title">Добави видео:</p>
-                <div class="btn-group btn-group-sm add-more-video" role="group">
-                  <button class="btn btn-default btn-success" type="button">
-                    <span class="glyphicon glyphicon-save"></span>
-                    Прикачи
-                  </button>
-                </div>
-              </div>
-
-
-             </div>
-            </td>
-          <!-- END IMAGE / VIDEO Upload -->
-
-          <!-- BEGIN RECIPE Form -->
-            <td class="col-sm-8">
-              <table>
+    <div class="row">
+        <h3 class="title-page text-center">Добави рецепта</h3>
+        <div class="recipes">
+            <table class="table">
                 <tbody>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-name">Заглавие: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="input-group input-group-sm wide-text">
-                        <input type="text" class="form-control" placeholder="Заглавие" id="form-name"
-                               aria-describedby="sizing-addon1"
-                               ng-model="recipe.title">
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-category">Категория: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group wide-text">
-                          <select class="form-control" id="form-category" ng-model="recipe.category">
-                            <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
-                          </select>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете категория ястие."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-dish">Ястие: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group input-group-sm wide-text">
-                          <input type="text" class="form-control" placeholder="Ястие" id="form-dish" aria-describedby="sizing-addon1" ng-model="recipe.dish">
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въвъведе вида на ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-ingredients">Съставки: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="input-group input-group-sm wide-text">
-                        <textarea class="form-control" rows="6" placeholder="Съставки"
-                                  id="form-ingredients"
-                                  aria-describedby="sizing-addon1"
-                                  ng-model="recipe.ingredients"></textarea>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-region">Област: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group wide-text">
-                          <select class="form-control" id="form-region" ng-model="recipe.region">
-                            <option ng-repeat="region in regions" value="{{region.id}}">{{region.name}}</option>
-                          </select>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете регион, в който се приготвя ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-description">Начин на приготвяне: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="input-group input-group-sm wide-text">
-                        <textarea class="form-control" rows="6" placeholder="Начин на приготвяне"
-                                  id="form-description"
-                                  aria-describedby="sizing-addon1"
-                                  ng-model="recipe.description"></textarea>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-servings">Порции: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group">
-                          <input class="form-control" id="form-servings" type="number" min="1" max="10" ng-model="recipe.ishesCount"/>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете брой порции за приготвяне на ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-difficulty">Ниво на трудност: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group input-group-sm wide-text" id="form-difficulty">
-                          <rzslider
-                              rz-slider-model="slider.value"
-                              rz-slider-options="slider.options" ng-model="recipe.difficulty"></rzslider>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Лесна се отбелязва с 1. Трудна се отбелязва с 5."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-time">Време за приготвяне: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group">
-                          <input class="form-control" id="form-time" type="number" ng-model="recipe.time"/>
-                        </div>
-                        <div class="right">
-                          <p class="add-more-title"> мин.</p>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въведете време за приготвяне на ястието в минути."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-holiday">Празник: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group wide-text">
-                          <select class="form-control" id="form-holiday" ng-model="recipe.holiday">
-                            <option>Великден</option>
-                            <option>Гергьовден</option>
-                            <option>Петровден</option>
-                            <option>Атанасовден</option>
-                            <option>Игнажден</option>
-                            <option>Рождество Христово</option>
-                            <option>Ивановден</option>
-                            <option>Йордановден</option>
-                            <optgroup class="separator"></optgroup>
-                            <option>Рамазан байрям</option>
-                            <option>Курбан байрям</option>
-                          </select>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете празник, за който се приготвя ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-season">Сезон: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group wide-text">
-                          <select class="form-control" id="form-season" ng-model="recipe.season">
-                            <option>Пролет</option>
-                            <option>Лято</option>
-                            <option>Есен</option>
-                            <option>Зима</option>
-                          </select>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                      <label for="form-other-options">Други опции: *</label>
-                    </td>
-                    <td class="col-sm-6">
-                      <div class="whole">
-                        <div class="input-group wide-text" id="form-other-options">
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="" ng-model="recipe.otherOptions.vegeterian">
-                              Вегетарианска рецепта
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="" ng-model="recipe.otherOptions.vegan">
-                              Веганска рецепта
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="" ng-model="recipe.otherOptions.bio">
-                              Рецепта само с био храни
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="" ng-model="recipe.otherOptions.allergy">
-                              Възможност за алергична реакция
-                            </label>
-                          </div>
-                        </div>
-                        <div class="help-block">
-                          <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете някоя от опциите, ако важи за рецептата"></span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="col-sm-1">
-                    </td>
-                    <td class="col-sm-6 save-btns">
-                      <div class="col-md-8">
-                        <button class="btn btn-default btn-success" type="button" ng-click="save(recipe)">
-                          <span class="glyphicon glyphicon-pencil"></span>
-                          Запази
-                        </button>
-                        <button class="btn btn-default right btn-danger" type="button">
-                          <span class="glyphicon glyphicon-trash"></span>
-                          Откажи
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-
-
-
+                    <tr>
+                        <!-- BEGIN IMAGE / VIDEO Upload -->
+                        <td class="col-sm-3">
+                            <div class="images">
+                                <div id="image">
+                                    <p>снимка</p>
+                                    <!-- <img id="image" src="images/logo.jpg"> -->
+                                </div>
+                                <div class="text-center">
+                                    <p>Заглавна снимка</p>
+                                </div>
+                                <p>Още снимки:</p>
+                                <div id="image">
+                                    <p>снимка</p>
+                                </div>
+                                <div id="image">
+                                    <p>снимка</p>
+                                </div>
+                                <div id="image">
+                                    <p>снимка</p>
+                                </div>
+                                <div class="add-more">
+                                    <p class="add-more-title">Добави снимка:</p>
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <button class="btn btn-default btn-success" type="button">
+                                            <span class="glyphicon glyphicon-save"></span> Прикачи
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="add-more">
+                                    <p class="add-more-title">Добави видео:</p>
+                                    <div class="btn-group btn-group-sm add-more-video" role="group">
+                                        <button class="btn btn-default btn-success" type="button">
+                                            <span class="glyphicon glyphicon-save"></span> Прикачи
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <!-- END IMAGE / VIDEO Upload -->
+                        <!-- BEGIN RECIPE Form -->
+                        <td class="col-sm-8">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-name">Заглавие: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="input-group input-group-sm wide-text">
+                                                <input type="text" class="form-control" placeholder="Заглавие" id="form-name" aria-describedby="sizing-addon1" ng-model="recipe.title">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-category">Категория: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="whole">
+                                                <div class="input-group wide-text">
+                                                    <select class="form-control" id="form-category" ng-model="recipe.category">
+                                                        <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="help-block">
+                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете категория ястие."></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-dish">Ястие: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="whole">
+                                                <div class="input-group input-group-sm wide-text">
+                                                    <input type="text" class="form-control" placeholder="Ястие" id="form-dish" aria-describedby="sizing-addon1" ng-model="recipe.dish">
+                                                </div>
+                                                <div class="help-block">
+                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въвъведе вида на ястието."></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-ingredients">Съставки: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="input-group input-group-sm wide-text">
+                                                <textarea class="form-control" rows="6" placeholder="Съставки" id="form-ingredients" aria-describedby="sizing-addon1" ng-model="recipe.ingredients"></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-region">Област: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="whole">
+                                                <div class="input-group wide-text">
+                                                    <select class="form-control" id="form-region" ng-model="recipe.region">
+                                                        <option ng-repeat="region in regions" value="{{region.id}}">{{region.name}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="help-block">
+                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете регион, в който се приготвя ястието."></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-description">Начин на приготвяне: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="input-group input-group-sm wide-text">
+                                                <textarea class="form-control" rows="6" placeholder="Начин на приготвяне" id="form-description" aria-describedby="sizing-addon1" ng-model="recipe.description"></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-servings">Порции: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="whole">
+                                                <div class="input-group">
+                                                    <input class="form-control" id="form-servings" type="number" min="1" max="10" ng-model="recipe.ishesCount" />
+                                                </div>
+                                                <div class="help-block">
+                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете брой порции за приготвяне на ястието."></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-difficulty">Ниво на трудност: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="whole">
+                                                <div class="input-group input-group-sm wide-text" id="form-difficulty">
+                                                    <rzslider rz-slider-model="slider.value" rz-slider-options="slider.options" ng-model="recipe.difficulty"></rzslider>
+                                                </div>
+                                                <div class="help-block">
+                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Лесна се отбелязва с 1. Трудна се отбелязва с 5."></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-time">Време за приготвяне: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="whole">
+                                                <div class="input-group">
+                                                    <input class="form-control" id="form-time" type="number" ng-model="recipe.time" />
+                                                </div>
+                                                <div class="right">
+                                                    <p class="add-more-title"> мин.</p>
+                                                </div>
+                                                <div class="help-block">
+                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въведете време за приготвяне на ястието в минути."></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-holiday">Празник: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="whole">
+                                                <div class="input-group wide-text">
+                                                    <select class="form-control" id="form-holiday" ng-model="recipe.holiday">
+                                                        <option>Великден</option>
+                                                        <option>Гергьовден</option>
+                                                        <option>Петровден</option>
+                                                        <option>Атанасовден</option>
+                                                        <option>Игнажден</option>
+                                                        <option>Рождество Христово</option>
+                                                        <option>Ивановден</option>
+                                                        <option>Йордановден</option>
+                                                        <optgroup class="separator"></optgroup>
+                                                        <option>Рамазан байрям</option>
+                                                        <option>Курбан байрям</option>
+                                                    </select>
+                                                </div>
+                                                <div class="help-block">
+                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете празник, за който се приготвя ястието."></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-season">Сезон: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="whole">
+                                                <div class="input-group wide-text">
+                                                    <select class="form-control" id="form-season" ng-model="recipe.season">
+                                                        <option>Пролет</option>
+                                                        <option>Лято</option>
+                                                        <option>Есен</option>
+                                                        <option>Зима</option>
+                                                    </select>
+                                                </div>
+                                                <div class="help-block">
+                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                            <label for="form-other-options">Други опции: *</label>
+                                        </td>
+                                        <td class="col-sm-6">
+                                            <div class="whole">
+                                                <div class="input-group wide-text" id="form-other-options">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="" ng-model="recipe.otherOptions.vegeterian"> Вегетарианска рецепта
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="" ng-model="recipe.otherOptions.vegan"> Веганска рецепта
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="" ng-model="recipe.otherOptions.bio"> Рецепта само с био храни
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="" ng-model="recipe.otherOptions.allergy"> Възможност за алергична реакция
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="help-block">
+                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете някоя от опциите, ако важи за рецептата"></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-1">
+                                        </td>
+                                        <td class="col-sm-6 save-btns">
+                                            <div class="col-md-8">
+                                                <button class="btn btn-default btn-success" type="button" ng-click="save(recipe)">
+                                                    <span class="glyphicon glyphicon-pencil"></span> Запази
+                                                </button>
+                                                <button class="btn btn-default right btn-danger" type="button">
+                                                    <span class="glyphicon glyphicon-trash"></span> Откажи
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <!-- END RECIPE Form -->
+                    </tr>
                 </tbody>
-              </table>
-
-            </td>
-          <!-- END RECIPE Form -->
-
-          </tr>
-        </tbody>
-      </table>
-
-
+            </table>
+        </div>
     </div>
-
-  </div>
 </div>

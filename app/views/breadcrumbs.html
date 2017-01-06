@@ -1,12 +1,12 @@
-  <!-- BEGIN Breadcrumbs -->
-  <!-- <div class="navbar navbar-default breadcrumbs-holder col-xs-9 row"> -->
-  <div class="navbar navbar-default breadcrumbs-holder group-container col-md-12 row">
+<!-- BEGIN Breadcrumbs -->
+<!-- <div class="navbar navbar-default breadcrumbs-holder col-xs-9 row"> -->
+<div class="navbar navbar-default breadcrumbs-holder group-container col-md-12 row">
     <ol class="breadcrumb">
-      <li ng-repeat="menu in values">
-        <a ui-sref="{{ menu.stateUrl }}" ng-if="!menu.disabled">{{ menu.name }}</a>
-        <span ng-if="menu.disabled">{{ menu.name }}</span>
-      </li>
-      <!-- <li class="active"><a ui-sref="myRecipes">Моите рецепти</a></li> -->
+        <li ng-repeat="menu in values">
+            <a ui-sref="{{ menu.stateUrl }}" ng-if="!menu.disabled">{{ menu.name }}</a>
+            <span ng-if="menu.disabled">{{ menu.name }}</span>
+        </li>
+        <!-- <li class="active"><a ui-sref="myRecipes">Моите рецепти</a></li> -->
     </ol>
-  </div>
-  <!-- END Breadcrumbs -->
+</div>
+<!-- END Breadcrumbs -->

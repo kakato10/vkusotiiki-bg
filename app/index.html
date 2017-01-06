@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
     <link rel="stylesheet" href="bower_components/angular-rateit/dist/ng-rateit.css" />
-    <link href="http://bg.allfont.net/allfont.css?fonts=domcasual-normal" rel="stylesheet" type="text/css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/style.css">
     <!-- endbuild -->
+    <link href="http://bg.allfont.net/allfont.css?fonts=domcasual-normal" rel="stylesheet" type="text/css" />
 </head>
 
 <body ng-app="vkusotiikiBgApp">
@@ -37,7 +37,7 @@
     <div id="container">
         <div class="header">
             <!-- First row of the page -->
-            <div class="logo-container navbar navbar-default container">
+            <div class="logo-container navbar navbar-default ">
                 <div class="logo left">
                     <img src="images/logo.jpg" alt="Logo">
                 </div>
@@ -54,7 +54,7 @@
             <!--     </div>
     <div class="header"> -->
             <div class="navbar navbar-default" role="navigation">
-                <div class="container">
+                <div class="">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
@@ -97,85 +97,83 @@
                 </div>
             </div>
         </div>
-        <div class="base-container whole">
-            <div class="container ">
+        <div class="container whole">
+            <div class="">
                 <breadcrumbs values="breadCrumbs"></breadcrumbs>
                 <div ui-view=""></div>
             </div>
         </div>
         <div class="footer">
-            <div class="container">
-                <table class="table table-footer">
-                    <thead>
-                        <tr>
-                            <th class="table-footer-th">Области</th>
-                            <th class="table-footer-th">Навигация</th>
-                            <th class="table-footer-th-social">Сподели</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <table class="table col-md-3 table-cities">
-                                    <tbody>
-                                        <tr>
-                                            <td><a href="#">София</a></td>
-                                            <td><a href="#">Велико Търново</a></td>
-                                            <td><a href="#">Пловдив</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Варна</a></td>
-                                            <td><a href="#">Стара Загора</a></td>
-                                            <td><a href="#">Пазарджик</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Бургас</a></td>
-                                            <td><a href="#">Благоевград</a></td>
-                                            <td><a href="#">Плевен</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td>
-                                <table class="table col-md-3">
-                                    <tbody>
-                                        <tr>
-                                            <td><a href="#">Карта на България</a></td>
-                                            <td><a href="#">Рецепти</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">За нас</a></td>
-                                            <td><a href="#">Контакти</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Нови рецепти</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td>
-                                <table class="table col-md-3 text-center">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <a href="https://www.facebook.com/" class="share-icon"><img src="images/fb.png" alt="Facebook" class="center">Facebook</a>
-                                            </td>
-                                            <td>
-                                                <a href="https://plus.google.com/" class="share-icon"><img src="images/g.png" alt="Google +" class="center">Google +</a>
-                                            </td>
-                                            <td>
-                                                <a href="https://twitter.com/" class="share-icon"><img src="images/tw.png" alt="Twitter" class="center">Twitter</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="text-center">
-                    <p id="copyright">© Vkusotiiki-bg 2016 г. Всички права запазени. </p>
-                </div>
+            <table class="table table-footer">
+                <thead>
+                    <tr>
+                        <th class="table-footer-th">Области</th>
+                        <th class="table-footer-th">Навигация</th>
+                        <th class="table-footer-th-social">Сподели</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <table class="table col-md-3 table-cities">
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">София</a></td>
+                                        <td><a href="#">Велико Търново</a></td>
+                                        <td><a href="#">Пловдив</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Варна</a></td>
+                                        <td><a href="#">Стара Загора</a></td>
+                                        <td><a href="#">Пазарджик</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Бургас</a></td>
+                                        <td><a href="#">Благоевград</a></td>
+                                        <td><a href="#">Плевен</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="table col-md-3">
+                                <tbody>
+                                    <tr>
+                                        <td><a ui-sref="home.map">Карта на България</a></td>
+                                        <td><a ui-sref="home.recipies.list">Рецепти</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a ui-sref="home.about">За нас</a></td>
+                                        <td><a ui-sref="home.contacts">Контакти</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a ui-sref="home.recipies.new">Нови рецепти</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="table col-md-3 text-center">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="https://www.facebook.com/" class="share-icon"><img src="images/fb.png" alt="Facebook" class="center">Facebook</a>
+                                        </td>
+                                        <td>
+                                            <a href="https://plus.google.com/" class="share-icon"><img src="images/g.png" alt="Google +" class="center">Google +</a>
+                                        </td>
+                                        <td>
+                                            <a href="https://twitter.com/" class="share-icon"><img src="images/tw.png" alt="Twitter" class="center">Twitter</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center">
+                <p id="copyright">© Vkusotiiki-bg 2016 г. Всички права запазени. </p>
             </div>
         </div>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
