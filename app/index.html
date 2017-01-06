@@ -89,6 +89,11 @@
                                     </button>
                                     </span>
                                     <input type="text" class="form-control" placeholder="Търсене">
+                                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="advancedSearchBtn">
+                    Разширено търсене
+                                    </button>
+                                    </span>
                                 </div>
                                 <!-- /input-group -->
                             </li>
@@ -245,6 +250,15 @@
         <script src="scripts/services/Rating.js"></script>
         <!-- endbuild -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASrwZ5hSZahiv-u09xV3ugI8G8k_a6D2U"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+    $("#advancedSearchBtn").click(function(){
+        $("#advancedSearchDiv").toggle();
+    });
+});
+       
+        </script>
 </body>
 
 </html>
