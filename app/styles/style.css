@@ -421,7 +421,6 @@ select {
 }
 
 #image {
-    background-color: #ccc;
     width: 200px;
     height: 200px;
     margin: 5px 5px 10px 5px;
@@ -483,8 +482,8 @@ td div.whole {
 .login-page-container,
 .contacts-page-container {
     display: block;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .header-login,
@@ -751,7 +750,7 @@ td div.whole {
 }
 
 .contacts-page-container .inner-container {
-    margin: 30px;
+    margin: 15px 0px;
     padding: 10px 30px;
 }
 
@@ -760,7 +759,7 @@ td div.whole {
 }
 
 .post-breadcrumbs {
-    margin-top: 95px;
+    margin-top: 75px;
 }
 
 .table-contacts.footer {
@@ -779,7 +778,7 @@ td div.whole {
 
 .about-us-text {
     text-align: justify;
-    padding: 20px;
+    padding: 10px;
 }
 
 .about-us-photos {}
@@ -955,16 +954,16 @@ textarea {
     text-decoration: none;
 }
 
-
 .row .table {
     border: 1px solid gray;
     width: 100%;
     margin-left: 8px;
 }
 
-.recipes{
+.recipes {
     margin-left: 40px;
 }
+
 .table.table > tbody {
     background: transparent;
 }
@@ -986,8 +985,9 @@ textarea {
     padding-top: 20px;
     padding-bottom: 10px;
 }
+
 .td-padding1 {
-padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .glyphicon glyphicon-heart {
@@ -1025,7 +1025,7 @@ padding-bottom: 10px;
 }
 
 .glyphicon-background {
-     background: white;
+    background: white;
     border-radius: 5px;
     border: 1px solid gray;
 }
