@@ -767,7 +767,7 @@ td div.whole {
 }
 
 #contactsMap {
-    width: 700px;
+    width: 100%;
     height: 380px;
     margin-bottom: 20px;
 }

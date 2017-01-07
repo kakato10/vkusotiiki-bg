@@ -1,115 +1,100 @@
 <div class="container">
     <div class="contacts-page-container post-breadcrumbs">
-        <div class="contacts-inner-container borderly-named-contacts">
-            <h6>Влизане</h6>
-            <div class="contacts-inner-container inner-container borderly-named-contacts inner-contacts">
-                <h6>Адрес</h6>
-                <table class="table table-contacts footer">
-                    <tbody>
-                        <tr>
-                            <td class="col-sm-2">Можете да ни намерите на адрес:</td>
-                            <td class="col-sm-4">гр. София</td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-2"></td>
-                            <td class="col-sm-4">бул. България №11</td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-2"></td>
-                            <td class="col-sm-4">ет. 3 aпартамент - 9</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="contactsMap" class="center"></div>
-            </div>
-            <div class="contacts-inner-container inner-container borderly-named-contacts inner-contacts longer-email">
-                <h6>Изпрати email</h6>
-                <table class="table table-contacts footer">
-                    <tbody>
-                        <tr>
-                            <td class="col-sm-1">
-                                <label for="form-name">Име: *</label>
-                            </td>
-                            <td class="col-sm-6">
-                                <div class="input-group input-group-sm wide-text">
-                                    <input type="text" class="form-control" placeholder="Име" id="form-name" aria-describedby="sizing-addon1">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-1">
-                                <label for="form-email">Имейл адрес: *</label>
-                            </td>
-                            <td class="col-sm-6">
-                                <div class="input-group input-group-sm wide-text">
-                                    <input type="text" class="form-control" placeholder="Имейл адрес" id="form-email" aria-describedby="sizing-addon1">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-1">
-                                <label for="form-title">Заглавие: *</label>
-                            </td>
-                            <td class="col-sm-6">
-                                <div class="input-group input-group-sm wide-text">
-                                    <input type="text" class="form-control" placeholder="Заглавие" id="form-title" aria-describedby="sizing-addon1">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-1">
-                                <label for="form-name">Съобщение: *</label>
-                            </td>
-                            <td class="col-sm-6">
-                                <div class="input-group input-group-sm wide-text">
-                                    <textarea class="form-control" rows="6" placeholder="Съобщение" id="form-ingredients" aria-describedby="sizing-addon1"></textarea>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-1"></td>
-                            <td class="col-sm-6">
-                                <div class="input-group input-group-sm wide-text text-center">
-                                    <button class="btn btn-default btn-success" type="button">
-                                        <span class="glyphicon glyphicon-pencil"></span> Запази
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="contacts-inner-container inner-container">
+            <h4>Адрес</h4>
+            <p align="center">Можете да ни намерите на адрес:</p>
+            <p align="center">гр. София,бул. България №11,ет. 3 aпартамент - 9</p>
+            <div id="contactsMap" class="center"></div>
         </div>
+        <div class="contacts-inner-container inner-container">
+            <h4>Изпрати email</h4>
+            <table align="center" width="75%">
+                <tbody>
+                    <tr>
+                        <td class="" width="20%">
+                            <label for="form-name">
+                                <font color="black">Име: *</font>
+                            </label>
+                        </td>
+                        <td class="">
+                            <input type="text" class="form-control" placeholder="Име" id="form-name" aria-describedby="sizing-addon1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            <label for="form-email">
+                                <font color="black">Имейл адрес: *</font>
+                            </label>
+                        </td>
+                        <td class="">
+                            <input type="text" class="form-control" placeholder="Имейл адрес" id="form-email" aria-describedby="sizing-addon1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            <label for="form-title">
+                                <font color="black">
+                                    Заглавие: *</font>
+                            </label>
+                        </td>
+                        <td class="">
+                            <input type="text" class="form-control" placeholder="Заглавие" id="form-title" aria-describedby="sizing-addon1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            <label for="form-name">
+                                <font color="black">Съобщение: *</font>
+                            </label>
+                        </td>
+                        <td class="">
+                            <textarea class="form-control" rows="6" placeholder="Съобщение" id="form-ingredients" aria-describedby="sizing-addon1"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class=""></td>
+                        <td class="">
+                            <div class=" text-center">
+                                <button class="btn btn-default btn-success" type="button">
+                                    <span class="glyphicon glyphicon-pencil"></span> Запази
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
         <div>
             <div>
-                <div>
-                    <script>
-                    function initialize() {
-                        var coordinates = {
-                            lat: 42.67828,
-                            lng: 23.29960
-                        };
-                        var mapProp = {
-                            center: coordinates,
-                            zoom: 15,
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
-                        };
+                <script>
+                function initialize() {
+                    var coordinates = {
+                        lat: 42.67828,
+                        lng: 23.29960
+                    };
+                    var mapProp = {
+                        center: coordinates,
+                        zoom: 15,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
 
-                        var map = new google.maps.Map(document.getElementById("contactsMap"), mapProp);
-                        var marker = new google.maps.Marker({
-                            position: coordinates,
-                            map: map,
-                            title: 'Hello World!'
-                        });
+                    var map = new google.maps.Map(document.getElementById("contactsMap"), mapProp);
+                    var marker = new google.maps.Marker({
+                        position: coordinates,
+                        map: map,
+                        title: 'Hello World!'
+                    });
 
-                        infowindow = new google.maps.InfoWindow({
-                            content: '<strong>бул. България №11</strong><br>България<br>1000 София<br>'
-                        });
-                        google.maps.event.addListener(marker, 'click', function() {
-                            infowindow.open(map, marker);
-                        });
+                    infowindow = new google.maps.InfoWindow({
+                        content: '<strong>бул. България №11</strong><br>България<br>1000 София<br>'
+                    });
+                    google.maps.event.addListener(marker, 'click', function() {
                         infowindow.open(map, marker);
-                    }
+                    });
+                    infowindow.open(map, marker);
+                }
 
-                    initialize();
-                    </script>
+                initialize();
+                </script>
