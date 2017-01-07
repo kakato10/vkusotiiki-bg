@@ -144,15 +144,15 @@
                             <table class="table col-md-3">
                                 <tbody>
                                     <tr>
-                                        <td><a ui-sref="home.map">Карта на България</a></td>
-                                        <td><a ui-sref="home.recipies.list">Рецепти</a></td>
+                                        <td class="footerlink"><a ui-sref="home.map">Карта на България</a></td>
+                                        <td class="footerlink"><a ui-sref="home.recipies.list">Рецепти</a></td>
                                     </tr>
                                     <tr>
-                                        <td><a ui-sref="home.about">За нас</a></td>
-                                        <td><a ui-sref="home.contacts">Контакти</a></td>
+                                        <td class="footerlink"><a ui-sref="home.about">За нас</a></td>
+                                        <td class="footerlink"><a ui-sref="home.contacts">Контакти</a></td>
                                     </tr>
                                     <tr>
-                                        <td><a ui-sref="home.recipies.new">Нови рецепти</a></td>
+                                        <td class="footerlink"><a ui-sref="home.recipies.new">Нови рецепти</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -252,12 +252,11 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASrwZ5hSZahiv-u09xV3ugI8G8k_a6D2U"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script>
-        $(document).ready(function(){
-    $("#advancedSearchBtn").click(function(){
-        $("#advancedSearchDiv").toggle();
-    });
-});
-       
+        $(document).ready(function() {
+            $("#advancedSearchBtn").click(function() {
+                $("#advancedSearchDiv").toggle();
+            });
+        });
         </script>
 </body>
 
