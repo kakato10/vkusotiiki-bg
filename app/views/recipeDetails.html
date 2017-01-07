@@ -18,10 +18,10 @@
         <div class="recipes">
             <table class="">
                 <tbody>
-                    <tr>
+                    <tr td-padding>
                         <!-- BEGIN IMAGE / VIDEO Upload -->
                         <td class="col-sm-3">
-                            <table width="100%" >
+                            <table width="100%">
                                 <tbody>
                                     <tr>
                                         <td>
@@ -41,6 +41,67 @@
                                                     {{ingridient.name}} - {{ingridient.quantity}} - {{ingridient.unit}}
                                                 </p>
                                             </div>
+                                            <br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-padding1" colspan="2">
+                                            <div class="input-group ingredients-holder">
+                                                <table width="90%" align="center">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="">
+                                                                <label for="form-servings">Порции: </label>
+                                                            </td>
+                                                            <td class="" width="50%">
+                                                                <p>{{recipe.servings || 3}}</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="">
+                                                                <label for="form-difficulty">Ниво на трудност: </label>
+                                                            </td>
+                                                            <td class="">
+                                                                <p>{{recipe.difficulty || 2}}</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="">
+                                                                <label for="form-time">Време за приготвяне: *</label>
+                                                            </td>
+                                                            <td class="">
+                                                                <p>{{recipe.time}} мин</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr ng-if="recipe.otherOptions">
+                                                            <td class="col-sm-1">
+                                                                <label for="form-other-options">Други опции: *</label>
+                                                            </td>
+                                                            <td class="col-sm-6">
+                                                                <div class="whole">
+                                                                    <div class="input-group wide-text" id="form-other-options">
+                                                                        <div class="checkbox" ng-if="recipe.otherOptions.vegeterian">
+                                                                            <label>Вегетарианска рецепта</label>
+                                                                        </div>
+                                                                        <div class="checkbox" ng-if="recipe.otherOptions.vegan">
+                                                                            <label>Веганска рецепта</label>
+                                                                        </div>
+                                                                        <div class="checkbox" ng-if="recipe.otherOptions.bio">
+                                                                            <label>Рецепта само с био храни</label>
+                                                                        </div>
+                                                                        <div class="checkbox" ng-if="recipe.otherOptions.allergy">
+                                                                            <label>Възможност за алергична реакция</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="help-block">
+                                                                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -48,8 +109,8 @@
                         </td>
                         <!-- END IMAGE / VIDEO Upload -->
                         <!-- BEGIN RECIPE Form -->
-                        <td class="col-sm-8" width="50%">
-                            <table width="100%">
+                        <td class="col-sm-8" width="50%" valign="top">
+                            <table width="100%" align="top">
                                 <tbody>
                                     <tr>
                                         <td class="col-sm-1">
@@ -103,93 +164,31 @@
                         <!-- END RECIPE Form -->
                     </tr>
                     <tr>
-                        <td colspan="2" width="100%" class="td-padding">
-                            <table width="100%">
+                        <td colspan="2">
+                            <table width="98%" align="center">
                                 <tbody>
                                     <tr>
-                                        <td class="col-sm-3" width="20%">
-                                            <label for="form-servings">Порции: </label>
-                                        </td>
-                                        <td class="col-sm-1">
-                                            <p>{{recipe.servings || 3}}</p>
-                                        </td>
-                                        <td class="col-sm-3">
-                                            <label for="form-difficulty">Ниво на трудност: </label>
-                                        </td>
-                                        <td class="col-sm-1">
-                                            <p>{{recipe.difficulty || 2}}</p>
-                                        </td>
-                                        <td class="col-sm-3">
-                                            <label for="form-time">Време за приготвяне: *</label>
-                                        </td>
-                                        <td class="col-sm-1">
-                                            <p>{{recipe.time}}</p>
-                                        </td>
-                                    </tr>
-                                    <tr ng-if="recipe.otherOptions">
-                                        <td class="col-sm-1">
-                                            <label for="form-other-options">Други опции: *</label>
-                                        </td>
-                                        <td class="col-sm-6">
-                                            <div class="whole">
-                                                <div class="input-group wide-text" id="form-other-options">
-                                                    <div class="checkbox" ng-if="recipe.otherOptions.vegeterian">
-                                                        <label>Вегетарианска рецепта</label>
-                                                    </div>
-                                                    <div class="checkbox" ng-if="recipe.otherOptions.vegan">
-                                                        <label>Веганска рецепта</label>
-                                                    </div>
-                                                    <div class="checkbox" ng-if="recipe.otherOptions.bio">
-                                                        <label>Рецепта само с био храни</label>
-                                                    </div>
-                                                    <div class="checkbox" ng-if="recipe.otherOptions.allergy">
-                                                        <label>Възможност за алергична реакция</label>
-                                                    </div>
-                                                </div>
-                                                <div class="help-block">
-                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="td-padding">
-                            <table width="100%">
-                                <tbody>
-                                    <tr>
-                                        <td class="col-sm-1">
+                                        <td class="" width="18%" align="right" height="75px">
                                             <label for="form-description">Добави в любими: </label>
                                         </td>
-                                        <td class="icon">
+                                        <td class="icon" width="25%">
                                             <button type="button" name="favorite"><i class="glyphicon glyphicon-heart"></i></button>
                                         </td>
-                                        <td class="col-sm-1">
+                                        <td class="" width="15%" align="right">
                                             <label for="form-description">Принтирай: </label>
                                         </td>
-                                        <td class="icon">
+                                        <td class="icon" width="12%">
                                             <button type="button" name="print"><i class="glyphicon glyphicon-print"></i></button>
                                         </td>
-                                        <td class="col-sm-1">
-                                            <label for="form-description">Запази в pdf: </label>
+                                        <td class="" align="right">
+                                            <label for="form-description">Добави нов вариант: </label>
                                         </td>
                                         <td class="icon">
-                                            <button type="button" name="saveAsPdf"><i class="  fa fa-file-pdf-o"></i></button>
+                                            <button type="button" name="edit"><i class="glyphicon glyphicon-edit"></i></button>
                                         </td>
                                     </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="td-padding">
-                            <table width="100%">
-                                <tbody>
                                     <tr>
-                                        <td class="col-sm-1">
+                                        <td class="" align="right" height="75px">
                                             <label for="form-description">Сподели: </label>
                                         </td>
                                         <td class="icon">
@@ -197,13 +196,13 @@
                                             <button type="button" name="shareGooglePlus"><i class="fa fa-google-plus"></i></button>
                                             <button type="button" name="shareTwitter"><i class="fa fa-twitter"></i></button>
                                         </td>
-                                        <td class="col-sm-1">
-                                            <label for="form-description">Добави нов вариант: </label>
+                                        <td class="" align="right">
+                                            <label for="form-description">Запази в pdf: </label>
                                         </td>
                                         <td class="icon">
-                                            <button type="button" name="edit"><i class="glyphicon glyphicon-edit"></i></button>
+                                            <button type="button" name="saveAsPdf"><i class="  fa fa-file-pdf-o"></i></button>
                                         </td>
-                                        <td class="col-sm-1">
+                                        <td class="" align="right">
                                             <label for="form-description">Купи приготвено ястие: </label>
                                         </td>
                                         <td class="icon">
@@ -216,15 +215,15 @@
                     </tr>
                     <tr>
                         <td colspan="2" class="td-padding">
-                            <table width="100%">
+                            <table width="95%" align="center">
                                 <tbody>
                                     <tr>
-                                        <td class="col-sm-1">
+                                        <td class="">
                                             <label for="form-description">Напишете коментар: </label>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td align="right">
                                             <form>
                                                 <textarea type="text" name="comment"></textarea>
                                                 <input type="submit" name="submitComment" value="Публикувай">
@@ -236,13 +235,18 @@
                                             <table width="100%">
                                                 <tbody>
                                                     <tr>
-                                                        <td class="col-sm-1">
-                                                            <label for="form-description">Коментари: </label>
+                                                        <td class="">
+                                                            <label for="form-description">
+                                                                <h4>Коментари: </h4></label>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="col-sm-1">
-                                                            <label for="form-description"><font color="red" size="6">Тук трябва да има коментари :D</font> </label>
+                                                        <td class="">
+                                                            <div class="input-group ingredients-holder">
+                                                                <label for="form-description">
+                                                                    <font color="red" size="6">Тук трябва да има коментари :D</font>
+                                                                </label>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 </tbody>

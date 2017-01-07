@@ -984,4 +984,10 @@ textarea {
 
 .td-padding {
     padding-top: 20px;
+    padding-bottom: 10px;
+}
+.td-padding1 {
+padding-bottom: 10px;
+padding-left: 5%;
+padding-right: 5%;
 }
