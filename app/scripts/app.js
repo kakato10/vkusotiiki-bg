@@ -281,6 +281,7 @@ angular
           mapped[mapping[key]] = object[key];
         });
         debugger;
+
         return mapped;
       }
 
@@ -291,7 +292,7 @@ angular
       };
 
       DS.adapters.http.defaults.deserialize = function (resourceConfig, data) {
-        var mapping = resourceConfig.methods.mapping();
+        var mapping = _.clone(resourceConfig.methods.mapping());
 
         if (mapping.authId) {
           delete mapping.authId;
