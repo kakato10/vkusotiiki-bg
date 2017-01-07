@@ -976,3 +976,12 @@ textarea {
 .col-sm-1 {
     background: transparent;
 }
+
+.row .recipe-details .recipes {
+    background: transparent;
+    border: 1px solid gray;
+}
+
+.td-padding {
+    padding-top: 20px;
+}

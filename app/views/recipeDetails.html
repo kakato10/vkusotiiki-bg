@@ -16,13 +16,13 @@
     </h2>
         <a ui-sref="#"><h4 class="title-page text-center styled-a">{{author.name}}</h4></a>
         <div class="recipes">
-            <table class="table">
+            <table class="">
                 <tbody>
                     <tr>
                         <!-- BEGIN IMAGE / VIDEO Upload -->
                         <td class="col-sm-3">
-                            <table class="table" >
-                                <tbody class="background">
+                            <table width="100%" >
+                                <tbody>
                                     <tr>
                                         <td>
                                             <div id="image">
@@ -31,7 +31,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="background">
+                                    <tr>
                                         <td class="recipe-ingredients text-center">
                                             <ng-rate-it ng-model="rating" step="0.5" resetable="false" min="0" max="5" ng-attr-read-only="!canRate" ng-click="rate(recipe, rating)"></ng-rate-it>{{rating}}
                                             <p>Създадена на {{ date | date:'yyyy-MM-dd hh:mm'}}</p>
@@ -49,7 +49,7 @@
                         <!-- END IMAGE / VIDEO Upload -->
                         <!-- BEGIN RECIPE Form -->
                         <td class="col-sm-8" width="50%">
-                            <table class="table">
+                            <table width="100%">
                                 <tbody>
                                     <tr>
                                         <td class="col-sm-1">
@@ -103,8 +103,8 @@
                         <!-- END RECIPE Form -->
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <table class="table" border="1" bordercolor="green">
+                        <td colspan="2" width="100%" class="td-padding">
+                            <table width="100%">
                                 <tbody>
                                     <tr>
                                         <td class="col-sm-3" width="20%">
@@ -157,8 +157,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <table class="table" border="2" bordercolor="orange">
+                        <td colspan="2" class="td-padding">
+                            <table width="100%">
                                 <tbody>
                                     <tr>
                                         <td class="col-sm-1">
@@ -185,8 +185,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <table class="table" border="2" bordercolor="orange">
+                        <td colspan="2" class="td-padding">
+                            <table width="100%">
                                 <tbody>
                                     <tr>
                                         <td class="col-sm-1">
@@ -215,8 +215,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <table class="table" border="2" bordercolor="orange">
+                        <td colspan="2" class="td-padding">
+                            <table width="100%">
                                 <tbody>
                                     <tr>
                                         <td class="col-sm-1">
@@ -232,12 +232,17 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">
-                                            <table class="table" border="2" bordercolor="orange">
+                                        <td colspan="2" class="td-padding">
+                                            <table width="100%">
                                                 <tbody>
                                                     <tr>
                                                         <td class="col-sm-1">
                                                             <label for="form-description">Коментари: </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-sm-1">
+                                                            <label for="form-description"><font color="red" size="6">Тук трябва да има коментари :D</font> </label>
                                                         </td>
                                                     </tr>
                                                 </tbody>
