@@ -20,7 +20,7 @@
                 <tbody>
                     <tr td-padding>
                         <!-- BEGIN IMAGE / VIDEO Upload -->
-                        <td class="col-sm-3">
+                        <td class="col-sm-3" width="90%">
                             <table width="100%">
                                 <tbody>
                                     <tr>
@@ -53,7 +53,7 @@
                                                             <td class="">
                                                                 <label for="form-servings">Порции: </label>
                                                             </td>
-                                                            <td class="" width="50%">
+                                                            <td class="" width="45%">
                                                                 <p>{{recipe.servings || 3}}</p>
                                                             </td>
                                                         </tr>
@@ -74,27 +74,24 @@
                                                             </td>
                                                         </tr>
                                                         <tr ng-if="recipe.otherOptions">
-                                                            <td class="col-sm-1">
+                                                            <td class="">
                                                                 <label for="form-other-options">Други опции: *</label>
                                                             </td>
-                                                            <td class="col-sm-6">
+                                                            <td class="">
                                                                 <div class="whole">
                                                                     <div class="input-group wide-text" id="form-other-options">
                                                                         <div class="checkbox" ng-if="recipe.otherOptions.vegeterian">
-                                                                            <label>Вегетарианска рецепта</label>
+                                                                            Вегетарианска рецепта
                                                                         </div>
                                                                         <div class="checkbox" ng-if="recipe.otherOptions.vegan">
-                                                                            <label>Веганска рецепта</label>
+                                                                            Веганска рецепта
                                                                         </div>
                                                                         <div class="checkbox" ng-if="recipe.otherOptions.bio">
-                                                                            <label>Рецепта само с био храни</label>
+                                                                            Рецепта само с био храни
                                                                         </div>
                                                                         <div class="checkbox" ng-if="recipe.otherOptions.allergy">
-                                                                            <label>Възможност за алергична реакция</label>
+                                                                           Възможност за алергична реакция
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="help-block">
-                                                                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете сезон, в който се приготвя ястието."></span>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -172,19 +169,19 @@
                                             <label for="form-description">Добави в любими: </label>
                                         </td>
                                         <td class="icon" width="25%">
-                                            <button type="button" name="favorite"><i class="glyphicon glyphicon-heart"></i></button>
+                                            <button class="heart-color .glyphicon-background" type="button" name="favorite"><i class="glyphicon glyphicon-heart "></i></button>
                                         </td>
                                         <td class="" width="15%" align="right">
                                             <label for="form-description">Принтирай: </label>
                                         </td>
                                         <td class="icon" width="12%">
-                                            <button type="button" name="print"><i class="glyphicon glyphicon-print"></i></button>
+                                            <button class="print-color .glyphicon-background" type="button" name="print"><i class="glyphicon glyphicon-print"></i></button>
                                         </td>
                                         <td class="" align="right">
                                             <label for="form-description">Добави нов вариант: </label>
                                         </td>
                                         <td class="icon">
-                                            <button type="button" name="edit"><i class="glyphicon glyphicon-edit"></i></button>
+                                            <button class="edit-color .glyphicon-background" type="button" name="edit"><i class="glyphicon glyphicon-edit"></i></button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -192,21 +189,21 @@
                                             <label for="form-description">Сподели: </label>
                                         </td>
                                         <td class="icon">
-                                            <button type="button" name="shareFacebook"><i class="fa fa-facebook-official"></i></button>
-                                            <button type="button" name="shareGooglePlus"><i class="fa fa-google-plus"></i></button>
-                                            <button type="button" name="shareTwitter"><i class="fa fa-twitter"></i></button>
+                                            <button class="facebook-color .glyphicon-background" type="button" name="shareFacebook"><i class="fa fa-facebook-official"></i></button>
+                                            <button class="google-plus-color .glyphicon-background" type="button" name="shareGooglePlus"><i class="fa fa-google-plus"></i></button>
+                                            <button class="twitter-color .glyphicon-background" type="button" name="shareTwitter"><i class="fa fa-twitter"></i></button>
                                         </td>
                                         <td class="" align="right">
                                             <label for="form-description">Запази в pdf: </label>
                                         </td>
                                         <td class="icon">
-                                            <button type="button" name="saveAsPdf"><i class="  fa fa-file-pdf-o"></i></button>
+                                            <button class="pdf-color .glyphicon-background" type="button" name="saveAsPdf"><i class="  fa fa-file-pdf-o"></i></button>
                                         </td>
                                         <td class="" align="right">
                                             <label for="form-description">Купи приготвено ястие: </label>
                                         </td>
                                         <td class="icon">
-                                            <button type="button" name="shoppingCart"><i class="fa fa-shopping-cart"></i></button>
+                                            <button class="shopping-cart-color .glyphicon-background" type="button" name="shoppingCart"><i class="fa fa-shopping-cart"></i></button>
                                         </td>
                                     </tr>
                                 </tbody>
