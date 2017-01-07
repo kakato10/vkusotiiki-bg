@@ -220,6 +220,7 @@ a:visited {
 
 .text-center th {
     font-size: medium;
+    border: 2px solid red;
 }
 
 .special-icon {
@@ -729,6 +730,8 @@ td div.whole {
 #map {
     width: 1100px;
     height: 700px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .borderly-named-contacts h6 {
