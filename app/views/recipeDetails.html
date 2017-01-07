@@ -16,13 +16,13 @@
     </h2>
         <a ui-sref="#"><h4 class="title-page text-center styled-a">{{author.name}}</h4></a>
         <div class="recipes">
-            <table class="table" border="3" bordercolor="red">
+            <table class="table">
                 <tbody>
                     <tr>
                         <!-- BEGIN IMAGE / VIDEO Upload -->
                         <td class="col-sm-3">
-                            <table class="table" border="3" bordercolor="blue">
-                                <tbody>
+                            <table class="table" >
+                                <tbody class="background">
                                     <tr>
                                         <td>
                                             <div id="image">
@@ -31,7 +31,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="background">
                                         <td class="recipe-ingredients text-center">
                                             <ng-rate-it ng-model="rating" step="0.5" resetable="false" min="0" max="5" ng-attr-read-only="!canRate" ng-click="rate(recipe, rating)"></ng-rate-it>{{rating}}
                                             <p>Създадена на {{ date | date:'yyyy-MM-dd hh:mm'}}</p>

@@ -927,7 +927,7 @@ textarea {
 }
 
 .main-content .col-md-8 {
-    width: 70%;
+    width: 69%;
 }
 
 #advancedSearchDiv {
@@ -958,11 +958,21 @@ textarea {
 
 .row .table {
     border: 1px solid gray;
-    background: red;
     width: 100%;
-    margin-left: 30px;
+    margin-left: 8px;
 }
 
 .recipes{
-    margin-left: 35px;
+    margin-left: 40px;
+}
+.table.table > tbody {
+    background: transparent;
+}
+
+.background {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.col-sm-1 {
+    background: transparent;
 }
