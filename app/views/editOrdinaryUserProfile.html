@@ -1,8 +1,8 @@
 <div class="edit-profile-ordinary-page-container">
-    <div class="reg-ordinary-inner-container ">
-        <h6 class="proflie-edit">Профил</h6>
+    <div class="container">
+        <h4 class="proflie-edit" align="center">Профил</h4>
         <div class="edit-profile-ordinary-inner-container-registration">
-            <table class="wide-text center">
+            <table class=" wide-text center">
                 <tbody>
                     <tr>
                         <td class="col-sm-3">
@@ -19,26 +19,26 @@
                             </div>
                         </td>
                         <td class="col-sm-8">
-                            <div class="user-info-container user-profile-section-title">
-                                <h6>Обща информация</h6>
+                            <div class="user-info-container">
+                                <h5 align="center">Обща информация</h5>
                                 <div class="user-info-inner-container">
-                                    <table class="table table-inner">
+                                    <table class=" table-inner" width="100%">
                                         <tbody>
                                             <tr>
-                                                <td class="col-sm-1">
+                                                <td class="">
                                                     <label for="form-name">Име: *</label>
                                                 </td>
-                                                <td class="col-sm-6">
+                                                <td class="">
                                                     <div class="input-group input-group-sm wide-text">
                                                         <input type="text" class="form-control" value="Hristo Hristov" id="form-name" aria-describedby="sizing-addon1">
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="col-sm-1">
+                                                <td class="">
                                                     <label for="form-dish">Email: *</label>
                                                 </td>
-                                                <td class="col-sm-6">
+                                                <td class="">
                                                     <div class="whole">
                                                         <div class="input-group input-group-sm wide-text">
                                                             <input type="text" class="form-control" value="hristo.hristov@gmail.com" id="form-dish" aria-describedby="sizing-addon1">
@@ -47,10 +47,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="col-sm-1">
+                                                <td class="">
                                                     <label for="form-category">Област: *</label>
                                                 </td>
-                                                <td class="col-sm-6">
+                                                <td class="">
                                                     <div class="whole ">
                                                         <div class="input-group wide-text">
                                                             <select class="form-control normalize" id="form-category" value="София" selected="София">
@@ -79,16 +79,16 @@
                         <td class="col-sm-3">
                         </td>
                         <td class="col-sm-8">
-                            <div class="user-info-container user-profile-section-title">
-                                <h6>Смяна на парола</h6>
+                            <div class="user-info-container ">
+                                <h5 align="center">Смяна на парола</h5>
                                 <div class="user-info-inner-container">
-                                    <table class="table table-inner">
+                                    <table class="table-inner" width="100%">
                                         <tbody>
                                             <tr>
-                                                <td class="col-sm-1">
+                                                <td class="" width="24%">
                                                     <label for="form-name">Парола: *</label>
                                                 </td>
-                                                <td class="col-sm-6">
+                                                <td class="">
                                                     <div class="whole">
                                                         <div class="input-group input-group-sm wide-text">
                                                             <input type="password" class="form-control" id="form-name" aria-describedby="sizing-addon1">
@@ -97,10 +97,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="col-sm-1">
+                                                <td class="">
                                                     <label for="form-dish">Повтори паролата: *</label>
                                                 </td>
-                                                <td class="col-sm-6">
+                                                <td class="">
                                                     <div class="whole">
                                                         <div class="input-group input-group-sm wide-text">
                                                             <input type="password" class="form-control" id="form-dish" aria-describedby="sizing-addon1">
@@ -116,39 +116,59 @@
                     </tr>
                     <tr>
                         <td class="col-sm-3"></td>
-                        <td class="col-sm-8">
-                            <div class="reg-ordinary-inner-container-btns edit-btns">
-                                <button class="btn btn-default center btn-success" type="button">
-                                    <span class="glyphicon glyphicon-floppy-disk"></span> Запази
-                                </button>
-                                <button class="btn btn-default center btn-danger" type="button">
-                                    <span class="glyphicon glyphicon-remove"></span> Откажи
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-sm-3">
-                        </td>
-                        <td class="col-sm-8">
-                            <div class="user-info-container user-profile-section-title fixed-width">
-                                <h6>Други опции</h6>
-                                <div class="user-info-inner-container">
-                                    <div class="col-sm-3">
-                                        <label>Добави нова рецепта: </label>
-                                    </div>
-                                    <div class="btn-group add-icon col-md-3 no-float text-center" role="group">
-                                        <a ui-sref="home.recipies.create">
-                                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                                            <p>Нова рецепта</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        <td class="col-sm-8" height="70px">
+                            <table width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td width="45%" align="right">
+                                            <button class="btn btn-default center btn-success" type="button">
+                                                <span class="glyphicon glyphicon-floppy-disk"></span> Запази
+                                            </button>
+                                        </td>
+                                        <td width="10%"> </td>
+                                        <td align="left">
+                                            <button class="btn btn-default center btn-danger" type="button">
+                                                <span class="glyphicon glyphicon-remove"></span> Откажи
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
         </div>
+        </td>
+        </tr>
+        <tr>
+            <td class="col-sm-3">
+            </td>
+            <td class="col-sm-8">
+                <div class="user-info-container">
+                    <h5 align="center">Други опции</h5>
+                    <div class="user-info-inner-container">
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td width="44%">
+                                        <div class="" align="">
+                                            <label>Добави нова рецепта: </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group add-icon no-float text-center" role="group">
+                                            <a ui-sref="home.recipies.create">
+                                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                                <p>Нова рецепта</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+        </table>
     </div>
+</div>
 </div>
