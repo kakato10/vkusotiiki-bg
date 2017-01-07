@@ -47,7 +47,7 @@ angular
         },
         resolve     : {
           recipes: [ 'Recipe', function (Recipe) {
-            return Recipe.findAll({}, {bypassCache: true});
+            return Recipe.findAll({});
           } ]
         }
       })
@@ -72,7 +72,7 @@ angular
         url         : 'list',
         resolve     : {
           recipes: [ 'Recipe', function (Recipe) {
-            return Recipe.findAll({}, {bypassCache: true});
+            return Recipe.findAll({});
           } ]
         },
         data        : {
@@ -87,7 +87,7 @@ angular
         resolve     : {
           recipies: [ 'Recipe', function (Recipe) {
 
-            return Recipe.findAll({}, {bypassCache: true})
+            return Recipe.findAll({})
               .then(function (recipies) {
                 recipies.sort(function (a, b) {
                   return new Date(b.createdOn) - new Date(a.createdOn);
@@ -108,7 +108,7 @@ angular
         resolve     : {
           recipies: [ 'Recipe', '$rootScope',
             function (Recipe, $rootScope) {
-              return Recipe.findAll({}, {bypassCache:true})
+              return Recipe.findAll({})
                 .then(function (recipies) {
                   return recipies.filter(function (recipe) {
                     return $rootScope.state.user.likes(recipe.id);
@@ -127,7 +127,7 @@ angular
         url         : 'my',
         resolve     : {
           recipies: [ 'Recipe', '$rootScope', function (Recipe, $rootScope) {
-            return Recipe.findAll({}, {bypassCache: true})
+            return Recipe.findAll({})
               .then(function (recipies) {
                 var userRecipies = recipies.filter(function (recipe) {
                   return recipe.authorId === $rootScope.state.user.id;
