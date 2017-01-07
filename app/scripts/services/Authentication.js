@@ -1,6 +1,7 @@
 /**
  * Created by kakato10 on 27.06.16.
  */
+'use strict';
 angular.module('vkusotiikiBgApp')
   .service('Authentication', [ 'ref', '$rootScope', 'State', '$state',
     function (ref, $rootScope, State, $state) {

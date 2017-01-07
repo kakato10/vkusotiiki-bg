@@ -4,6 +4,6 @@
     </a>
     <a ui-sref="home.recipies.details({{recipe}})">{{recipe.title}}</a>
     <div>
-        <ng-rate-it ng-model="rating" read-only="true" ng-if="rating"></ng-rate-it><span ng-if="rating!==0">{{rating}}</span>
+        <ng-rate-it ng-model="recipe.rating" read-only="true" ng-if="recipe.rating"></ng-rate-it><span ng-if="recipe.rating!==0">{{recipe.rating}}</span>
     </div>
 </div>

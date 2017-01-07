@@ -24,23 +24,19 @@ angular.module('vkusotiikiBgApp')
       var rating = recipe.rating;
 
       function canRate() {
-        Rating.findAll({}, {bypassCache: true})
+        Rating.findAll({})
           .then(function (ratings) {
             ratings = ratings.filter(function (rating) {
               return rating.recipe === recipe.id;
             });
-            if (!rating) {
-              rating = ratings.reduce(function (current, rating) {
-                  return current + rating.rating;
-                }, 0) / ratings.length;
-              $scope.rating = rating;
-            }
+
             if ($scope.state.user) {
               $scope.canRate = !ratings.some(function (rating) {
                 return rating.user === $scope.state.user.id;
               });
               return;
             }
+
             $scope.canRate = false;
           });
       }
@@ -71,12 +67,13 @@ angular.module('vkusotiikiBgApp')
         });
       };
 
-      $scope.rating = rating;
+      $scope.rating = rating || 0;
       $scope.date = new Date(recipe.createdOn);
 
       $scope.rate = function (recipe, rating) {
         if ($scope.canRate) {
           $scope.canRate = false;
+          debugger;
           Rating.create({
             user  : $scope.state.user.id,
             recipe: recipe.id,
