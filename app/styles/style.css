@@ -498,7 +498,7 @@ td div.whole {
     display: block;
     border: 1px solid gray;
     border-radius: 5px;
-    padding-top: 60px;
+    padding-top: 10px;
 }
 
 .loging-inner-container-header {
@@ -533,8 +533,8 @@ td div.whole {
     text-align: center;
     font-size: 24px;
     font-weight: normal;
-    margin-bottom: 60px;
-    margin-top: 60px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .loging-inner-container-loginform {
@@ -545,7 +545,6 @@ td div.whole {
 
 .loging-inner-container-button-login {
     margin-left: 29%;
-    margin-bottom: 40px;
     margin-top: 20px;
 }
 
@@ -663,12 +662,18 @@ td div.whole {
     width: 11.5%;
 }
 
-.user-info-container,
 .user-pass-container,
 .contacts-container {
     display: block !important;
     margin-left: 30%;
     margin-right: 30%;
+    margin-top: 10px;
+}
+
+.user-info-container {
+    display: block !important;
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 10px;
 }
 
@@ -1028,10 +1033,4 @@ textarea {
     background: white;
     border-radius: 5px;
     border: 1px solid gray;
-}
-
-.reg-ordinary-inner-container
-{
-    margin-top: 90px;
-    background: none;
 }
