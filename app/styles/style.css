@@ -220,7 +220,6 @@ a:visited {
 
 .text-center th {
     font-size: medium;
-    border: 2px solid red;
 }
 
 .special-icon {
@@ -954,4 +953,16 @@ textarea {
 .footerlink > a:hover {
     color: black;
     text-decoration: none;
+}
+
+
+.row .table {
+    border: 1px solid gray;
+    background: red;
+    width: 100%;
+    margin-left: 30px;
+}
+
+.recipes{
+    margin-left: 35px;
 }
