@@ -1029,3 +1029,9 @@ textarea {
     border-radius: 5px;
     border: 1px solid gray;
 }
+
+.reg-ordinary-inner-container
+{
+    margin-top: 90px;
+    background: none;
+}
