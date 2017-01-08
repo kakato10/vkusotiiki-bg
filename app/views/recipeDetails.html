@@ -4,7 +4,7 @@
 <left-navigation></left-navigation>
 <div class="main-content col-xs-9 row">
     <div class="row recipe-details">
-        <h2 class="title-page text-center">{{recipe.title}}
+        <h2 class="title-page text-center" id="recipeTitle">{{recipe.title}}
         <span class="glyphicon glyphicon-star favourite"
               ng-if="state.user && state.user.likes(recipe.id)"
               ng-click="removeFromFavourites()">
@@ -172,10 +172,10 @@
                                             <button class="heart-color .glyphicon-background" type="button" name="favorite"><i class="glyphicon glyphicon-heart "></i></button>
                                         </td>
                                         <td class="" width="15%" align="right">
-                                            <label for="form-description">Принтирай: </label>
+                                            <label for="printBtn">Принтирай: </label>
                                         </td>
                                         <td class="icon" width="12%">
-                                            <button class="print-color .glyphicon-background" type="button" name="print"><i class="glyphicon glyphicon-print"></i></button>
+                                            <button id="printBtn" class="print-color .glyphicon-background" type="button" name="print"><i class="glyphicon glyphicon-print"></i></button>
                                         </td>
                                         <td class="" align="right">
                                             <label for="form-description">Добави нов вариант: </label>
@@ -189,9 +189,29 @@
                                             <label for="form-description">Сподели: </label>
                                         </td>
                                         <td class="icon">
-                                            <button class="facebook-color .glyphicon-background" type="button" name="shareFacebook"><i class="fa fa-facebook-official"></i></button>
-                                            <button class="google-plus-color .glyphicon-background" type="button" name="shareGooglePlus"><i class="fa fa-google-plus"></i></button>
-                                            <button class="twitter-color .glyphicon-background" type="button" name="shareTwitter"><i class="fa fa-twitter"></i></button>
+                                            <button class="facebook-color .glyphicon-background shareBtn"
+                                                    type="button"
+                                                    name="shareFacebook"
+                                                    data-url="https://www.facebook.com/sharer/sharer.php?u="
+                                                    data-name="Facebook">
+                                                <i class="fa fa-facebook-official"></i>
+                                            </button>
+
+                                            <button class="google-plus-color .glyphicon-background shareBtn"
+                                                    type="button"
+                                                    name="shareGooglePlus"
+                                                    data-url="https://plus.google.com/share?url="
+                                                    data-name="Google+">
+                                                <i class="fa fa-google-plus"></i>
+                                            </button>
+
+                                            <button class="twitter-share-button twitter-color .glyphicon-background shareBtn"
+                                                    type="button"
+                                                    name="shareTwitter"
+                                                    data-name="Twitter"
+                                                    data-url="https://twitter.com/share?url=">
+                                                <i class="fa fa-twitter"></i>
+                                            </button>
                                         </td>
                                         <td class="" align="right">
                                             <label for="form-description">Запази в pdf: </label>
@@ -254,6 +274,28 @@
                             </table>
         </div>
     </div>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//vkusotiiki-bg.firebaseapp.com/%23/recipiesrecipeDetails/11" class="share-icon"><img src="images/fb.1aad6319.png" alt="Facebook" class="center">Facebook</a>
-  <a href="javascript:window.print();" class="btn btn-in btn-link"><i class="fa fa-print" aria-hidden="true"></i><span>Print Page</span></a>
 </div>
+
+
+<script>
+$(function () {
+    $(".shareBtn").click(function () {
+        // var url = window.location.href.replace("#", "%23").replace("https:", "https%3A");
+        var url = "https://vkusotiiki-bg.firebaseapp.com/#/recipiesrecipeDetails/440".replace("#", "%23").replace("https:", "https%3A"),
+            a = $(this).data("url"),
+            name = $(this).data("name"),
+            left  = ($(window).width()/2)-(900/2),
+            top   = ($(window).height()/2)-(600/2);
+        if ($(this).data("name") === "Twitter") {
+            var title = $("#recipeTitle").text().trim();
+            url = `${url}&text=${title}&hashtags=vkusotiiki_bg,yummy,tasty`;
+        }
+
+        var popup = window.open(`${a}${url}`, `${name} Share`, "width=900, height=800, top="+top+", left="+left);
+    });
+
+    $("#printBtn").click(function () {
+        window.print();
+    });
+});
+</script>
