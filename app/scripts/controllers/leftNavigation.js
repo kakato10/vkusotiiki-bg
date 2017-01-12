@@ -17,12 +17,15 @@ angular.module('vkusotiikiBgApp')
           });
 
           recipes.sort(function (a, b) {
-            var firstRating = a.rating || 0,
-                secondRating = b.rating || 0;
+            var firstRating = parseFloat(a.rating) || 0,
+                secondRating = parseFloat(b.rating) || 0;
             return secondRating - firstRating;
           });
 
+
           $scope.recipies = recipes.slice(0, 5);
+
+
         });
 
     } ]);

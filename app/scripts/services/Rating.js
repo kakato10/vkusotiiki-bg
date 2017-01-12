@@ -5,8 +5,20 @@
 angular.module('vkusotiikiBgApp')
   .service('Rating', [ '$rootScope', 'ref', 'DS',
     function ($rootScope, ref, DS) {
+      var mapping = {
+        id: 'id',
+        user: 'user',
+        recipe: 'recipe',
+        rating: 'value'
+      };
       return DS.defineResource({
-        name: 'Rating'
+        name: 'Rating',
+        endpoint: '/rating',
+        methods: {
+          mapping: function () {
+            return mapping;
+          }
+        }
       });
     }
   ]);

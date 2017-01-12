@@ -47,7 +47,7 @@ angular
         },
         resolve     : {
           recipes: [ 'Recipe', function (Recipe) {
-            return Recipe.findAll({}, {bypassCache: true});
+            return Recipe.findAll({});
           } ]
         }
       })
@@ -72,7 +72,7 @@ angular
         url         : 'list',
         resolve     : {
           recipes: [ 'Recipe', function (Recipe) {
-            return Recipe.findAll({}, {bypassCache: true});
+            return Recipe.findAll({});
           } ]
         },
         data        : {
@@ -86,7 +86,8 @@ angular
         url         : 'new',
         resolve     : {
           recipies: [ 'Recipe', function (Recipe) {
-            return Recipe.findAll({}, {bypassCache: true})
+
+            return Recipe.findAll({})
               .then(function (recipies) {
                 recipies.sort(function (a, b) {
                   return new Date(b.createdOn) - new Date(a.createdOn);
@@ -107,7 +108,7 @@ angular
         resolve     : {
           recipies: [ 'Recipe', '$rootScope',
             function (Recipe, $rootScope) {
-              return Recipe.findAll({}, {bypassCache:true})
+              return Recipe.findAll({})
                 .then(function (recipies) {
                   return recipies.filter(function (recipe) {
                     return $rootScope.state.user.likes(recipe.id);
@@ -126,7 +127,7 @@ angular
         url         : 'my',
         resolve     : {
           recipies: [ 'Recipe', '$rootScope', function (Recipe, $rootScope) {
-            return Recipe.findAll({}, {bypassCache: true})
+            return Recipe.findAll({})
               .then(function (recipies) {
                 var userRecipies = recipies.filter(function (recipe) {
                   return recipe.authorId === $rootScope.state.user.id;
@@ -156,7 +157,10 @@ angular
           } ],
           categories: [ 'Category', function (Category) {
             return Category.findAll();
-          } ]
+          } ],
+          dishes    : ['Dish', function (Dish) {
+            return Dish.findAll();
+          }]
         },
         data        : {
           label: 'Нова рецепта'
@@ -218,27 +222,28 @@ angular
         resolve     : {
           recipe  : [ '$stateParams', 'Recipe',
             function ($stateParams, Recipe) {
+              console.log('recipeeee');
               return Recipe.find($stateParams.id);
             } ],
           author  : [ '$stateParams', 'Recipe', 'User',
             function ($stateParams, Recipe, User) {
               return Recipe.find($stateParams.id)
                 .then(function (recipe) {
-                  return User.find(recipe.authorId);
+                  // return User.find(recipe.authorId);
+                  return {};
                 });
             } ],
           category: [ '$stateParams', 'Recipe', 'Category',
             function ($stateParams, Recipe, Category) {
               return Recipe.find($stateParams.id)
                 .then(function (recipe) {
-                  return Category.find(recipe.category.slice(1));
+                  return Category.find(recipe.category);
                 })
             } ],
           region  : [ '$stateParams', 'Recipe', 'Region', function ($stateParams, Recipe, Region) {
             return Recipe.find($stateParams.id)
               .then(function (recipe) {
-                console.log(recipe);
-                return Region.find(recipe.region.slice(1));
+                return Region.find(recipe.region);
               })
           } ]
         },
@@ -254,11 +259,76 @@ angular
   .run([ 'DS', 'DSFirebaseAdapter', 'DSHttpAdapter',
     function (DS, DSFirebaseAdapter, DSHttpAdapter) {
       DS.registerAdapter('firebase', DSFirebaseAdapter, {
+        default: false
+      });
+
+      var httpAdapter = DS.registerAdapter('http', DSHttpAdapter, {
         default: true
       });
-      // DS.registerAdapter('http', DSHttpAdapter, {
-      //   default: true
-      // });
+
+      DS.adapters.http.defaults.basePath = 'https://vkusotiiki.herokuapp.com/api/';
+
+      DS.adapters.http.defaults.httpConfig = {
+        headers: {
+          'Authorization': 'Basic ' + window.btoa('aptaafqenmmjcs:6ec1b9d6aea75876d9e421c0b6e994eb4d2b740e623d509e9eed90d08b20014e')
+        }
+      };
+
+      function map(mapping, object, method) {
+        var mapped = {};
+
+        Object.keys(object).forEach(function (key) {
+          mapped[mapping[key]] = object[key];
+        });
+        debugger;
+
+        return mapped;
+      }
+
+      DS.adapters.http.defaults.serialize = function (resourceConfig, data) {
+        var mapping = resourceConfig.methods.mapping();
+
+        return map(mapping, data);
+      };
+
+      DS.adapters.http.defaults.deserialize = function (resourceConfig, data) {
+        var mapping = _.clone(resourceConfig.methods.mapping());
+
+        if (mapping.authId) {
+          delete mapping.authId;
+        }
+
+        var deserialized = {};
+
+        data = data.data;
+        var keys;
+
+        if (Array.isArray(data)) {
+          keys = Object.keys(data[0]);
+        } else {
+          keys = Object.keys(data);
+        }
+
+        var reversedMapping = {};
+
+        keys.forEach(function (key) {
+          var matched = Object.keys(mapping).filter(function (prop) {
+            return mapping[prop] === key;
+          })[0];
+
+          reversedMapping[key] = matched;
+        });
+
+        if (Array.isArray(data)) {
+          return data.map(function (el) {
+            return map(reversedMapping, el);
+          });
+        }
+
+        return map(reversedMapping, data);
+      };
+
+      DS.adapters.http.defaults.suffix = '/';
     }
   ])
   .run([ '$rootScope', '$state', function ($rootScope, $state) {
@@ -292,7 +362,7 @@ angular
         $rootScope.breadCrumbs = breadCrumbs;
       });
   } ])
-  .run([ 'Recipe', 'User', 'Region', 'Category', 'Rating',
-    function (Recipe, User, Region, Category, Rating) {
+  .run([ 'Recipe', 'User', 'Region', 'Category', 'Rating', 'Dish',
+    function (Recipe, User, Region, Category, Rating, Dish) {
       /* jshint unused: false */
     } ]);

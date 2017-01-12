@@ -90,9 +90,11 @@
                                         </td>
                                         <td class="col-sm-6">
                                             <div class="whole">
-                                                <div class="input-group input-group-sm wide-text">
-                                                    <input type="text" class="form-control" placeholder="Ястие" id="form-dish" aria-describedby="sizing-addon1" ng-model="recipe.dish">
-                                                </div>
+                                              <div class="input-group wide-text">
+                                                <select class="form-control" id="form-region" ng-model="recipe.dish">
+                                                  <option ng-repeat="dish in dishes" value="{{dish.id}}">{{dish.name}}</option>
+                                                </select>
+                                              </div>
                                                 <div class="help-block">
                                                     <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въвъведе вида на ястието."></span>
                                                 </div>
@@ -173,7 +175,7 @@
                                         <td class="col-sm-6">
                                             <div class="whole">
                                                 <div class="input-group">
-                                                    <input class="form-control" id="form-time" type="number" ng-model="recipe.time" />
+                                                    <input class="form-control" id="form-time" type="text" ng-model="recipe.time" />
                                                 </div>
                                                 <div class="right">
                                                     <p class="add-more-title"> мин.</p>

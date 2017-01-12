@@ -39,6 +39,7 @@ module.exports = function(config) {
       'bower_components/js-data-http/dist/js-data-http.js',
       'bower_components/js-data-angular/dist/js-data-angular.js',
       'bower_components/angular-rateit/dist/ng-rateit.js',
+      'bower_components/lodash/lodash.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

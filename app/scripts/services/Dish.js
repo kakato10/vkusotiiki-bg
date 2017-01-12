@@ -1,14 +1,14 @@
 'use strict';
 angular.module('vkusotiikiBgApp')
-  .service('Category', [ 'DS', function (DS) {
+  .service('Dish', [ 'DS', function (DS) {
     var mapping = {
       name: 'name',
       id: 'id'
     };
 
     return DS.defineResource({
-      name: 'Category',
-      endpoint: '/category',
+      name: 'Dish',
+      endpoint: '/dish',
       methods: {
         mapping: function () {
           return mapping;

@@ -45,7 +45,7 @@ angular.module('vkusotiikiBgApp')
                   });
               }
             } else {
-              this.user.id = userData.uid;
+              this.user.authId = userData.uid;
               User.create(this.user)
                 .then(function () {
                   swal({

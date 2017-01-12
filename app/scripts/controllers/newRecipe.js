@@ -8,11 +8,11 @@
  * Controller of the vkusotiikiBgApp
  */
 angular.module('vkusotiikiBgApp')
-  .controller('NewRecipeCtrl', [ '$scope', 'Authentication', 'Recipe', 'regions', 'categories', '$state',
-    function ($scope, Authentication, Recipe, regions, categories, $state) {
+  .controller('NewRecipeCtrl', [ '$scope', 'Authentication', 'Recipe', 'regions', 'categories', 'dishes', '$state',
+    function ($scope, Authentication, Recipe, regions, categories, dishes, $state) {
       $scope.regions = regions;
       $scope.categories = categories;
-
+      $scope.dishes = dishes;
       $scope.slider = {
         value  : 2,
         options: {
@@ -31,7 +31,8 @@ angular.module('vkusotiikiBgApp')
           return {
             name    : data[ 0 ],
             quantity: parseInt(data[ 1 ], 10),
-            unit    : data[ 2 ]
+            unit    : data[ 2 ],
+            is_allergic : 0
           };
         });
         return ingredients;
@@ -39,9 +40,13 @@ angular.module('vkusotiikiBgApp')
 
       $scope.save = Authentication.require(function (recipe) {
         recipe.ingredients = formatIngredients(recipe.ingredients);
-        recipe.createdOn = new Date().toString();
         recipe.authorId = $scope.state.user.id;
         recipe.difficulty = $scope.slider.value;
+
+        delete recipe.season;
+        delete recipe.holiday;
+        delete recipe.otherOptions;
+
         Recipe.create(recipe, {
           cacheResponse: true
         }).then(function (recipe) {

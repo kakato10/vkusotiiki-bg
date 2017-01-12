@@ -17,6 +17,6 @@ angular.module('vkusotiikiBgApp')
         'name'    : 'Нови рецепти',
         'stateUrl': 'newRecipes'
       } ];
-      
+
       $scope.recipies = recipies;
     } ]);

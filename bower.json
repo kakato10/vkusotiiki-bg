@@ -19,7 +19,8 @@
     "js-data-firebase": "^2.1.1",
     "js-data-http": "^2.2.2",
     "js-data-angular": "^3.2.1",
-    "angular-rateit": "^2.0.5"
+    "angular-rateit": "^2.0.5",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
