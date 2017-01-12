@@ -1,161 +1,134 @@
 <div class="reg-ordinary-page-container">
     <div class="header-reg-ordinary">Регистрация</div>
-    <div class="reg-ordinary-inner-container borderly-named-reg-ordinary">
-        <h6>Регистрация в сайта</h6>
-        <div class="reg-ordinary-inner-container-header">Необходима ни е малко информация за Вас ...</div>
-        <div class="reg-ordinary-inner-container-registration">
-            <div class="user-image-upload-container">
-                <div class="user-image">
-                    <div id="image"></div>
-                </div>
-                <div class="upload-user-image">
-                    <p class="add-image">Добави снимка:</p>
-                    <div class="btn-group btn-group-sm" role="group">
-                        <button class="btn btn-default btn-success upload_user_image_btn" type="button">
-                            <span class="glyphicon glyphicon-save"></span> Прикачи
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="user-info-container borderly-named-user-info">
-                <h6>Обща информация</h6>
-                <div class="user-info-inner-container">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="col-sm-1">
-                                    <label for="form-name">Име: *</label>
-                                </td>
-                                <td class="col-sm-6">
-                                    <div class="input-group input-group-sm wide-text">
-                                        <input type="text" class="form-control" placeholder="Име" id="form-name" aria-describedby="sizing-addon1" ng-model="user.name">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-1">
-                                    <label for="form-dish">Email: *</label>
-                                </td>
-                                <td class="col-sm-6">
-                                    <div class="whole">
-                                        <div class="input-group input-group-sm wide-text">
-                                            <input type="text" class="form-control" placeholder="Еmail" id="form-dish" aria-describedby="sizing-addon1" ng-model="user.email">
+    <div class="reg-ordinary-inner-container">
+        <table width="90%" align="center">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="reg-ordinary-inner-container-header">Необходима ни е малко информация за Вас ...</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <table width="100%" align="center">
+                            <tbody>
+                                <tr>
+                                    <td align="center" width="30%">
+                                        <div class="user-image">
+                                            <div id="image"></div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-1">
-                                    <label for="form-category">Област: *</label>
-                                </td>
-                                <td class="col-sm-6">
-                                    <div class="whole ">
-                                        <div class="input-group wide-text">
-                                            <select class="form-control normalize" id="form-category" selected="София" ng-model="user.region">
-                                                <option>София</option>
-                                                <option>Пловдив</option>
-                                                <option>Плевен</option>
-                                                <option>Пазарджик</option>
-                                                <option>Стара Загора</option>
-                                                <option>Варна</option>
-                                                <option>Бургас</option>
-                                            </select>
+                                        <div class="upload-user-image">
+                                            <p class="add-image">Добави снимка:</p>
+                                            <div class="btn-group btn-group-sm" role="group">
+                                                <button class="btn btn-default btn-success upload_user_image_btn" type="button">
+                                                    <span class="glyphicon glyphicon-save"></span> Прикачи
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="help-block">
-                                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете област."></span>
+                                    </td>
+                                    <td>
+                                        <div class="user-info-container regiter">
+                                            <table width="90%" align="center">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="" width="30%">
+                                                            <label for="form-name">Име: *</label>
+                                                        </td>
+                                                        <td class="">
+                                                            <div class="input-group input-group-sm wide-text">
+                                                                <input type="text" class="form-control" placeholder="Име" id="form-name" aria-describedby="sizing-addon1" ng-model="user.name">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <label for="form-dish">Email: *</label>
+                                                        </td>
+                                                        <td class="">
+                                                            <div class="whole">
+                                                                <div class="input-group input-group-sm wide-text">
+                                                                    <input type="text" class="form-control" placeholder="Еmail" id="form-dish" aria-describedby="sizing-addon1" ng-model="user.email">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <label for="form-category">Област: *</label>
+                                                        </td>
+                                                        <td class="">
+                                                            <div class="whole ">
+                                                                <div class="input-group wide-text">
+                                                                    <select class="form-control normalize" id="form-category" selected="София" ng-model="user.region">
+                                                                        <option>София</option>
+                                                                        <option>Пловдив</option>
+                                                                        <option>Плевен</option>
+                                                                        <option>Пазарджик</option>
+                                                                        <option>Стара Загора</option>
+                                                                        <option>Варна</option>
+                                                                        <option>Бургас</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="help-block">
+                                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Изберете област."></span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <label for="form-name">Парола: *</label>
+                                                        </td>
+                                                        <td class="">
+                                                            <div class="whole">
+                                                                <div class="input-group input-group-sm wide-text">
+                                                                    <input type="password" class="form-control" placeholder="Парола" id="form-name" aria-describedby="sizing-addon1" ng-model="password">
+                                                                </div>
+                                                                <div class="help-block">
+                                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въведете парола с повече от 6 символа"></span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <label for="form-dish">Повтори паролата: *</label>
+                                                        </td>
+                                                        <td class="">
+                                                            <div class="whole">
+                                                                <div class="input-group input-group-sm wide-text">
+                                                                    <input type="password" class="form-control" placeholder="Повтори паролата" id="form-dish" aria-describedby="sizing-addon1" ng-model="passwordRepeat">
+                                                                </div>
+                                                                <div class="help-block">
+                                                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въведете тоново паролата."></span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="user-pass-container borderly-named-user-pass">
-                <h6>Парола</h6>
-                <div class="user-pass-inner-container">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="col-sm-1">
-                                    <label for="form-name">Парола: *</label>
-                                </td>
-                                <td class="col-sm-6">
-                                    <div class="whole">
-                                        <div class="input-group input-group-sm wide-text">
-                                            <input type="password" class="form-control" placeholder="Парола" id="form-name" aria-describedby="sizing-addon1" ng-model="password">
-                                        </div>
-                                        <div class="help-block">
-                                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въведете парола с повече от 6 символа"></span>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-1">
-                                    <label for="form-dish">Повтори паролата: *</label>
-                                </td>
-                                <td class="col-sm-6">
-                                    <div class="whole">
-                                        <div class="input-group input-group-sm wide-text">
-                                            <input type="password" class="form-control" placeholder="Повтори паролата" id="form-dish" aria-describedby="sizing-addon1" ng-model="passwordRepeat">
-                                        </div>
-                                        <div class="help-block">
-                                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="Въведете тоново паролата."></span>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="reg-ordinary-inner-container-btns" ng-click="register(user, password, passwordRepeat)">
-                <button class="btn btn-default center btn-danger" type="button">
-                    <span class="glyphicon glyphicon-floppy-disk"></span> Запази
-                </button>
-                <button class="btn btn-default center btn-edit" type="button">
-                    <span class="glyphicon glyphicon-remove"></span> Откажи
-                </button>
-            </div>
-        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="reg-ordinary-inner-container-btns" ng-click="register(user, password, passwordRepeat)">
+                            <button class="btn btn-default center btn-danger" type="button">
+                                <span class="glyphicon glyphicon-floppy-disk"></span> Запази
+                            </button>
+                            <button class="btn btn-default center btn-edit" type="button">
+                                <span class="glyphicon glyphicon-remove"></span> Откажи
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</div>
-</div>
-</div>
-<!--
-<form class="form-horizontal" role="form">
-    <div class="form-group">
-        <label for="email" class = "col-sm-2 control-label">Email</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control input-email" id="email">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="password" class="col-sm-2 control-label">Парола</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control input-password" id="password">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox login-checkbox-remember-me">
-                <label><input type="checkbox">Запомни ме</label>
-            </div>
-
-            <div class="login-lost-pass-link">
-                <a href="">Забравена парола</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="loging-inner-container-button-login">
-        <button type="button" class="btn btn-success btn-login">Влез</button>
-    </div>
-</form>
--->
-</div>
-</div>
 </div>

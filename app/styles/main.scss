@@ -28,7 +28,7 @@ body {
 /* Custom page header */
 
 .header {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #6e5034;
     margin-bottom: 10px;
     /* Make the masthead heading the same height as the navigation */
     h3 {
@@ -37,15 +37,16 @@ body {
         line-height: 40px;
         padding-bottom: 19px;
     }
+
 }
 
 
 /* Custom page footer */
 
 .footer {
-    padding-top: 20px;
+    padding-top: 0px;
     color: #777;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #6e5034;
 }
 
 .container-narrow > hr {
@@ -57,7 +58,7 @@ body {
 
 .jumbotron {
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #6e5034;
     .btn {
         font-size: 21px;
         padding: 14px 24px;

@@ -49,6 +49,10 @@ a:visited {
     font-size: 40pt;
 }
 
+#logo {
+    margin: 0px;
+}
+
 .logo-container {
     text-align: center;
     display: inline-block;
@@ -393,6 +397,7 @@ select {
     margin: 5px 5px 10px 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background: white;
 }
 
 .add-more {
@@ -420,7 +425,7 @@ select {
 }
 
 .wide-text {
-    width: 80%;
+    width: 100%;
 }
 
 .input-group.wide-text .form-control,
@@ -609,24 +614,6 @@ td div.whole {
 
 .upload_user_image_btn {
     margin-left: 5px !important;
-}
-
-.borderly-named-user-info h6 {
-    font-weight: bold;
-    margin: -1.5% 3% 0;
-    padding-left: 0.6%;
-    background: white;
-    display: block;
-    width: 26.5%;
-}
-
-.borderly-named-user-pass h6 {
-    font-weight: bold;
-    margin: -1.5% 3% 0;
-    padding-left: 0.6%;
-    background: white;
-    display: block;
-    width: 11.5%;
 }
 
 .user-pass-container,
@@ -1019,3 +1006,12 @@ select {
 th {
     text-align: center;
 }
+
+.user-info-container .borderly-named-user-info {
+    background: red;
+}
+
+.input-group .wide-text {
+    width: 100%
+}
+
