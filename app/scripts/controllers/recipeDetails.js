@@ -81,4 +81,20 @@ angular.module('vkusotiikiBgApp')
           });
         }
       }
-    } ]);
+    } ])
+  .run([ '$rootScope', function ($rootScope) {
+    $rootScope.createPDF = function () {
+      var doc = new jsPDF();
+        var specialElementHandlers = {
+            '#printHelper': function (element, renderer) {
+                return true;
+            }
+        };
+
+        doc.fromHTML($('#recipe-holder').html(), 15, 15, {
+            'width': 170,
+                'elementHandlers': specialElementHandlers
+        });
+        doc.save('sample-file.pdf');
+    };
+  }]);

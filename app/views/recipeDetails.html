@@ -2,16 +2,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <left-navigation></left-navigation>
-<table width="77%">
+<table id="recipe-holder" width="77%">
     <thead>
         <tr>
             <th>
                 <h2 id="recipeTitle" class="title-page text-center">{{recipe.title}}
-                    <span class="glyphicon glyphicon-star favourite"
+                    <span class="glyphicon glyphicon-heart favourite"
                           ng-if="state.user && state.user.likes(recipe.id)"
                           ng-click="removeFromFavourites()">
                     </span>
-                    <span class="glyphicon glyphicon-star-empty favourite"
+                    <span class="glyphicon glyphicon-heart-empty favourite"
                         ng-if="state.user && !state.user.likes(recipe.id)"
                         ng-click="addToFavourites(recipe.id)">
                     </span>
@@ -179,22 +179,27 @@
                                                     <label for="form-description">Добави в любими: </label>
                                                 </td>
                                                 <td class="icon" width="25%">
-                                                    <button class="heart-color .glyphicon-background" type="button" name="favorite">
-                                                        <span class="glyphicon glyphicon-star favourite" ng-if="state.user && state.user.likes(recipe.id)" ng-click="removeFromFavourites()"></span>
-                                                        <span class="glyphicon glyphicon-star-empty favourite" ng-if="state.user && !state.user.likes(recipe.id)" ng-click="addToFavourites(recipe.id)"></span>
+                                                    <button class="btn disabled heart-color .glyphicon-background" type="button" ng-if="!state.user">
+                                                        <span class="glyphicon glyphicon-heart favourite"></span>
+                                                    </button>
+
+                                                    <button class="heart-color .glyphicon-background" type="button" name="favorite" ng-if="state.user">
+                                                        <span class="glyphicon glyphicon-heart favourite" ng-if="state.user && state.user.likes(recipe.id)" ng-click="removeFromFavourites()"></span>
+                                                        <span class="glyphicon glyphicon-heart-empty favourite" ng-if="state.user && !state.user.likes(recipe.id)" ng-click="addToFavourites(recipe.id)"></span>
                                                     </button>
                                                 </td>
                                                 <td class="" width="15%" align="right">
                                                     <label for="printBtn">Принтирай: </label>
                                                 </td>
                                                 <td class="icon" width="12%">
-                                                    <button  id="printBtn" class="print-color .glyphicon-background" type="button" name="print"><i class="glyphicon glyphicon-print"></i></button>
+                                                    <button  id="printBtn" class="print-color .glyphicon-background" type="button" name="print" onclick="javascript:window.print();"><i class="glyphicon glyphicon-print"></i></button>
+                                                    <div id="printHelper"></div>
                                                 </td>
                                                 <td class="" align="right">
                                                     <label for="form-description">Добави нов вариант: </label>
                                                 </td>
                                                 <td class="icon">
-                                                    <button class="edit-color .glyphicon-background" type="button" name="edit"><i class="glyphicon glyphicon-edit"></i></button>
+                                                    <a class="create-btn .glyphicon-background color-edit" type="button" ui-sref="home.recipies.create" style="color:green"><i class="glyphicon glyphicon-edit"></i></a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -230,13 +235,13 @@
                                                     <label for="form-description">Запази в pdf: </label>
                                                 </td>
                                                 <td class="icon">
-                                                    <button class="pdf-color .glyphicon-background" type="button" name="saveAsPdf"><i class="  fa fa-file-pdf-o"></i></button>
+                                                    <button class="pdf-color .glyphicon-background" type="button" name="saveAsPdf" ng-click="createPDF();"><i class="  fa fa-file-pdf-o"></i></button>
                                                 </td>
                                                 <td class="" align="right">
-                                                    <label for="form-description">Купи приготвено ястие: </label>
+                                                    <label for="buyBtn">Купи приготвено ястие: </label>
                                                 </td>
                                                 <td class="icon">
-                                                    <button class="shopping-cart-color .glyphicon-background" type="button" name="shoppingCart"><i class="fa fa-shopping-cart"></i></button>
+                                                    <button id="buyBtn" class="btn disabled shopping-cart-color .glyphicon-background" type="button" name="shoppingCart"><i class="fa fa-shopping-cart"></i></button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -299,8 +304,7 @@
 <script>
 $(function () {
     $(".shareBtn").click(function () {
-        // var url = window.location.href.replace("#", "%23").replace("https:", "https%3A");
-        var url = "https://vkusotiiki-bg.firebaseapp.com/#/recipiesrecipeDetails/440".replace("#", "%23").replace("https:", "https%3A"),
+        var url = window.location.href.replace("#", "%23!").replace("https:", "https%3A"),
             a = $(this).data("url"),
             name = $(this).data("name"),
             left  = ($(window).width()/2)-(900/2),
@@ -311,10 +315,6 @@ $(function () {
         }
 
         var popup = window.open(`${a}${url}`, `${name} Share`, "width=900, height=800, top="+top+", left="+left);
-    });
-
-    $("#printBtn").click(function () {
-        window.print();
     });
 });
 </script>

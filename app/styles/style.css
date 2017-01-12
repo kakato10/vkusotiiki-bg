@@ -962,6 +962,26 @@ textarea {
     color: red;
 }
 
+.heart-color, .shopping-cart-color, .create-btn {
+    width: 42px;
+    height: 42px;
+}
+
+.create-btn {
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #e5e5e5;
+}
+
+span.glyphicon-heart, span.glyphicon-heart-empty {
+    color: red;
+}
+
+.heart-color.disabled, .shopping-cart-color.disabled {
+    font-size: 30px;
+    padding: 0;
+}
+
 .facebook-color,
 .print-color {
     color: blue;
