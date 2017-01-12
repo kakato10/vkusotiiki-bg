@@ -1,11 +1,20 @@
 <left-navigation></left-navigation>
-<div class="main-content col-md-8 center">
-    <div class="row">
-        <h3 class="title-page text-center">Любими рецепти</h3>
-        <div class="recipes">
-            <div class="scroll">
-                <recipe-preview-extended ng-repeat="recipe in favourites" recipe="recipe"></recipe-preview-extended>
-            </div>
-        </div>
-    </div>
-</div>
+<table width="79%">
+    <thead>
+        <tr>
+            <th>
+                <h3 class="title-page text-center">Любими рецепти</h3> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="recipes">
+                    <div class="scroll">
+                        <recipe-preview-extended ng-repeat="recipe in favourites" recipe="recipe"></recipe-preview-extended>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
