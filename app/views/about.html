@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="contacts-page-container post-breadcrumbs">
+<div class="about container col-md-8">
+    <div class="contacts-page-container">
         <div class="contacts-inner-container inner-container">
             <div class="about-us-text">
                 <h4 align="left">Идеята за сайта</h4>
@@ -82,36 +82,40 @@
             </table>
         </div>
     </div>
+</div>
+<div>
     <div>
         <div>
-            <div>
-                <script>
-                function initialize() {
-                    var coordinates = {
-                        lat: 42.67828,
-                        lng: 23.29960
-                    };
-                    var mapProp = {
-                        center: coordinates,
-                        zoom: 15,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    };
+            <script>
+            function initialize() {
+                var coordinates = {
+                    lat: 42.67828,
+                    lng: 23.29960
+                };
+                var mapProp = {
+                    center: coordinates,
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
 
-                    var map = new google.maps.Map(document.getElementById("contactsMap"), mapProp);
-                    var marker = new google.maps.Marker({
-                        position: coordinates,
-                        map: map,
-                        title: 'Hello World!'
-                    });
+                var map = new google.maps.Map(document.getElementById("contactsMap"), mapProp);
+                var marker = new google.maps.Marker({
+                    position: coordinates,
+                    map: map,
+                    title: 'Hello World!'
+                });
 
-                    infowindow = new google.maps.InfoWindow({
-                        content: '<strong>бул. България №11</strong><br>България<br>1000 София<br>'
-                    });
-                    google.maps.event.addListener(marker, 'click', function() {
-                        infowindow.open(map, marker);
-                    });
+                infowindow = new google.maps.InfoWindow({
+                    content: '<strong>бул. България №11</strong><br>България<br>1000 София<br>'
+                });
+                google.maps.event.addListener(marker, 'click', function() {
                     infowindow.open(map, marker);
-                }
+                });
+                infowindow.open(map, marker);
+            }
 
-                initialize();
-                </script>
+            initialize();
+            </script>
+        </div>
+    </div>
+</div>

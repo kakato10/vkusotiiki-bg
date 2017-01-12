@@ -10,3 +10,323 @@
     </ol>
 </div>
 <!-- END Breadcrumbs -->
+<div id="advancedSearchDiv">
+    <div class="group-container col-md-12 row" id="filter">
+        <table width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <table align="center">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label for="#category"> Категория </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="subfilter-container">
+                                            <select id="category" multiple="multiple">
+                                                <option>Без предпочитание</option>
+                                                <option>Салати</option>
+                                                <option>Супи</option>
+                                                <option>Основни</option>
+                                                <option>Десерти</option>
+                                                <option>Печива</option>
+                                                <option>Напитки</option>
+                                                <option>Други</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <table align="center">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label for="#dish" style="display: block"> Ястие </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="subfilter-container">
+                                            <select id="dish" multiple="multiple">
+                                                <option>Без предпочитание</option>
+                                                <option>Баница</option>
+                                                <option>Баклава</option>
+                                                <option>Ориз</option>
+                                                <option>Картофи</option>
+                                                <option>Мусака</option>
+                                                <option>Гювеч</option>
+                                                <option>Сарми</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <table align="center">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label for="#region"> Област </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="subfilter-container">
+                                            <select id="region" multiple="multiple">
+                                                <option>Благоевград</option>
+                                                <option>Велико Търново</option>
+                                                <option>София</option>
+                                                <option>Варна</option>
+                                                <option>Бургас</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <table align="center">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label for="#season"> Сезон </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="subfilter-container">
+                                            <select id="season" multiple="multiple">
+                                                <option>Без предпочитание</option>
+                                                <option>Пролет</option>
+                                                <option>Лято</option>
+                                                <option>Есен</option>
+                                                <option>Зима</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <table align="center">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label for="#holiday"> Празник </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="subfilter-container">
+                                            <select id="hliday" multiple="multiple">
+                                                <option>Без предпочитание</option>
+                                                <option>Великден</option>
+                                                <option>Гергьовден</option>
+                                                <option>Коледа</option>
+                                                <option>Бъдни вечер</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table align="center">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label for="#timeForCooking"> Време за приготвяне </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="subfilter-container borderly-named">
+                                            <div>
+                                                <input type="checkbox"> до 15 минути
+                                                <br>
+                                                <input type="checkbox"> 15 - 30 минути
+                                                <br>
+                                                <input type="checkbox"> 30 - 45 минути
+                                                <br>
+                                                <input type="checkbox"> 45 - 60 минути
+                                                <br>
+                                                <input type="checkbox"> над 60 минути
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td colspan="2">
+                        <table width="500px" align="center">
+                            <thead>
+                                <tr>
+                                    <th align="center">
+                                        <label for="#ingredients"> Продукти </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="subfilter-container borderly-named" id="ingredients">
+                                            <ul class="nav nav-tabs">
+                                                <li class="active"><a data-toggle="tab" data-target="#menu1">Зеленчуци</a></li>
+                                                <li><a data-toggle="tab" data-target="#menu2">Плодове</a></li>
+                                                <li><a data-toggle="tab" data-target="#menu2">Ядки</a></li>
+                                                <li><a data-toggle="tab" data-target="#menu2">Млечни</a></li>
+                                                <li><a data-toggle="tab" data-target="#menu2">Месни</a></li>
+                                                <li><a data-toggle="tab" data-target="#menu2">Рибни</a></li>
+                                                <li><a data-toggle="tab" data-target="#menu2">Подправки</a></li>
+                                                <li><a data-toggle="tab" data-target="#menu2">Други</a></li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div id="menu1" class="tab-pane fade in active tab">
+                                                    <label>
+                                                        <input type="checkbox"> Ориз </label>
+                                                    <label>
+                                                        <input type="checkbox"> Леща </label>
+                                                    <label>
+                                                        <input type="checkbox"> Гъби </label>
+                                                    <label>
+                                                        <input type="checkbox"> Картофи </label>
+                                                    <label>
+                                                        <input type="checkbox"> Боб </label>
+                                                    <label>
+                                                        <input type="checkbox"> Тиквички </label>
+                                                    <label>
+                                                        <input type="checkbox"> Домати </label>
+                                                    <label>
+                                                        <input type="checkbox"> Грах </label>
+                                                    <label>
+                                                        <input type="checkbox"> Чушки </label>
+                                                    <label>
+                                                        <input type="checkbox"> Целина </label>
+                                                    <label>
+                                                        <input type="checkbox"> Зелен лук </label>
+                                                    <label>
+                                                        <input type="checkbox"> Черевен лук </label>
+                                                </div>
+                                                <div id="menu2" class="tab-pane fade tab">
+                                                    <label>
+                                                        <input type="checkbox"> Портокал </label>
+                                                    <label>
+                                                        <input type="checkbox"> Банан </label>
+                                                    <label>
+                                                        <input type="checkbox"> Ябълка </label>
+                                                    <label>
+                                                        <input type="checkbox"> Круша </label>
+                                                    <label>
+                                                        <input type="checkbox"> Нектарина </label>
+                                                    <label>
+                                                        <input type="checkbox"> Кайсия </label>
+                                                    <label>
+                                                        <input type="checkbox"> Ягода </label>
+                                                    <label>
+                                                        <input type="checkbox"> Малина </label>
+                                                    <label>
+                                                        <input type="checkbox"> Пъпеш </label>
+                                                    <label>
+                                                        <input type="checkbox"> Диня </label>
+                                                    <label>
+                                                        <input type="checkbox"> Червени боровинки </label>
+                                                    <label>
+                                                        <input type="checkbox"> Черешо </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <table align="center" width="240px">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label for="#otherOptions"> Други опции </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="subfilter-container borderly-named">
+                                            <input type="checkbox"> Предлагани от ресторанти
+                                            <br>
+                                            <input type="checkbox"> Вегетарианска рецепта
+                                            <br>
+                                            <input type="checkbox"> Веганска рецепта
+                                            <br>
+                                            <input type="checkbox"> Рецепта само с био храни
+                                            <br>
+                                            <input type="checkbox"> Възможност за алергична реакция
+                                            <br>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <table align="center" width="200px">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label for="#complexity"> Сложност </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="subfilter-container borderly-named" id="complexity">
+                                            <label>
+                                                <input type="radio"> 1 </label>
+                                            <label>
+                                                <input type="radio"> 2 </label>
+                                            <label>
+                                                <input type="radio"> 3 </label>
+                                            <label>
+                                                <input type="radio"> 4 </label>
+                                            <label>
+                                                <input type="radio"> 5 </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="contacts-page-container post-breadcrumbs">
+<div class="contact container col-md-8">
+    <div class="contacts-page-container">
         <div class="contacts-inner-container inner-container">
             <h4>Адрес</h4>
             <p align="center">Можете да ни намерите на адрес:</p>
@@ -11,7 +11,7 @@
             <table align="center" width="75%">
                 <tbody>
                     <tr>
-                        <td class="" width="20%">
+                        <td class="" width="20%" height="45px">
                             <label for="form-name">
                                 <font color="black">Име: *</font>
                             </label>
@@ -21,7 +21,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="">
+                        <td class=""  height="45px">
                             <label for="form-email">
                                 <font color="black">Имейл адрес: *</font>
                             </label>
@@ -31,10 +31,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="">
+                        <td class=""  height="45px">
                             <label for="form-title">
-                                <font color="black">
-                                    Заглавие: *</font>
+                                <font color="black"> Заглавие: *</font>
                             </label>
                         </td>
                         <td class="">
@@ -42,7 +41,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="">
+                        <td class=""  height="45px">
                             <label for="form-name">
                                 <font color="black">Съобщение: *</font>
                             </label>
@@ -53,7 +52,7 @@
                     </tr>
                     <tr>
                         <td class=""></td>
-                        <td class="">
+                        <td class=""  height="45px">
                             <div class=" text-center">
                                 <button class="btn btn-default btn-success" type="button">
                                     <span class="glyphicon glyphicon-pencil"></span> Запази
@@ -65,36 +64,40 @@
             </table>
         </div>
     </div>
+</div>
+<div>
     <div>
         <div>
-            <div>
-                <script>
-                function initialize() {
-                    var coordinates = {
-                        lat: 42.67828,
-                        lng: 23.29960
-                    };
-                    var mapProp = {
-                        center: coordinates,
-                        zoom: 15,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    };
+            <script>
+            function initialize() {
+                var coordinates = {
+                    lat: 42.67828,
+                    lng: 23.29960
+                };
+                var mapProp = {
+                    center: coordinates,
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
 
-                    var map = new google.maps.Map(document.getElementById("contactsMap"), mapProp);
-                    var marker = new google.maps.Marker({
-                        position: coordinates,
-                        map: map,
-                        title: 'Hello World!'
-                    });
+                var map = new google.maps.Map(document.getElementById("contactsMap"), mapProp);
+                var marker = new google.maps.Marker({
+                    position: coordinates,
+                    map: map,
+                    title: 'Hello World!'
+                });
 
-                    infowindow = new google.maps.InfoWindow({
-                        content: '<strong>бул. България №11</strong><br>България<br>1000 София<br>'
-                    });
-                    google.maps.event.addListener(marker, 'click', function() {
-                        infowindow.open(map, marker);
-                    });
+                infowindow = new google.maps.InfoWindow({
+                    content: '<strong>бул. България №11</strong><br>България<br>1000 София<br>'
+                });
+                google.maps.event.addListener(marker, 'click', function() {
                     infowindow.open(map, marker);
-                }
+                });
+                infowindow.open(map, marker);
+            }
 
-                initialize();
-                </script>
+            initialize();
+            </script>
+        </div>
+    </div>
+</div>
