@@ -15,7 +15,11 @@
             ng-if="state.user && !state.user.likes(recipe.id)"
             ng-click="addToFavourites(recipe.id)">
         </span>
-    </h2><a ui-sref="#"><h4 class="title-page text-center styled-a">{{author.name}}</h4></a></th>
+    </h2>
+                <a ui-sref="#">
+                    <h4 class="title-page text-center styled-a">{{author.name}}</h4>
+                </a>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -175,7 +179,10 @@
                                                     <label for="form-description">Добави в любими: </label>
                                                 </td>
                                                 <td class="icon" width="25%">
-                                                    <button class="heart-color .glyphicon-background" type="button" name="favorite"><i class="glyphicon glyphicon-heart "></i></button>
+                                                    <button class="heart-color .glyphicon-background" type="button" name="favorite">
+                                                        <span class="glyphicon glyphicon-star favourite" ng-if="state.user && state.user.likes(recipe.id)" ng-click="removeFromFavourites()"></span>
+                                                        <span class="glyphicon glyphicon-star-empty favourite" ng-if="state.user && !state.user.likes(recipe.id)" ng-click="addToFavourites(recipe.id)"></span>
+                                                    </button>
                                                 </td>
                                                 <td class="" width="15%" align="right">
                                                     <label for="form-description">Принтирай: </label>
