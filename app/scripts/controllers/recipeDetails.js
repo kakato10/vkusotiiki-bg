@@ -84,17 +84,51 @@ angular.module('vkusotiikiBgApp')
     } ])
   .run([ '$rootScope', function ($rootScope) {
     $rootScope.createPDF = function () {
-      var doc = new jsPDF();
-        var specialElementHandlers = {
-            '#printHelper': function (element, renderer) {
-                return true;
-            }
-        };
+      var doc = new jsPDF('l', 'em','a2',true);
 
-        doc.fromHTML($('#recipe-holder').html(), 15, 15, {
-            'width': 170,
-                'elementHandlers': specialElementHandlers
-        });
-        doc.save('sample-file.pdf');
+      var utf_8_string_to_render = $('#recipe-holder').html();
+
+      Promise.all(
+      [
+          new Promise(function (resolve) 
+          {
+              var temp = document.createElement("div");
+              temp.id = "temp";
+              temp.style = "color: black;margin:0px;font-size:20px;";
+              temp.innerHTML= utf_8_string_to_render;
+              //need to render element, otherwise it won't be displayed
+              document.body.appendChild(temp);
+
+              html2canvas($("#temp"), {
+              onrendered: function(canvas) {
+
+                      $("#temp").remove();
+                  resolve(canvas.toDataURL('image/png'));
+              },
+              });
+          })
+      ]).then(function (ru_text) { 
+
+          doc.addImage(ru_text[0], 'JPEG', 0,0);
+          doc.text(10, 10, '' );
+
+          doc.save('filename.pdf');
+          });
+
+
+      // };
+
+
+      // var specialElementHandlers = {
+      //     '#printHelper': function (element, renderer) {
+      //         return true;
+      //     }
+      // };
+
+      // doc.fromHTML($('#recipe-holder').html(), 15, 15, {
+      //     'width': 170,
+      //         'elementHandlers': specialElementHandlers
+      // });
+      // doc.save('sample-file.pdf');
     };
   }]);
