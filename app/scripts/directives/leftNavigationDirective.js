@@ -5,6 +5,7 @@ angular.module('vkusotiikiBgApp')
     return {
       templateUrl: 'views/leftNavigation.html',
       restrict: 'E',
+      replace: true,
       controller: 'LeftNavigation',
       scope: {}
     };

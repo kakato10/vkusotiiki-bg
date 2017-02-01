@@ -1035,3 +1035,22 @@ th {
     width: 100%
 }
 
+.recommendations {
+  border: 1px solid black;
+  padding: 0 10px;
+}
+
+.recommendations .recipes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommendations h4 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.recipe-details {
+  width: 100%;
+  overflow: auto;
+}

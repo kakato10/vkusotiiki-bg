@@ -280,7 +280,6 @@ angular
         Object.keys(object).forEach(function (key) {
           mapped[mapping[key]] = object[key];
         });
-        debugger;
 
         return mapped;
       }

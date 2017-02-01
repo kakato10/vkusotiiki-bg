@@ -1,17 +1,10 @@
 'use strict';
 
 angular.module('vkusotiikiBgApp')
-  .controller('LeftNavigation', [ '$scope', 'Recipe',
+  .controller('ContentBasedRecommendation', [ '$scope', 'Recipe',
     function ($scope, Recipe) {
-      function randomIndex(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-      }
-
       Recipe.findAll()
         .then(function (recipes) {
-          var index = randomIndex(0, recipes.length);
-          $scope.weekly = recipes[index];
-
           recipes = recipes.filter(function (recipe) {
             return recipe.rating;
           });
